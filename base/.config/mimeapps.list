@@ -1,0 +1,16 @@
+[Default Applications]
+inode/directory=pcmanfm.desktop
+application/x-audacity-project=audacity.desktop
+application/epub+zip=FBReader.desktop
+
+[Added Associations]
+video/3gpp=audacity.desktop;
+image/svg+xml=userapp-inkview-XBZU1X.desktop;
+video/mp4=avidemux-qt.desktop;avidemux-gtk.desktop;audacity.desktop;
+application/x-audacity-project=audacity.desktop;
+image/webp=gimp.desktop;
+audio/midi=vlc.desktop;
+application/epub+zip=FBReader.desktop;
+application/x-mobipocket-ebook=FBReader.desktop;
+audio/aac=vlc.desktop;
+image/jpeg=inkscape.desktop;

@@ -1,0 +1,15 @@
+# Default .gtkeyboardrc file written by GTKeyboard
+keyboard main_keyboard on
+keyboard number_pad on
+keyboard cursor_keys on
+keyboard f_keys on
+
+set handlebars off
+
+set word_wrap off
+set info_popups on
+set bump_amount 15
+hide buttonbar
+set random_strlen 10
+set eyecandy off
+set redirect_policy implicit

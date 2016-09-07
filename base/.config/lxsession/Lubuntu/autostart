@@ -1,0 +1,30 @@
+#@pcmanfm --desktop-off --profile lubuntu
+@compton
+/home/denilson/myrepos/small_scripts/wallpaper_restore.sh
+@/home/denilson/Downloads/pulseaudio-raop2/run.sh
+@syndaemon -t -k -i 1.5
+@/home/denilson/myrepos/small_scripts/auto_configure_upon_usb_device_change.py
+@/home/denilson/myrepos/arandr-indicator/arandr-indicator.py
+@/home/denilson/myrepos/indicator-chars/indicator-chars.py
+@/home/denilson/Downloads/byteonpanel-hg/src/byteonpanel
+#indicator-multiload
+@indicator-cpufreq
+@caffeine
+@caffeine-indicator
+shutter --min_at_startup
+smbnetfs /home/denilson/samba
+/home/denilson/bin/dropbox_start_delayed.sh
+
+# Too buggy. Behaves as a fork-bomb when there is no network connection. Takes up too much RAM.
+#hackhands
+
+# Hot corner to "expose"-like feature:
+#@brightside
+#@skippy-xd --start-daemon
+
+
+# For now, I'm running these semi-manually in a terminal:
+# UPDATE: not anymore, they are being called by auto_configure_upon_usb_device_change.py
+#/home/denilson/myrepos/small_scripts/auto_exec_xinput_xset_upon_usb_device_change.py:
+#/home/denilson/myrepos/small_scripts/synclient_asus_x450c.sh
+#/home/denilson/myrepos/small_scripts/xmodmap_menu_to_compose.sh

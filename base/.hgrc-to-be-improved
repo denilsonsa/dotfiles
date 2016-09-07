@@ -1,0 +1,234 @@
+[ui]
+username = Denilson Sá Maia <denilsonsa@gmail.com>
+ignore = ~/.hgignore
+#merge = kdiff3
+
+[extensions]
+# http://mercurial.selenic.com/wiki/ConvertExtension
+hgext.convert =
+
+# http://mercurial.selenic.com/wiki/GraphlogExtension
+hgext.graphlog =
+
+# http://mercurial.selenic.com/wiki/ExtdiffExtension
+hgext.extdiff =
+
+# http://mercurial.selenic.com/wiki/HgkExtension
+hgk =
+
+# http://mercurial.selenic.com/wiki/ColorExtension
+color =
+
+# http://mercurial.selenic.com/wiki/ProgressExtension
+progress =
+
+# http://mercurial.selenic.com/wiki/PagerExtension
+pager =
+
+# PyQt4 interface
+# http://mercurial.selenic.com/wiki/CuteHgExtension
+#cutehg =
+
+# "fetch" is like "pull -u", followed by "merge" if needed
+# http://mercurial.selenic.com/wiki/FetchExtension
+hgext.fetch =
+
+# http://mercurial.selenic.com/wiki/RebaseProject
+rebase =
+
+# http://mercurial.selenic.com/wiki/WorkingWithSubversion
+# http://bitbucket.org/durin42/hgsubversion/wiki/Home
+# http://blog.red-bean.com/sussman/?p=116
+#hgsubversion =
+
+# http://hg-git.github.com/
+hgext.bookmarks =
+# On Gentoo:
+# hggit =
+# On Ubuntu:
+hgext.git =
+
+# This command lets you choose which parts of the changes in a working
+# directory you'd like to commit.
+# http://mercurial.selenic.com/wiki/RecordExtension
+hgext.record=
+
+# Curses interface for the record command
+# http://mercurial.selenic.com/wiki/CrecordExtension
+#crecord = ~/hg_extensions/crecord/crecord
+crecord =
+
+# http://mercurial.selenic.com/wiki/HisteditExtension
+# http://bitbucket.org/durin42/histedit/src/
+# This extension is distributed with Mercurial 2.3 and later.
+#histedit = ~/hg_extensions/histedit/hg_histedit.py
+histedit =
+
+# http://mercurial.selenic.com/wiki/MqExtension
+mq =
+
+# http://mercurial.selenic.com/wiki/ChurnExtension
+hgext.churn =
+
+# http://mercurial.selenic.com/wiki/ActivityExtension
+# http://labs.freehackers.org/projects/hgactivity/wiki
+# Disabled because of https://bitbucket.org/tortoisehg/thg/issue/1143/
+#activity = ~/hg_extensions/Hgactivity/activity
+
+# http://mercurial.selenic.com/wiki/bExtension
+# http://www.digitalgemstones.com/projects/b/
+#bugs = ~/hg_extensions/b/src/b.py
+
+# Facebook extensions:
+# https://www.youtube.com/watch?v=xsfTwG4Nc58
+# https://github.com/facebook/watchman
+# https://bitbucket.org/facebook/hgwatchman
+# https://bitbucket.org/facebook/remotefilelog
+# https://bitbucket.org/facebook/hgsql
+# https://bitbucket.org/facebook/hg-experimental
+# https://bitbucket.org/seanfarley/hgremotenames
+# http://mercurial.selenic.com/wiki/EvolveExtension
+
+[pager]
+# -F or --quit-if-one-screen
+# -M or --LONG-PROMPT
+# -S or --chop-long-lines
+# -R or --RAW-CONTROL-CHARS
+# -X or --no-init
+#    Disables sending the termcap initialization and deinitialization
+#    strings to the terminal.
+# If unset, gets from $PAGER environment variable
+#pager = less -FMRX
+
+[diff]
+# Use git extended diff format.
+# Recommended by:
+# http://mercurial.selenic.com/wiki/EditingHistory#Using_Mercurial_Queues
+git = True
+showfunc = True
+
+[alias]
+changelog = log --style changelog
+shortlog = log --style compact
+# http://stackoverflow.com/questions/3575189/mercurial-log-with-one-liners
+#lg = log --template '{node|short} | {date|isodate} | {author|user}: {desc|strip|firstline}\n'
+# Since mercurial 2.5:
+# http://stackoverflow.com/questions/3625725/can-i-add-custom-colors-to-mercurial-command-templates
+#lg = log --template '{label("log.rev",rev)} {label("log.rev",node|short)} {label("log.date",date|isodate)} {label("log.author",author|user)}: {desc|firstline|strip}\n'
+lg = log --template '{label("log.rev",rev)}. {label("log.date",date|isodate)} {label("log.author",author|user)}:{label("log.branch",ifeq(branch,"default",""," {branch}"))}{label("log.tags",if(tags," {tags}"))} {desc|firstline|strip}\n'
+glg = glog --template '{label("log.rev",rev)}. {label("log.date",date|isodate)} {label("log.author",author|user)}:{label("log.branch",ifeq(branch,"default",""," {branch}"))}{label("log.tags",if(tags," {tags}"))} {desc|firstline|strip}\n'
+# Other useful templates: {branches} {tags} {date|age}
+
+[color]
+status.modified = magenta bold
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold
+status.unknown = blue bold
+status.ignored = black bold
+# log.changeset is already set by default.
+log.changeset = yellow
+log.rev = yellow
+log.user = cyan
+log.author = cyan
+log.date = green
+log.branch = green
+log.tags = yellow
+
+[auth]
+# This section requires hg-1.3
+bitbucket.prefix = bitbucket.org/
+bitbucket.schemes = https
+bitbucket.username = denilsonsa
+#bitbucket.password = 
+
+# hg clone https://denilsonsa@bitbucket.org/denilsonsa/pygame-joystick-test/
+# hg clone ssh://hg@bitbucket.org/denilsonsa/pygame-joystick-test/
+
+[web]
+#cacerts = /etc/ssl/certs/ca-certificates.crt
+
+[hostfingerprints]
+#bitbucket.org = 81:2b:08:90:dc:d3:71:ee:e0:7c:b4:75:ce:9b:6c:48:94:56:a1:fe
+# http://blog.bitbucket.org/2014/03/06/ssl-certificates-are-changing/
+#bitbucket.org = 67:b3:bf:9f:c5:38:0e:4c:dd:4e:8a:da:3d:11:1b:c2:a5:d1:6c:6b
+
+[extdiff]
+cmd.kdiff3=
+
+cmd.meld=
+
+# These require DirDiff Vim plugin
+# http://www.vim.org/scripts/script.php?script_id=102
+# This code is based on
+# http://mercurial.selenic.com/wiki/ExtdiffExtension
+cmd.vimdiff=vim
+opts.vimdiff=-f '+next' '+execute "DirDiff" argv(0) argv(1)'
+
+cmd.gvimdiff=gvim
+opts.gvimdiff=-f '+next' '+execute "DirDiff" argv(0) argv(1)'
+# Little note:
+# "+next" makes vim go to the second file before executing DirDiff.
+#     This is importante because then vim won't print "1 more file to edit"
+#     whenever we try to quit.
+
+[merge-tools]
+# http://mercurial.selenic.com/wiki/MergeToolConfiguration
+#
+# $output expands to the existing file which already contains the version from
+# the first parent - and this is also where the result of the merge ends up /
+# must end up 
+#
+# $local expands to file.orig which is created as a copy of file in the working
+# directory version - it thus contains the unmerged version from the first
+# parent 
+#
+# $base expands to /tmp/file~base.* which is created with the version from the
+# common ancestor revision (see hg debugancestor) 
+#
+# $other expands to /tmp/file~other.* which is created with the version from
+# the new second parent revision which the first parent is merged with
+
+kdiff3.args=--auto --L1 base --L2 local --L3 other $base $local $other -o $output
+kdiff3.gui=True
+kdiff3.priority=15
+#kdiff3.fixeol=True
+
+# http://stackoverflow.com/questions/685151/completly-manual-mercurial-merge/3121284#3121284
+#kdiff3.args=--L1 base --L2 local --L3 other $base $local $other -o $output
+#kdiff3.premerge=False
+
+#kdiff3.args=--auto --L1 base --L2 local --L3 other $base $local $other -o $output
+#kdiff3.regkey=Software\KDiff3
+#kdiff3.regappend=\kdiff3.exe
+#kdiff3.fixeol=True
+#kdiff3.gui=True
+#kdiff3.priority=15
+
+meld.gui=True
+meld.priority=2
+
+#gvimdiff.args=--nofork -d -g -O $local $other $base
+#gvimdiff.regkey=Software\Vim\GVim
+#gvimdiff.regname=path
+#gvimdiff.priority=10
+
+# Based on: http://mercurial.selenic.com/wiki/MergingWithVim
+gvimdiff.args=-f -d $base $local $output $other +close +close
+gvimdiff.gui=True
+gvimdiff.priority=10
+
+# These settings are needed by TortoiseHg:
+kdiff3.diffargs=--L1 '$plabel1' --L2 '$clabel' $parent $child
+#kdiff3.diff3args=--L1 '$plabel1' --L2 '$clabel' --L3 '$plabel2' $parent1 $child $parent2
+kdiff3.dirdiff=True
+meld.diffargs=-a --label='$plabel1' $parent --label='$clabel' $child
+#meld.diff3args=-a --label='$plabel1' $parent1 --label='$clabel' $child --label='$plabel2' $parent2
+gvimdiff.diffargs=-f -d $parent $child
+
+
+[tortoisehg]
+authorcolor = True
+changeset-expander = True
+editor = gvim
+vdiff = kdiff3

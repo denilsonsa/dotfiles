@@ -1,0 +1,42 @@
+[user]
+	name = Denilson Sá Maia
+	email = denilsonsa@gmail.com
+[github]
+	user = denilsonsa
+	token = THIS_MUST_BE_SECRET
+[core]
+	excludesfile = /home/denilson/.gitignore
+[color]
+	ui = true
+[alias]
+	ci = commit
+	co = checkout
+	st = status --short --branch
+	#glog = log --graph --decorate
+	glog = log --graph --decorate --pretty=oneline --abbrev-commit
+	# http://www.jukie.net/bart/blog/pimping-out-git-log
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	dirdiff = difftool --dir-diff
+
+	# "git branch foobar" creates a new branch.
+	# "git branch --list foobar" lists branches that match "foobar".
+	# "git branch" lists all (local) branches.
+	# "-a" or "--all" to list all branches.
+	branches = branch --list --all
+
+	# aliases that match the hg in / out commands
+	# https://github.com/sympy/sympy/wiki/Git-hg-rosetta-stone
+	out      = !git fetch && git log FETCH_HEAD..
+	outgoing = !git fetch && git log FETCH_HEAD..
+	in       = !git fetch && git log ..FETCH_HEAD
+	incoming = !git fetch && git log ..FETCH_HEAD
+
+[giggle]
+	main-window-view = HistoryView
+	history-view-vpane-position = 241
+	main-window-maximized = false
+	main-window-geometry = 1189x758+0+0
+[push]
+	default = simple
+[cola]
+	fontdiff = Inconsolata,9,-1,5,50,0,0,0,0,0

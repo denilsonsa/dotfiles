@@ -1,0 +1,7 @@
+# Workaround for GTK-2.8 bug:
+# http://forums.gentoo.org/viewtopic-t-420489.html
+# http://bugs.gentoo.org/show_bug.cgi?id=118439
+#gtk-cursor-theme-name = "A-1"
+#gtk-cursor-theme-size = 16
+
+gtk-icon-theme-name = "Tango"

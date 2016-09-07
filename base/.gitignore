@@ -1,0 +1,23 @@
+# To exclude some files per-repository, without using .gitignore, use
+# repository/.git/info/exclude
+# https://stackoverflow.com/questions/1753070/git-ignore-files-only-locally
+
+*.o
+*.lo
+*.la
+\#*#
+.*.rej
+*.rej
+.*~
+*~
+.#*
+.DS_Store
+*.bak
+.*.swp
+.swp
+.swo
+*.pyc
+*.pyo
+__pycache__
+.ipynb_checkpoints
+.jekyll-metadata

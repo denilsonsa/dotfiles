@@ -1,0 +1,14 @@
+XMathematica.secondaryModifierMask:Mod3Mask
+
+# http://www.lesswatts.org/projects/powertop/known.php#xterm
+XTerm.sessionMgt: false
+
+# The next line enables a Xcursor theme (select a colored cursor theme)
+#Xcursor.theme: A-1
+#Xcursor.size:
+
+Xcursor.theme: crystalblue
+Xcursor.size: 32
+
+# The next line disables the Xcursor extension (disables the colored cursors)
+#Xcursor.core: 1

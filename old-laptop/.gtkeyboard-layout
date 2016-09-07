@@ -1,0 +1,12 @@
+# Configure these settings the through application-do not edit!
+ TOOLTIPS = 1
+ TOOLBAR = 1
+ MENUBAR = 1
+ KEYBOARD = 1
+ STATUS = 1
+ TEXT = 1
+ BUTTONBAR = 0
+ KBD_KBD = 1
+ KBD_NUMPAD = 1
+ KBD_CURSOR = 1
+ KBD_FKEYS = 1

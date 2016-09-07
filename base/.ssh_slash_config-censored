@@ -1,0 +1,24 @@
+Protocol 2
+HashKnownHosts no
+UseRoaming no
+
+Host *
+	ControlMaster auto
+	ControlPath ~/.ssh/control_master_%r@%h-%p
+	Protocol 2
+	Compression yes
+	# SendEnv LANG LC_*
+	SendEnv 
+
+# Host 10.0.0.1
+# 	ForwardX11 yes
+# 	ForwardX11Trusted yes
+# 	Compression yes
+# Host 10.0.1.1
+# 	ForwardX11 yes
+# 	ForwardX11Trusted yes
+# 	Compression yes
+
+Host openwrt
+	HostName 192.168.0.1
+	User root

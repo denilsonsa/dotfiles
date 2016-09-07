@@ -1,0 +1,13 @@
+--type-set=proto=.proto,.protodevel
+
+--type-set=ebuild=.ebuild
+
+--type-set=svg=.svg
+
+# Remapping --cc to match C/C++ files
+#   --[no]cc           .c .h .xs
+#   --[no]cpp          .cpp .cc .cxx .m .hpp .hh .h .hxx
+--type-set=cc=.c,.cc,.cpp,.cxx,.h,.hh,.hpp,.hxx
+
+# Jekyll generated site
+--ignore-dir=_site

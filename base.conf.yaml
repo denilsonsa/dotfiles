@@ -1,0 +1,62 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+        relative: true
+- clean: ['~']
+- link:
+    '~/.ackrc': 'base/.ackrc'
+    #'~/.bashrc': 'base/.hgrc'
+    '~/.cplayrc': 'base/.cplayrc'
+    #'~/.gitconfig': 'base/.gitconfig'
+    '~/.gitignore': 'base/.gitignore'
+    '~/.gtkrc-2.0': 'base/.gtkrc-2.0'
+    '~/.config/gtk-3.0/settings.ini': 'base/.config/gtk-3.0/settings.ini'
+    '~/.hgignore': 'base/.hgignore'
+    #'~/.hgrc': 'base/.hgrc'
+    '~/.indicator-chars': 'base/.indicator-chars'
+    #'~/.kdiff3rc' ?
+    #'~/.profile': 'base/.profile'
+    '~/.vimrc': 'base/.vimrc'
+    '~/.XCompose': 'base/.XCompose'
+    '~/.xinputrc': 'base/.xinputrc'
+    '~/.vim/scripts.vim': 'base/.vim/scripts.vim'
+    '~/.config/htop/htoprc': 'base/.config/htop/htoprc'
+    '~/.config/pudb/pudb.cfg': 'base/.config/pudb/pudb.cfg'
+    '~/.config/lxtask.conf': 'base/.config/lxtask.conf'
+    '~/.config/upstart': 'base/.config/upstart'
+    '~/.config/compton.conf': 'base/.config/compton.conf'
+    '~/.config/user-dirs.dirs': 'base/.config/user-dirs.dirs'
+    '~/.config/user-dirs.locale': 'base/.config/user-dirs.locale'
+    #'~/.config/lxpanel/Lubuntu/config': 'base/.config/lxpanel/Lubuntu/config'
+    #'~/.config/lxpanel/Lubuntu/panels/panel': 'base/.config/lxpanel/Lubuntu/panels/panel'
+    #'~/.config/lxsession-default-apps/settings.conf': 'base/.config/lxsession-default-apps/settings.conf'
+    #'~/.config/lxsession/Lubuntu/autostart': 'base/.config/lxsession/Lubuntu/autostart'
+    #'~/.config/lxsession/Lubuntu/desktop.conf': 'base/.config/lxsession/Lubuntu/desktop.conf'
+    #'~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml': 'base/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml'
+    #'~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml': 'base/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml'
+    #'~/.config/openbox/lubuntu-rc.xml': 'base/.config/openbox/lubuntu-rc.xml'
+    #'~/.config/fontconfig/fonts.conf': 'base/.config/fontconfig/fonts.conf'
+    #'~/.config/pcmanfm/*': ?
+    # TODO:
+    # '~/.proxychains/proxychains.conf'
+    # '~/.screenlayout/'
+    # '~/.mednafen/mednafen-09x.cfg' -> Set this line: sound.device sexyal-literal-default
+    # '~/.local/share/applications/mimeapps.list':
+    # '~/.local/share/applications/mimeinfo.cache':
+    # '~/.local/share/applications/defaults.list':
+    # '~/.config/mimeapps.list':
+    # '~/.gimp-2.8/'
+    # '~/.config/inkscape/'
+    # '~/.fluxbox/'
+    # '~/.dosbox/dosbox-0.74.conf'
+    # '~/.dosbox/dosbox-SVN.conf'
+    # '~/.config/autostart/'
+    # '~/.config/gpick/settings.xml'
+- shell:
+    - ['test -f ~/.vim/autoload/plug.vim || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', 'Installing vim-plug (if needed)']
+    - 
+        command: ['vim -c PlugInstall', 'Please observe any error messages and quit vim afterwards.']
+        stdin: true
+        stdout: true
+        stderr: true
