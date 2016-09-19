@@ -375,6 +375,11 @@
         </finalactions>
       </action>
     </keybind>
+    <keybind key="W-q">
+      <action name="Execute">
+        <command>skippy-xd --toggle-window-picker</command>
+      </action>
+    </keybind>
     <!--keybind key="C-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>
@@ -480,6 +485,15 @@
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>center</x> <y>center</y> </action>
     </keybind>
+    <keybind key="W-KP_0">
+      <action name="MoveResizeTo"> <monitor>prev</monitor> </action>
+    </keybind>
+    <keybind key="W-KP_Decimal">
+      <action name="MoveResizeTo"> <monitor>next</monitor> </action>
+    </keybind>
+    <keybind key="W-KP_Delete">
+      <action name="MoveResizeTo"> <monitor>next</monitor> </action>
+    </keybind>
     <!-- Always on top/bottom -->
     <keybind key="W-T">
       <action name="ToggleAlwaysOnTop"/>
@@ -576,22 +590,22 @@
         <command>xbacklight -inc 1</command>
       </action>
     </keybind>
-    <keybind key="W-KP_Subtract">
+    <keybind key="W-KP_Divide">
       <action name="Execute">
         <command>xbacklight -dec 1</command>
       </action>
     </keybind>
-    <keybind key="W-KP_Add">
+    <keybind key="W-KP_Multiply">
       <action name="Execute">
         <command>xbacklight -inc 1</command>
       </action>
     </keybind>
-    <keybind key="W-S-KP_Subtract">
+    <keybind key="W-S-KP_Divide">
       <action name="Execute">
         <command>xbacklight -dec 10</command>
       </action>
     </keybind>
-    <keybind key="W-S-KP_Add">
+    <keybind key="W-S-KP_Multiply">
       <action name="Execute">
         <command>xbacklight -inc 10</command>
       </action>
@@ -608,7 +622,19 @@
         <command>amixer -q -D pulse sset Master 3%+ unmute</command>
       </action>
     </keybind>
+    <keybind key="W-KP_Add">
+      <action name="Execute">
+        <!--command>amixer -q -c 0 sset Master 3%+ unmute</command-->
+        <command>amixer -q -D pulse sset Master 3%+ unmute</command>
+      </action>
+    </keybind>
     <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <!--command>amixer -q -c 0 sset Master 3%- unmute</command-->
+        <command>amixer -q -D pulse sset Master 3%- unmute</command>
+      </action>
+    </keybind>
+    <keybind key="W-KP_Subtract">
       <action name="Execute">
         <!--command>amixer -q -c 0 sset Master 3%- unmute</command-->
         <command>amixer -q -D pulse sset Master 3%- unmute</command>
