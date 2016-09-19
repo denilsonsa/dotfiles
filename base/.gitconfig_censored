@@ -5,7 +5,7 @@
 	user = denilsonsa
 	token = THIS_MUST_BE_SECRET
 [core]
-	excludesfile = /home/denilson/.gitignore
+	excludesfile = ~/.gitignore
 [color]
 	ui = true
 [alias]
@@ -30,6 +30,8 @@
 	outgoing = !git fetch && git log FETCH_HEAD..
 	in       = !git fetch && git log ..FETCH_HEAD
 	incoming = !git fetch && git log ..FETCH_HEAD
+
+	bl = blame -w -M
 
 [giggle]
 	main-window-view = HistoryView

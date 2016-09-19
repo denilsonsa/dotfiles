@@ -4,8 +4,8 @@
         Copy the file to $HOME/.config/openbox/ instead. -->
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
-    <strength>10</strength>
-    <screen_edge_strength>20</screen_edge_strength>
+    <strength>16</strength>
+    <screen_edge_strength>24</screen_edge_strength>
   </resistance>
   <focus>
     <focusNew>yes</focusNew>
@@ -121,7 +121,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>6</number>
+    <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>One</name>
@@ -130,6 +130,8 @@
       <name>Four</name>
       <name>Five</name>
       <name>Six</name>
+      <name>Seven</name>
+      <name>Eight</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -323,15 +325,16 @@
       <action name="ToggleShade"/>
     </keybind>
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
-    <keybind key="A-Print">
+    <!--keybind key="A-Print">
       <action name="Execute">
         <command>lxsession-default screenshot window</command>
       </action>
-    </keybind>
+    </keybind-->
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <!--dialog>icons</dialog-->
+        <dialog>list</dialog>
+        <raise>yes</raise>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -341,6 +344,8 @@
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow">
+        <dialog>list</dialog>
+        <raise>yes</raise>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -350,7 +355,8 @@
     </keybind>
     <keybind key="W-Tab">
       <action name="NextWindow">
-        <!--dialog>icons</dialog-->
+        <dialog>list</dialog>
+        <raise>yes</raise>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -360,6 +366,8 @@
     </keybind>
     <keybind key="W-S-Tab">
       <action name="PreviousWindow">
+        <dialog>list</dialog>
+        <raise>yes</raise>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -403,45 +411,37 @@
       <action name="ToggleMaximize"/>
     </keybind>
     <!-- Keybindings for window tiling -->
-    <keybind key="W-A-Left">
-      <!-- HalfLeftScreen -->
+    <keybind key="W-KP4">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <height>98%</height>
-        <width>50%</width>
-      </action>
+      <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>100%</height> <width>50%</width> </action>
     </keybind>
-    <keybind key="W-A-Right">
-      <!-- HalfRightScreen -->
+    <keybind key="W-KP6">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <height>98%</height>
-        <width>50%</width>
-      </action>
+      <action name="MoveResizeTo"> <x>-0</x> <y>0</y> <height>100%</height> <width>50%</width> </action>
     </keybind>
-    <keybind key="W-A-Up">
-      <!-- HalfUpperScreen -->
+    <keybind key="W-KP8">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
+      <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>50%</height> <width>100%</width> </action>
     </keybind>
-    <keybind key="W-A-Down">
-      <!-- HalfLowerScreen -->
+    <keybind key="W-KP2">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
+      <action name="MoveResizeTo"> <x>0</x> <y>-0</y> <height>50%</height> <width>100%</width> </action>
+    </keybind>
+    <keybind key="W-KP7">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>50%</height> <width>50%</width> </action>
+    </keybind>
+    <keybind key="W-KP9">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>-0</x> <y>0</y> <height>50%</height> <width>50%</width> </action>
+    </keybind>
+    <keybind key="W-KP1">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>0</x> <y>-0</y> <height>50%</height> <width>50%</width> </action>
+    </keybind>
+    <keybind key="W-KP3">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>-0</x> <y>-0</y> <height>50%</height> <width>50%</width> </action>
     </keybind>
     <!-- Always on top/bottom -->
     <keybind key="W-T">
@@ -520,12 +520,12 @@
     <!-- Lock the screen on Ctrl + Alt + l-->
     <keybind key="W-L">
       <action name="Execute">
-        <command>/home/denilson/myrepos/small_scripts/lock_and_turn_off_monitor.sh</command>
+        <command>~/bin/lock_and_turn_off_monitor.sh</command>
       </action>
     </keybind>
     <keybind key="C-A-L">
       <action name="Execute">
-        <command>/home/denilson/myrepos/small_scripts/lock_and_turn_off_monitor.sh</command>
+        <command>~/bin/lock_and_turn_off_monitor.sh</command>
       </action>
     </keybind>
     <!-- Backlight fine tuning -->
@@ -539,9 +539,29 @@
         <command>xbacklight -inc 1</command>
       </action>
     </keybind>
+    <keybind key="W-KP_Subtract">
+      <action name="Execute">
+        <command>xbacklight -dec 1</command>
+      </action>
+    </keybind>
+    <keybind key="W-KP_Add">
+      <action name="Execute">
+        <command>xbacklight -inc 1</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-KP_Subtract">
+      <action name="Execute">
+        <command>xbacklight -dec 10</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-KP_Add">
+      <action name="Execute">
+        <command>xbacklight -inc 10</command>
+      </action>
+    </keybind>
     <keybind key="XF86TouchpadToggle">
       <action name="Execute">
-        <command>/home/denilson/myrepos/small_scripts/touchpad_enable_disable.sh</command>
+        <command>~/bin/touchpad_enable_disable.sh</command>
       </action>
     </keybind>
     <!-- Keybinding for Volume management -->
