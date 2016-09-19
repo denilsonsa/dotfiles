@@ -60,3 +60,7 @@
         stdin: true
         stdout: true
         stderr: true
+    -
+        command: ["echo 'You may also want to install:\n https://bitbucket.org/mozbugbox/byteonpanel/overview (apt-get install gnome-common libgtk-3-dev valac)\n https://github.com/denilsonsa/indicator-chars\n https://github.com/denilsonsa/arandr-indicator\n https://bitbucket.org/denilsonsa/small_scripts/overview'"]
+        stdout: true
+        stderr: true
