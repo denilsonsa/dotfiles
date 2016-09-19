@@ -411,37 +411,74 @@
       <action name="ToggleMaximize"/>
     </keybind>
     <!-- Keybindings for window tiling -->
-    <keybind key="W-KP4">
+    <keybind key="W-A-KP_4">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>100%</height> <width>50%</width> </action>
     </keybind>
-    <keybind key="W-KP6">
+    <keybind key="W-A-KP_6">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>-0</x> <y>0</y> <height>100%</height> <width>50%</width> </action>
     </keybind>
-    <keybind key="W-KP8">
+    <keybind key="W-A-KP_8">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>50%</height> <width>100%</width> </action>
     </keybind>
-    <keybind key="W-KP2">
+    <keybind key="W-A-KP_2">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>0</x> <y>-0</y> <height>50%</height> <width>100%</width> </action>
     </keybind>
-    <keybind key="W-KP7">
+    <keybind key="W-A-KP_7">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>50%</height> <width>50%</width> </action>
     </keybind>
-    <keybind key="W-KP9">
+    <keybind key="W-A-KP_9">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>-0</x> <y>0</y> <height>50%</height> <width>50%</width> </action>
     </keybind>
-    <keybind key="W-KP1">
+    <keybind key="W-A-KP_1">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>0</x> <y>-0</y> <height>50%</height> <width>50%</width> </action>
     </keybind>
-    <keybind key="W-KP3">
+    <keybind key="W-A-KP_3">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"> <x>-0</x> <y>-0</y> <height>50%</height> <width>50%</width> </action>
+    </keybind>
+    <!-- Keybindings for window moving -->
+    <keybind key="W-KP_4">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>0</x> <y>center</y> </action>
+    </keybind>
+    <keybind key="W-KP_6">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>-0</x> <y>center</y> </action>
+    </keybind>
+    <keybind key="W-KP_8">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>center</x> <y>0</y> </action>
+    </keybind>
+    <keybind key="W-KP_2">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>center</x> <y>-0</y> </action>
+    </keybind>
+    <keybind key="W-KP_7">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>0</x> <y>0</y> </action>
+    </keybind>
+    <keybind key="W-KP_9">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>-0</x> <y>0</y> </action>
+    </keybind>
+    <keybind key="W-KP_1">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>0</x> <y>-0</y> </action>
+    </keybind>
+    <keybind key="W-KP_3">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>-0</x> <y>-0</y> </action>
+    </keybind>
+    <keybind key="W-KP_5">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo"> <x>center</x> <y>center</y> </action>
     </keybind>
     <!-- Always on top/bottom -->
     <keybind key="W-T">

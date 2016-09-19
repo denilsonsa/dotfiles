@@ -128,6 +128,9 @@ set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~
 set path+=/usr/local/include
 set history=1000
 
+" sesdir might be useful
+set sessionoptions=blank,curdir,resize,tabpages,winsize
+
 set viminfo=!,<500,s10,'50,/50,:500,@500,h
 "viminfo help:"{{{
 " ! - Save and restore global variables that start with uppercase and does not have lower case characters.
