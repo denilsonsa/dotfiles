@@ -697,11 +697,6 @@
         <command>lxsession-default quit</command>
       </action>
     </keybind>
-    <!--keybind key="Pause">
-      <action name="Execute">
-        <command>skippy-xd -toggle-window-picker</command>
-      </action>
-    </keybind-->
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
@@ -992,7 +987,6 @@
       </mousebind>
     </context>
     <context name="Desktop">
-      <!--
       <mousebind button="Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
@@ -1003,6 +997,7 @@
           <to>next</to>
         </action>
       </mousebind>
+      <!--
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
