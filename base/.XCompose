@@ -30,10 +30,9 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 # But remember that degree is not an ordinal!
 #<Multi_key> <o> <o>         : "°" degree # DEGREE SIGN
 <Multi_key> <d> <g>          : "°" degree # DEGREE SIGN
-
-# "℃" U2103 # DEGREE CELSIUS
-# "℉" U2109 # DEGREE FAHRENHEIT
-# "K" U212A # KELVIN SIGN
+<Multi_key> <o> <C>          : "℃" U2103 # DEGREE CELSIUS
+<Multi_key> <o> <F>          : "℉" U2109 # DEGREE FAHRENHEIT
+<Multi_key> <o> <K>          : "K" U212A # KELVIN SIGN
 
 # Don't forget these useful chars:
 #<Multi_key> <minus> <minus> <period> : "–" U2013 # EN DASH
