@@ -301,7 +301,7 @@
         <to>9</to>
       </action>
     </keybind>
-    <!--keybind key="W-d">
+    <!--keybind key="W-D">
       <action name="ToggleShowDesktop"/>
     </keybind-->
     <!-- Keybindings for windows -->
@@ -375,7 +375,7 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="W-q">
+    <keybind key="W-Q">
       <action name="Execute">
         <command>skippy-xd --toggle-window-picker</command>
       </action>
@@ -510,7 +510,7 @@
       <action name="ToggleDecorations"/>
     </keybind>
     <!-- Keybindings for running applications on Home + E -->
-    <keybind key="W-e">
+    <keybind key="W-E">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
@@ -520,7 +520,7 @@
       </action>
     </keybind>
     <!-- Keybindings for running Run menu from Lxpanel on Home + R-->
-    <keybind key="W-r">
+    <keybind key="W-R">
       <action name="Execute">
         <command>lxsession-default launcher</command>
       </action>
@@ -556,6 +556,12 @@
     <keybind key="C-A-T">
       <action name="Execute">
         <command>lxsession-default terminal</command>
+      </action>
+    </keybind>
+    <!-- Launch a gVim -->
+    <keybind key="W-G">
+      <action name="Execute">
+        <command>gvim</command>
       </action>
     </keybind>
     <!-- Launch a filemanager on Ctrl + Alt + D-->

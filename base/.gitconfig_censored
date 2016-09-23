@@ -39,6 +39,8 @@
 	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
 	showmeld = "!showci () { rev=${1:-HEAD}; git difftool -t meld --dir-diff $rev~1 $rev; }; showci $1"
 
+	prp = "!git pull --rebase && git push"
+
 [giggle]
 	main-window-view = HistoryView
 	history-view-vpane-position = 241
