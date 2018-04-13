@@ -13,10 +13,17 @@
 	ci = commit
 	co = checkout
 	st = status --short --branch
+
+	# Note: git log does not show reverted commits.
+	#       Use --full-history to show those.
+	#
 	#glog = log --graph --decorate
-	glog = log --graph --decorate --pretty=oneline --abbrev-commit
+	#glog = log --graph --decorate --pretty=oneline --abbrev-commit
 	# http://www.jukie.net/bart/blog/pimping-out-git-log
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	# --graph is really slow for large repositories.
+	lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	#hist = log --graph --color=always --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' --all
 	dirdiff = difftool --dir-diff
 
 	# "git branch foobar" creates a new branch.
@@ -24,6 +31,7 @@
 	# "git branch" lists all (local) branches.
 	# "-a" or "--all" to list all branches.
 	branches = branch --list --all
+	#branches = for-each-ref --sort=-committerdate refs/heads/
 
 	# aliases that match the hg in / out commands
 	# https://github.com/sympy/sympy/wiki/Git-hg-rosetta-stone
@@ -34,12 +42,33 @@
 
 	bl = blame -w -M
 
+	# --color-words is an alias to --word-diff=color
+	showw = show --color-words
+	diffw = diff --color-words
+	logw = log -p --color-words
+
 	meld = difftool -t meld --dir-diff
 	# http://stackoverflow.com/questions/17558221/
 	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
 	showmeld = "!showci () { rev=${1:-HEAD}; git difftool -t meld --dir-diff $rev~1 $rev; }; showci $1"
 
+	# git stash show that actually makes sense:
+	sshow = stash show -p
+	ssave = stash save
+	sdrop = stash drop
+	slist = stash list
+	sapply = stash apply
+	spop = stash pop
+
 	prp = "!git pull --rebase && git push"
+	# http://stackoverflow.com/questions/30208928/can-git-pull-automatically-stash-and-pop-pending-changes
+	prs = pull --rebase --autostash
+	prsp = "!git pull --rebase --autostash && git push"
+
+[fetch]
+	# Auto-prune local branches that are tracking remote branches that don't exist anymore.
+	# https://stackoverflow.com/a/44129766
+	prune = true
 
 [giggle]
 	main-window-view = HistoryView
@@ -50,3 +79,5 @@
 	default = simple
 [cola]
 	fontdiff = Inconsolata,9,-1,5,50,0,0,0,0,0
+[gui]
+	editor = gvim
