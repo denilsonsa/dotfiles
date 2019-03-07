@@ -1,0 +1,51 @@
+# vim:ft=conf
+# Used by ag (silver searcher), rg (ripgrep), …
+# http://geoff.greer.fm/2016/09/26/ignore/
+# See also: ~/.ackrc
+
+*.min.css
+*.min.js
+
+*.compiled.js
+
+*.css.map
+*.js.map
+*.min.js.map
+
+*.bundle.js
+
+bootstrap.css
+bootstrap.min.css
+bootstrap.js
+bootstrap-sortable.js
+
+jquery.js
+jquery.*.css
+jquery.*.js
+jquery-*.css
+jquery-*.js
+
+swagger-ui.js
+swagger-ui-bundle.js
+swfupload.*.js
+swfupload-*.js
+
+mootools.*.js
+mootools-*.js
+
+moment.js
+
+dataTables.js
+DataTables.js
+
+angular.js
+angular.*.js
+angular-*.js
+
+ui-bootstrap*.js
+d3.*.js
+d3.js
+c3.js
+c3.css
+c3.*.js
+c3.*.css

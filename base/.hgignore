@@ -11,6 +11,7 @@ syntax: glob
 .*.swp
 .swp
 .swo
+.swx
 # Mac OS X invisible directory created by Finder:
 .DS_Store
 # Windows thumbnail cache:
