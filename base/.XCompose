@@ -60,6 +60,10 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 #<Multi_key> <N> <O>                  : "№" numerosign # NUMERO SIGN
 <Multi_key> <n> <u>                   : "№" numerosign # NUMERO SIGN
 
+# RTL and LTR marks. Usually useless to type manually, unless you speak some RTL language.
+<Multi_key> <l> <t> <r>           : "‎" U200E # LEFT-TO-RIGHT MARK (LRM)
+<Multi_key> <r> <t> <l>           : "‏" U200F # RIGHT-TO-LEFT MARK (RLM)
+
 # Arrows:
 #<Multi_key> <less> <minus>               : "←" U2190 # LEFTWARDS ARROW
 #<Multi_key> <minus> <greater>            : "→" U2192 # RIGHTWARDS ARROW
@@ -250,12 +254,12 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 
 # Multimedia icons
 <Multi_key> <e> <j>                 : "⏏" U23CF # EJECT SYMBOL
-<Multi_key> <m> <f> <f>             : "⏩" U23E9 # BLACK RIGHT-POINTING DOUBLE TRIANGLE (fast forward)
-<Multi_key> <m> <greater> <greater> : "⏩" U23E9 # BLACK RIGHT-POINTING DOUBLE TRIANGLE (fast forward)
-<Multi_key> <m> <f> <r>             : "⏪" U23EA # BLACK LEFT-POINTING DOUBLE TRIANGLE (rewind)
-<Multi_key> <m> <less> <less>       : "⏪" U23EA # BLACK LEFT-POINTING DOUBLE TRIANGLE (rewind)
-<Multi_key> <m> <f> <u>             : "⏫" U23EB # BLACK UP-POINTING DOUBLE TRIANGLE
-<Multi_key> <m> <f> <d>             : "⏬" U23EC # BLACK DOWN-POINTING DOUBLE TRIANGLE
+<Multi_key> <m> <f> <f>             : "⏩" U23E9 # BLACK RIGHT-POINTING DOUBLE TRIANGLE (fast forward) :fast_forward:
+<Multi_key> <m> <greater> <greater> : "⏩" U23E9 # BLACK RIGHT-POINTING DOUBLE TRIANGLE (fast forward) :fast_forward:
+<Multi_key> <m> <f> <r>             : "⏪" U23EA # BLACK LEFT-POINTING DOUBLE TRIANGLE (rewind) :rewind:
+<Multi_key> <m> <less> <less>       : "⏪" U23EA # BLACK LEFT-POINTING DOUBLE TRIANGLE (rewind) :rewind:
+<Multi_key> <m> <f> <u>             : "⏫" U23EB # BLACK UP-POINTING DOUBLE TRIANGLE :arrow_double_up:
+<Multi_key> <m> <f> <d>             : "⏬" U23EC # BLACK DOWN-POINTING DOUBLE TRIANGLE :arrow_double_down:
 <Multi_key> <m> <n> <e>             : "⏭" U23ED # BLACK RIGHT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR (looks like "next")
 <Multi_key> <m> <p> <r>             : "⏮" U23EE # BLACK LEFT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR (looks like "previous")
 <Multi_key> <m> <p> <p>             : "⏯" U23EF # BLACK RIGHT-POINTING TRIANGLE WITH DOUBLE VERTICAL BAR (looks like "play/pause")
@@ -303,52 +307,53 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <r> <e> <c>           : "♻" U267B # BLACK UNIVERSAL RECYCLING SYMBOL
 <Multi_key> <F> <L>               : "⚐" U2690 # BLACK FLAG
 <Multi_key> <f> <l>               : "⚑" U2691 # BLACK FLAG
-<Multi_key> <a> <n>               : "⚓" U2693 # ANCHOR
+<Multi_key> <a> <n>               : "⚓" U2693 # ANCHOR :anchor:
 <Multi_key> <a> <t>               : "⚛" U269B # ATOM SYMBOL
 <Multi_key> <w> <a>               : "⚠" U26A0 # WARNING SIGN
-<Multi_key> <h> <v>               : "⚡" U26A1 # HIGH VOLTAGE SIGN
+<Multi_key> <h> <v>               : "⚡" U26A1 # HIGH VOLTAGE SIGN :zap:
 <Multi_key> <s> <c>               : "✂" U2702 # BLACK SCISSORS
-<Multi_key> <a> <i> <r>           : "✈" U2708 # AIRPLANE
+<Multi_key> <a> <i> <r>           : "✈" U2708 # AIRPLANE :airplane:
 <Multi_key> <a> <i> <u>           : "🛧" U1F6E7 # UP-POINTING AIRPLANE
 <Multi_key> <a> <i> <d>           : "🛫" U1F6EB # AIRPLANE DEPARTURE
 <Multi_key> <a> <i> <a>           : "🛬" U1F6EC # AIRPLANE ARRIVING
 <Multi_key> <a> <i> <l>           : "🛬" U1F6EC # AIRPLANE ARRIVING
 # Note: the BUS mappings conflict with <b> <u> = ŭ
-<Multi_key> <b> <u> <s>           : "🚌" U1F68C # BUS
-<Multi_key> <B> <U> <S>           : "🚍" U1F68D # ONCOMING BUS
-<Multi_key> <v> <g>               : "🎮" U1F3AE # VIDEO GAME
-<Multi_key> <p> <a> <w>           : "🐾" U1F43E # PAW PRINTS
-<Multi_key> <e> <y> <e>           : "👀" U1F440 # EYES
+<Multi_key> <b> <u> <s>           : "🚌" U1F68C # BUS :bus:
+<Multi_key> <B> <U> <S>           : "🚍" U1F68D # ONCOMING BUS :oncoming_bus:
+<Multi_key> <p> <p>               : "🎉" U1F389 # PARTY POPPER :tada:
+<Multi_key> <v> <g>               : "🎮" U1F3AE # VIDEO GAME :video_game:
+<Multi_key> <p> <a> <w>           : "🐾" U1F43E # PAW PRINTS :paw_prints:
+<Multi_key> <e> <y> <e>           : "👀" U1F440 # EYES : eyes:
 <Multi_key> <E> <Y> <E>           : "👁" U1F441 # EYE
-<Multi_key> <f> <o> <o> <t>       : "👣" U1F463 # FOOTPRINTS
-<Multi_key> <f> <e> <e> <t>       : "👣" U1F463 # FOOTPRINTS
-<Multi_key> <o> <k>               : "👌" U1F44C # OK HAND SIGN
-<Multi_key> <t> <u>               : "👍" U1F44D # THUMBS UP SIGN
-<Multi_key> <t> <d>               : "👎" U1F44E # THUMBS DOWN SIGN
-<Multi_key> <p> <o> <o>           : "💩" U1F4A9 # PILE OF POO
-<Multi_key> <C> <C>               : "💳" U1F4B3 # CREDIT CARD
-<Multi_key> <p> <c>               : "💻" U1F4BB # PERSONAL COMPUTER
-<Multi_key> <P> <C>               : "💻" U1F4BB # PERSONAL COMPUTER
-<Multi_key> <f> <d>               : "💾" U1F4BE # FLOPPY DISK
-<Multi_key> <c> <d>               : "💿" U1F4BF # OPTICAL DISK
-<Multi_key> <C> <D>               : "💿" U1F4BF # OPTICAL DISK
-<Multi_key> <d> <v> <d>           : "📀" U1F4C0 # DVD
-<Multi_key> <D> <V> <D>           : "📀" U1F4C0 # DVD
-<Multi_key> <k> <e> <y>           : "🔑" U1F511 # KEY
+<Multi_key> <f> <o> <o> <t>       : "👣" U1F463 # FOOTPRINTS :feet:
+<Multi_key> <f> <e> <e> <t>       : "👣" U1F463 # FOOTPRINTS :feet:
+<Multi_key> <o> <k>               : "👌" U1F44C # OK HAND SIGN :ok_hand:
+<Multi_key> <t> <u>               : "👍" U1F44D # THUMBS UP SIGN :+1: :thumbsup:
+<Multi_key> <t> <d>               : "👎" U1F44E # THUMBS DOWN SIGN :-1: :thumbsdown:
+<Multi_key> <p> <o> <o>           : "💩" U1F4A9 # PILE OF POO :hankey: :poop: :shit:
+<Multi_key> <C> <C>               : "💳" U1F4B3 # CREDIT CARD :credit_card:
+<Multi_key> <p> <c>               : "💻" U1F4BB # PERSONAL COMPUTER :computer:
+<Multi_key> <P> <C>               : "💻" U1F4BB # PERSONAL COMPUTER :computer:
+<Multi_key> <f> <d>               : "💾" U1F4BE # FLOPPY DISK :floppy_disk:
+<Multi_key> <c> <d>               : "💿" U1F4BF # OPTICAL DISK :cd:
+<Multi_key> <C> <D>               : "💿" U1F4BF # OPTICAL DISK :cd:
+<Multi_key> <d> <v> <d>           : "📀" U1F4C0 # DVD :dvd:
+<Multi_key> <D> <V> <D>           : "📀" U1F4C0 # DVD :dvd:
+<Multi_key> <k> <e> <y>           : "🔑" U1F511 # KEY :key:
 <Multi_key> <bracketleft> <k>  <bracketright> : "⚿" U26BF # SQUARED KEY
 <Multi_key> <bracketleft> <k> <e> <y> <bracketright> : "⚿" U26BF # SQUARED KEY
-<Multi_key> <p> <a> <d>           : "🔒" U1F512 # LOCK
-<Multi_key> <l> <o> <c> <k>       : "🔒" U1F512 # LOCK
-<Multi_key> <P> <A> <D>           : "🔓" U1F513 # OPEN LOCK
-<Multi_key> <L> <O> <C> <K>       : "🔓" U1F513 # OPEN LOCK
+<Multi_key> <p> <a> <d>           : "🔒" U1F512 # LOCK :lock:
+<Multi_key> <l> <o> <c> <k>       : "🔒" U1F512 # LOCK :lock:
+<Multi_key> <P> <A> <D>           : "🔓" U1F513 # OPEN LOCK :unlock:
+<Multi_key> <L> <O> <C> <K>       : "🔓" U1F513 # OPEN LOCK :unlock:
 <Multi_key> <s> <p> <y>           : "🕵" U1F575 # SLEUTH OR SPY
-#<Multi_key> <colon> <parenright>        : "☺" U263A # WHITE SMILING FACE
+#<Multi_key> <colon> <parenright>        : "☺" U263A # WHITE SMILING FACE :relaxed:
 #<Multi_key> <colon> <parenleft>         : "☹" U2639 # WHITE FROWNING FACE
-<Multi_key> <colon> <D>                  : "😃" U1F603 # SMILING FACE WITH OPEN MOUTH
-<Multi_key> <semicolon> <parenright>     : "😉" U1F609 # WINKING FACE
+<Multi_key> <colon> <D>                  : "😃" U1F603 # SMILING FACE WITH OPEN MOUTH :smiley:
+<Multi_key> <semicolon> <parenright>     : "😉" U1F609 # WINKING FACE :wink:
 <Multi_key> <minus> <underscore> <minus> : "😑" U1F611 # EXPRESSIONLESS FACE
 <Multi_key> <colon> <P>                  : "😛" U1F61B # FACE WITH STUCK-OUT TONGUE
-<Multi_key> <semicolon> <P>              : "😜" U1F61C # FACE WITH STUCK-OUT TONGUE AND WINKING EYE
+<Multi_key> <semicolon> <P>              : "😜" U1F61C # FACE WITH STUCK-OUT TONGUE AND WINKING EYE :wink2:
 #<Multi_key> <less> <3>           : "♥" U2665 # BLACK HEART SUIT
 # REMOVED! <Multi_key> <less> <greater>      : "♦" U2666 # BLACK DIAMOND SUIT
 <Multi_key> <o> <plus>            : "♀" U2640 # Female sign
@@ -370,8 +375,10 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <n> <5>               : "♭" U266D # MUSIC FLAT SIGN
 <Multi_key> <n> <6>               : "♮" U266E # MUSIC NATURAL SIGN
 <Multi_key> <n> <7>               : "♯" U266F # MUSIC SHARP SIGN
-<Multi_key> <n> <8>               : "🎵" U1F3B5 # MUSICAL NOTE
-<Multi_key> <n> <9>               : "🎶" U1F3B6 # MULTIPLE MUSICAL NOTES
+<Multi_key> <n> <8>               : "🎵" U1F3B5 # MUSICAL NOTE :musical_note:
+<Multi_key> <n> <9>               : "🎶" U1F3B6 # MULTIPLE MUSICAL NOTES :notes:
+<Multi_key> <n> <plus>            : "🎜" U1F39C # BEAMED ASCENDING MUSICAL NOTES
+<Multi_key> <n> <minus>           : "🎝" U1F39D # BEAMED DESCENDING MUSICAL NOTES
 #<Multi_key> <numbersign> <b>     : "♭"   U266d # MUSIC FLAT SIGN
 #<Multi_key> <numbersign> <f>     : "♮"   U266e # MUSIC NATURAL SIGN
 #<Multi_key> <numbersign> <numbersign> : "♯"   U266f # MUSIC SHARP SIGN
