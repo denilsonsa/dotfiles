@@ -2,7 +2,9 @@ scriptencoding utf8
 set encoding=utf8
 
 " Inconsolata is a great font. Source Code Pro is almost as good.
+"set guifont=Inconsolata\ Medium\ 8
 set guifont=Inconsolata\ Medium\ 9
+set linespace=-1
 "set guifont=Source\ Code\ Pro\ Medium\ 8
 "
 " Very similar:
@@ -31,6 +33,10 @@ let g:leave_my_textwidth_alone=1
 
 "set autoindent smartindent cindent
 set  ai         nosi        nocin
+" Do not reindent the line if the first typed character is #.
+" Use-case: visual-block several lines, then I, then #. If the line is
+" reindented, it doesn't work as I expect.
+set indentkeys-=0#
 " These have been moved to AFTER pathogen plugin
 filetype indent on
 filetype plugin on
@@ -56,6 +62,8 @@ syn on
 set  hls
 "set incsearch ignorecase smartcase
 set  is        ic         scs
+"set wrapscan
+"set ws
 
 set number
 
@@ -89,9 +97,10 @@ let &guicursor = &guicursor . ",a:blinkon0"
 set wildmenu
 set wildmode=longest:full
 
+" http://stackoverflow.com/questions/307148/vim-scrolling-slowly
 "set cursorline
 "set cursorcolumn
-au GUIEnter * set cursorline
+"au GUIEnter * set cursorline
 
 au FileType nerdtree,help setl nocursorline nocursorcolumn
 
@@ -116,10 +125,18 @@ set showmatch matchtime=2
 " uhex:     Show unprintable characters hexadecimal as <xx> instead of using ^C and ~C.
 set display=lastline,uhex
 
-set listchars=eol:$,tab:>.,trail:@,extends:>,precedes:<,nbsp:␣
-set showbreak=>>\ 
+" Wrapped lines maintain the same indentation as previous lines
+set breakindent
+
+"set listchars=eol:$,tab:>.,trail:@,extends:>,precedes:<,nbsp:~
+set listchars=eol:⏎,tab:↹_,trail:•,extends:»,precedes:«,nbsp:␣
+" Ideas for showbreak: ↳‖⁞⁝⋮⍿⎸⏐│┆┊╎║❘⦀⦙⦚⫶⫼⸽⸾
+"set showbreak=>>\ 
+"set showbreak=↳\ 
+set showbreak=⸾
 set sidescroll=10
 set winminheight=0
+set noequalalways
 set nojoinspaces
 set cpoptions+=$
 set guioptions-=T
@@ -127,6 +144,19 @@ set nrformats=alpha,hex
 set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~
 set path+=/usr/local/include
 set history=1000
+
+" I don't want to search included files.
+set complete-=i
+
+set mouse=a
+set mousemodel=popup_setpos
+if &term =~ '^screen'
+	" http://superuser.com/questions/549930/cant-resize-vim-splits-inside-tmux
+	set ttymouse=sgr
+endif
+" Emulating xterm shift+left_click behavior (of doing nothing)
+noremap <S-LeftMouse> <Nop>
+
 
 " sesdir might be useful
 set sessionoptions=blank,curdir,resize,tabpages,winsize
@@ -198,12 +228,15 @@ endfunction
 call RestoreMyColorScheme()
 
 "Folding settings"{{{
-set foldmethod=marker
-set foldtext=MyFoldText()
+"set foldmethod=marker
+"set foldtext=MyFoldText()
 set fillchars=vert:\ ,fold:\ 
 
 "Set folding options for CSS files
 au FileType css,*.css setlocal foldmethod=marker foldmarker={,} foldcolumn=3
+
+"Set folding for HTMLTemplate files
+au FileType tmpl,*.tmpl setlocal foldmethod=marker foldmarker=<TMPL_BLOCK,</TMPL_BLOCK> foldtext=v:folddashes.getline(v:foldstart)
 
 
 "zS shows folds. zS stands for Show
@@ -298,6 +331,7 @@ endfunc
 " Minimum width to 3 instead of the default 4.
 set numberwidth=3
 
+
 "" {{{ Terminal fixes
 "if &term ==? "xterm"
 "  set t_Sb=^[4%dm
@@ -344,12 +378,17 @@ autocmd BufReadPost *
 "Default is \
 "let mapleader = ']'
 
+" Normally, ~ works on a single character.
+" If 'tildeop'|'top' is on, then ~ is an operator, just like gu.
+" Either way, g~ always behaves as an operator.
+"set tildeop
+
 "This cleans the "highlight search" (only works on GUI)
 nnoremap <M-/> :nohlsearch<CR>
 
 "<C-L> will clear the search highlighting and will update the diff.
 "Copied from https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-nnoremap <C-L> <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 "This makes "Y" to work from the cursor to the end of line (which is more logical, but not Vi-compatible). See :help Y
 nnoremap Y y$
@@ -591,7 +630,7 @@ let NERDTreeWinSize=25
 " If I ever want to change the sort order...
 "let NERDTreeSortOrder=
 
-let NERDTreeIgnore=['\.py[co]$', '^__pycache__$', '\.o$', '\.sw[op]$']
+let NERDTreeIgnore=['\.py[co]$', '^__pycache__$', '\.o$', '\.sw[op]$', '\.gif', '\.png', '\.jpg', 'favicon\.ico']
 
 " Default: 0
 "let NERDTreeShowHidden=1
@@ -600,15 +639,18 @@ let NERDTreeIgnore=['\.py[co]$', '^__pycache__$', '\.o$', '\.sw[op]$']
 "let NERDTreeCaseSensitiveSort=1
 
 " Default: $HOME/.NERDTreeBookmarks
-let NERDTreeBookmarksFile="$HOME/.vim/NERDTreeBookmarksFile"
+let NERDTreeBookmarksFile=expand("~/.vim/NERDTreeBookmarksFile")
 " Default: 0
-"let NERDTreeShowBookmarks=1
+let NERDTreeShowBookmarks=1
 
 " Default: 1
 "let NERDTreeMouseMode=2
 
 " Unicode arrows? Nah...
 "let NERDTreeDirArrows=1
+
+" Default: 1
+let NERDTreeHighlightCursorline=0
 
 "}}}
 
@@ -620,7 +662,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#050505 ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#101010 ctermbg=darkgrey
 
 "let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
+" They slow down Vim too much.
+let g:indent_guides_enable_on_vim_startup = 0
 
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar']
 
@@ -804,6 +847,12 @@ let g:markdown_fold_style = 'stacked'
 
 "}}}
 
+"Disabling vim-better-whitespace highlighting for now"{{{
+
+let g:better_whitespace_enabled = 0
+
+"}}}
+
 "Loading Pathogen (that auto-loads plugins from ~/.vim/bundle)"{{{
 "Remember to run :Helptags after installing new plugins
 
@@ -833,6 +882,19 @@ let g:markdown_fold_style = 'stacked'
 
 "}}}
 
+"Fuzzy Finder (FZF)"{{{
+
+"let g:fzf_launcher = 'xterm -e bash -ic %s'
+
+"}}}
+
+"luochen1990/rainbow "{{{
+" Use :RainbowToggle
+let g:rainbow_active = 0
+" Configuration example: https://github.com/luochen1990/rainbow
+" It might be worth changing the colors.
+"}}}
+
 "vim-plug "{{{
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -848,8 +910,11 @@ call plug#begin()
 
 Plug 'nixon/vim-vmath'
 Plug 'tpope/vim-repeat'
+
 Plug 'tpope/vim-speeddating'
-Plug 'haya14busa/vim-easyoperator-line'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+"Plug 'tpope/vim-unimpaired'
 
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
@@ -862,6 +927,7 @@ Plug 'rhysd/unite-emoji.vim'
 " Note: I have my own fork of vim-emoji-complete.
 Plug 'kyuhi/vim-emoji-complete'
 
+" Might be worth: https://github.com/Shougo/denite.nvim
 "Plug 'tsukkee/unite-help'  " Older
 Plug 'Shougo/unite-help'
 "Plug 'h1mesuke/unite-outline'  " Older, unmaintained
@@ -878,9 +944,14 @@ Plug 'ujihisa/unite-colorscheme'
 " Why? I don't need so many colorschemes…
 Plug 'flazz/vim-colorschemes'
 
+Plug 'ctrlpvim/ctrlp.vim'
+
+"Plug 'junegunn/fzf', {'dir': '~/stuff/fzf'}
+"Plug 'junegunn/fzf.vim'
+
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'chrismetcalf/vim-rainbow'
+Plug 'haya14busa/vim-easyoperator-line'
 Plug 'ciaranm/securemodelines'
 Plug 'danro/rename.vim'
 Plug 'godlygeek/tabular'
@@ -892,10 +963,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'msprev/vim-markdown-folding'
 "Plug 'nelstrom/vim-markdown-folding'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'powerman/vim-plugin-viewdoc'
+"Plug 'powerman/vim-plugin-viewdoc'
 Plug 'powerman/AnsiEsc.vim'
 Plug 'rhysd/open-pdf.vim'
-Plug 'sjl/gundo.vim'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/CRefVim'
@@ -910,14 +980,26 @@ Plug 'vim-scripts/icalendar.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/pep8'
 
+" Coloring matching parentheses:
+Plug 'luochen1990/rainbow'
+"Plug 'chrismetcalf/vim-rainbow'
+
+" Undo viewers:
+Plug 'sjl/gundo.vim'
+"Plug 'mbbill/undotree'
+"Plug 'simnalamburt/vim-mundo'
+
 " Useful, however very slow.
+" https://github.com/reinderien/mimic/wiki/Related-Software
 " https://github.com/vim-utils/vim-troll-stopper/issues/7
 "Plug 'vim-utils/vim-troll-stopper'
 
 " Signs besides modified lines. First one works only for git, the second one
 " works for several VCS.
-"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 "Plug 'mhinz/vim-signify'
+
+Plug 'tpope/vim-fugitive'
 
 "Plug 'scrooloose/syntastic'
 
@@ -1047,6 +1129,8 @@ au FileType tex,plaintex,*.tex setlocal nocin
 au FileType python,*.py setlocal sw=4 et
 "For Markdown files
 au FileType markdown,*.md setlocal et
+" For commit messages
+au FileType gitcommit,hgcommit setlocal spell spelllang=en
 
 "Comments for PHP files
 " See also :help php-indent
@@ -1082,7 +1166,7 @@ augroup filetypedetect
 	au BufNewFile,BufRead *.xhtml    setf xml
 
 	"au BufRead /tmp/OperaCache/opr*  setf html
-	au BufRead ~/.opera/cache4/opr*  setf html
+	"au BufRead ~/.opera/cache4/opr*  setf html
 
 	" SecondLife scripts
 	au BufNewFile,BufRead *.lsl      setf lsl
@@ -1128,15 +1212,6 @@ endfunction
 
 "Use the | character to combine more than one command into only one line, like this:
 ":if has("gui") | echo "oi" | endif
-
-" VimTip #1: the super star
-" {{{
-" When a discussion started about learning vim on the vim list Juergen Salk mentioned the "*" key as something that he wished he had know earlier. When I read the mail I had to go help on what the heck the "*" did. I also wish I had known earlier...
-" 
-" Using the "*" key while in normal mode searches for the word under the cursor.
-" 
-" If that doesn't save you a lot of typing, I don't know what will.
-" }}}
 
 " VimTip #37: The basic operation about vim-boolean optionals
 " {{{
@@ -1189,125 +1264,6 @@ endfunction
 " 
 " :help cmdline-ranges
 " :help !cmd
-" }}}
-
-" VimTip #42: Using marks
-" {{{
-" To mark one or more positions in a file, use the m[ark] command.
-" 
-" Examples:
-" 
-" ma       -    set current cursor location as mark a
-" 
-" 'a       -    jump to beginning of line of mark a
-" 
-" `a       -    jump to postition of mark a
-" 
-" d'a      -    delete from current line to line of mark a
-" 
-" d`a      -    delete from current cursor position to mark a
-" 
-" c'a      -    change text from current line to line of mark a
-" 
-" y`a      -    yank text to unnamed buffer from cursor to mark a
-" 
-" :marks   -    list all the current marks
-" 
-" NB: Lowercase marks (a-z) are valid within one file. Uppercase marks
-" (A-Z), also called file marks, are valid between files.
-" 
-" For a detailed description of the m[ark] command refer to
-" 
-" :help mark
-" 
-" See also:
-" 
-" :help various-motions
-" }}}
-
-" VimTip #48: Moving around
-" {{{
-" You can save a lot of time when navigating through the text by using 
-" appropriate movements commands. In most cases the cursor keys,
-" <PageUp> or <PageDown> are NOT the best choice.
-" 
-" Here is a selection of some basic movement commands that 
-" hopefully helps you to acquire a taste for more:
-" 
-" e   - move to the end of a word                   
-" w   - move forward to the beginning of a word     
-" 3w  - move forward three words
-" b   - move backward to the beginning of a word
-" 3b  - move backward three words
-" 
-" $       - move to the end of the line          
-" <End>   - same as $
-" 0       - move to the beginning of the line
-" <Home>  - same as 0
-" 
-" )   - jump forward one sentence
-" (   - jump backward one sentence
-" 
-" }   - jump forward one paragraph
-" {   - jump backward one paragraph
-" 
-" H   - jump to the top of the display       
-" M   - jump to the middle of the display   
-" L   - jump to the bottom of the display
-" 
-" 'm  - jump to the beginning of the line of mark m
-" `m  - jump to the location of mark m
-" 
-" G   - jump to end of file
-" 1G  - jump to beginning of file
-" 50G - jump to line 50
-" 
-" '' - return to the line where the cursor was before the latest jump
-" `` - return to the cursor position before the latest jump (undo the jump).
-" 
-" %  - jump to corresponding item, e.g. from an open brace to its 
-"      matching closing brace
-"    
-" For some more interesting movement commands (especially those 
-" for programmers) refer to:
-" 
-" :help motion.txt
-" 
-" :help search-commands
-" }}}
-
-" VimTip #49: Switching case of characters
-" {{{
-" To switch the case of one or more characters use the "~", "gU" or "gu" commands.
-" 
-" Examples:
-" 
-" ~     -     switch case of character under cursor 
-"             (in visual-mode: switch case of highlighted text)
-" 
-" 3~    -     switch case of next three characters
-" 
-" g~~   -     switch case of current line
-" 
-" U     -     in visual-mode: make highlighted text uppercase
-" 
-" gUU   -     make current line uppercase
-" 
-" u     -     in visual-mode: make highlighted text lowercase
-" 
-" guu   -     make current line lowercase
-" 
-" gUaw  -     make current word uppercase
-" 
-" guaw  -     make current word lowercase
-" 
-" For some more examples refer to
-" 
-" :help ~
-" 
-" See also:
-" 
-" :help simple-change
 " }}}
 
 " VimTip #82: letting variable values be overwritten in a script
