@@ -1,40 +1,40 @@
-# Next class copied from http://www.argafal.de/public/cplay-1.49-speedpatch3
-# Found at http://www.argafal.de/cgi-bin/index.pl?page=projcplay
-class TimeOffsetPlayerMplayer(Player):
-    re_progress = re.compile("\((?: (?P<h1>\d+):)?(?:(?P<m1>\d+):)?(?P<s1>\d+).\d\).*\((?: (?P<h2>\d+):)?(?:(?P<m2>\d+):)?(?P<s2>\d+).\d\)")
-
-    def parse_buf(self):
-        match = self.re_progress.search(self.buf)
-        if match:
-            if match.group('h1'):
-                h1 = string.atoi(match.group('h1'))
-            else: h1 = 0
-            if match.group('h2'):
-                h2 = string.atoi(match.group('h2'))
-            else: h2 = 0
-            if match.group('m1'):
-                m1 = string.atoi(match.group('m1'))
-            else: m1 = 0
-            if match.group('m2'):
-                m2 = string.atoi(match.group('m2'))
-            else: m2 = 0
-            if match.group('s1'):
-                s1 = string.atoi(match.group('s1'))
-            else: s1 = 0
-            if match.group('s2'):
-                s2 = string.atoi(match.group('s2'))
-            else: s2 = 0
-
-            #h1, m1, s1, h2, m2, s2 = map(string.atoi, match.groups())
-            head = h1*3600+m1*60+s1
-            tail = h2*3600+m2*60+s2-head
-            self.set_position(head, head+tail, [head, tail])
-
-
-PLAYERS.extend(
-    [
-        TimeOffsetPlayerMplayer("mplayer -noquiet -ss %d %s", "\.(m4a|ogg|mp3|wav|wma|amr)$"),
-        NoOffsetPlayer("timidity %s", "\.(mid|rmi)$"),
-        #NoOffsetPlayer("aplaymidi --port 17:0 %s", "\.(mid|rmi)$"),
-    ]
-)
+# # Next class copied from http://www.argafal.de/public/cplay-1.49-speedpatch3
+# # Found at http://www.argafal.de/cgi-bin/index.pl?page=projcplay
+# class TimeOffsetPlayerMplayer(Player):
+#     re_progress = re.compile("\((?: (?P<h1>\d+):)?(?:(?P<m1>\d+):)?(?P<s1>\d+).\d\).*\((?: (?P<h2>\d+):)?(?:(?P<m2>\d+):)?(?P<s2>\d+).\d\)")
+# 
+#     def parse_buf(self):
+#         match = self.re_progress.search(self.buf)
+#         if match:
+#             if match.group('h1'):
+#                 h1 = string.atoi(match.group('h1'))
+#             else: h1 = 0
+#             if match.group('h2'):
+#                 h2 = string.atoi(match.group('h2'))
+#             else: h2 = 0
+#             if match.group('m1'):
+#                 m1 = string.atoi(match.group('m1'))
+#             else: m1 = 0
+#             if match.group('m2'):
+#                 m2 = string.atoi(match.group('m2'))
+#             else: m2 = 0
+#             if match.group('s1'):
+#                 s1 = string.atoi(match.group('s1'))
+#             else: s1 = 0
+#             if match.group('s2'):
+#                 s2 = string.atoi(match.group('s2'))
+#             else: s2 = 0
+# 
+#             #h1, m1, s1, h2, m2, s2 = map(string.atoi, match.groups())
+#             head = h1*3600+m1*60+s1
+#             tail = h2*3600+m2*60+s2-head
+#             self.set_position(head, head+tail, [head, tail])
+# 
+# 
+# PLAYERS.extend(
+#     [
+#         TimeOffsetPlayerMplayer("mplayer -noquiet -ss %d %s", "\.(m4a|ogg|mp3|wav|wma|amr)$"),
+#         NoOffsetPlayer("timidity %s", "\.(mid|rmi)$"),
+#         #NoOffsetPlayer("aplaymidi --port 17:0 %s", "\.(mid|rmi)$"),
+#     ]
+# )
