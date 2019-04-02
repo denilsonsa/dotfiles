@@ -121,7 +121,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>8</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>One</name>
@@ -132,6 +132,7 @@
       <name>Six</name>
       <name>Seven</name>
       <name>Eight</name>
+      <name>Nine</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -196,6 +197,7 @@
         <wrap>yes</wrap>
       </action>
     </keybind>
+    <!--
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
@@ -220,6 +222,7 @@
         <wrap>yes</wrap>
       </action>
     </keybind>
+    -->
     <keybind key="S-W-Left">
       <action name="SendToDesktop">
         <to>left</to>
@@ -232,6 +235,7 @@
         <wrap>yes</wrap>
       </action>
     </keybind>
+    <!--
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
         <to>left</to>
@@ -256,6 +260,7 @@
         <wrap>yes</wrap>
       </action>
     </keybind>
+    -->
     <keybind key="W-F1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -380,6 +385,11 @@
         <command>skippy-xd --toggle-window-picker</command>
       </action>
     </keybind>
+    <keybind key="C-A-Tab">
+      <action name="Execute">
+        <command>skippy-xd --toggle-window-picker</command>
+      </action>
+    </keybind>
     <!--keybind key="C-A-Tab">
       <action name="NextWindow">
         <panels>yes</panels>
@@ -415,84 +425,167 @@
     <keybind key="W-M">
       <action name="ToggleMaximize"/>
     </keybind>
+    <keybind key="W-S-M">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <monitor>2</monitor>
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>200%</width>
+      </action>
+    </keybind>
     <!-- Keybindings for window tiling -->
     <keybind key="W-A-KP_4">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>100%</height> <width>50%</width> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
     </keybind>
     <keybind key="W-A-KP_6">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>-0</x> <y>0</y> <height>100%</height> <width>50%</width> </action>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
     </keybind>
     <keybind key="W-A-KP_8">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>50%</height> <width>100%</width> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>50%</height>
+        <width>100%</width>
+      </action>
     </keybind>
     <keybind key="W-A-KP_2">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>-0</y> <height>50%</height> <width>100%</width> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <height>50%</height>
+        <width>100%</width>
+      </action>
     </keybind>
     <keybind key="W-A-KP_7">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>0</y> <height>50%</height> <width>50%</width> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
     </keybind>
     <keybind key="W-A-KP_9">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>-0</x> <y>0</y> <height>50%</height> <width>50%</width> </action>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
     </keybind>
     <keybind key="W-A-KP_1">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>-0</y> <height>50%</height> <width>50%</width> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
     </keybind>
     <keybind key="W-A-KP_3">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>-0</x> <y>-0</y> <height>50%</height> <width>50%</width> </action>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>-0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
     </keybind>
     <!-- Keybindings for window moving -->
     <keybind key="W-KP_4">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>center</y> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>center</y>
+      </action>
     </keybind>
     <keybind key="W-KP_6">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>-0</x> <y>center</y> </action>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>center</y>
+      </action>
     </keybind>
     <keybind key="W-KP_8">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>center</x> <y>0</y> </action>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>0</y>
+      </action>
     </keybind>
     <keybind key="W-KP_2">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>center</x> <y>-0</y> </action>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>-0</y>
+      </action>
     </keybind>
     <keybind key="W-KP_7">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>0</y> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+      </action>
     </keybind>
     <keybind key="W-KP_9">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>-0</x> <y>0</y> </action>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+      </action>
     </keybind>
     <keybind key="W-KP_1">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>0</x> <y>-0</y> </action>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+      </action>
     </keybind>
     <keybind key="W-KP_3">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>-0</x> <y>-0</y> </action>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>-0</y>
+      </action>
     </keybind>
     <keybind key="W-KP_5">
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"> <x>center</x> <y>center</y> </action>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+      </action>
     </keybind>
     <keybind key="W-KP_0">
-      <action name="MoveResizeTo"> <monitor>prev</monitor> </action>
+      <action name="MoveResizeTo">
+        <monitor>prev</monitor>
+      </action>
     </keybind>
     <keybind key="W-KP_Decimal">
-      <action name="MoveResizeTo"> <monitor>next</monitor> </action>
+      <action name="MoveResizeTo">
+        <monitor>next</monitor>
+      </action>
     </keybind>
     <keybind key="W-KP_Delete">
-      <action name="MoveResizeTo"> <monitor>next</monitor> </action>
+      <action name="MoveResizeTo">
+        <monitor>next</monitor>
+      </action>
     </keybind>
     <!-- Always on top/bottom -->
     <keybind key="W-T">
@@ -555,7 +648,8 @@
     <!-- Launch a terminal on Ctrl + Alt + T-->
     <keybind key="C-A-T">
       <action name="Execute">
-        <command>lxsession-default terminal</command>
+        <command>lxterminal</command>
+        <!--command>lxsession-default terminal</command-->
       </action>
     </keybind>
     <!-- Launch a gVim -->
@@ -697,6 +791,11 @@
         <command>lxsession-default screenshot</command>
       </action>
     </keybind-->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>~/bin/take-screenshot</command>
+      </action>
+    </keybind>
     <!-- Launch logout when push on the shutdown button -->
     <keybind key="XF86PowerOff">
       <action name="Execute">
