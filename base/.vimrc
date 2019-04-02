@@ -238,9 +238,10 @@ au FileType css,*.css setlocal foldmethod=marker foldmarker={,} foldcolumn=3
 "Set folding for HTMLTemplate files
 au FileType tmpl,*.tmpl setlocal foldmethod=marker foldmarker=<TMPL_BLOCK,</TMPL_BLOCK> foldtext=v:folddashes.getline(v:foldstart)
 
+" Perl folding in Vim doesn't work well. In fact, it is pretty bad.
 " :help perl.vim
-let perl_fold=1
-let perl_fold_anonymous_subs=1
+"let perl_fold=1
+"let perl_fold_anonymous_subs=1
 "let perl_fold_blocks=1
 
 "zS shows folds. zS stands for Show
