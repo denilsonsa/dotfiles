@@ -635,7 +635,7 @@ let NERDTreeWinSize=25
 " If I ever want to change the sort order...
 "let NERDTreeSortOrder=
 
-let NERDTreeIgnore=['\.py[co]$', '^__pycache__$', '\.o$', '\.sw[op]$', '\.gif', '\.png', '\.jpg', 'favicon\.ico']
+let NERDTreeIgnore=['\.py[co]$', '^__pycache__$', '\.class$', '\.o$', '\.sw[op]$', '\.gif', '\.png', '\.jpg', 'favicon\.ico']
 
 " Default: 0
 "let NERDTreeShowHidden=1
