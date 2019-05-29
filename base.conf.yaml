@@ -29,6 +29,7 @@
     '~/.config/skippy-xd/skippy-xd.rc': 'base/.config/skippy-xd/skippy-xd.rc'
     '~/.config/user-dirs.dirs': 'base/.config/user-dirs.dirs'
     '~/.config/user-dirs.locale': 'base/.config/user-dirs.locale'
+    '~/.config/lxqt/session.conf': 'base/.config/lxqt/session.conf'
     #'~/.config/lxpanel/Lubuntu/config': 'base/.config/lxpanel/Lubuntu/config'
     #'~/.config/lxpanel/Lubuntu/panels/panel': 'base/.config/lxpanel/Lubuntu/panels/panel'
     #'~/.config/lxsession-default-apps/settings.conf': 'base/.config/lxsession-default-apps/settings.conf'
