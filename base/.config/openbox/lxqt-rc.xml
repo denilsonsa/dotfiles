@@ -620,7 +620,7 @@
       <action name="Execute">
         <!--command>lxterminal</command-->
         <!--command>lxsession-default terminal</command-->
-        <command>qterminal</command>
+        <command>terminator</command>
       </action>
     </keybind>
     <!-- Launch gVim -->
@@ -699,7 +699,7 @@
     <keybind key="XF86WWW">
       <action name="Execute">
         <!--command>lxsession-default terminal</command-->
-        <command>qterminal</command>
+        <command>terminator</command>
       </action>
     </keybind>
     <!-- Keybinding for calculator button-->
