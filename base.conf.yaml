@@ -19,6 +19,7 @@
     #'~/.profile': 'base/.profile'
     '~/.vimrc': 'base/.vimrc'
     '~/.XCompose': 'base/.XCompose'
+    '~/.Xresources': 'base/.Xresources'
     '~/.xinputrc': 'base/.xinputrc'
     '~/.vim/scripts.vim': 'base/.vim/scripts.vim'
     '~/.config/htop/htoprc': 'base/.config/htop/htoprc'
