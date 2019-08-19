@@ -6,6 +6,9 @@
 	token = THIS_MUST_BE_SECRET
 [core]
 	excludesfile = ~/.gitignore
+
+	# Look at gc.writeCommitGraph for more info
+	commitGraph = true
 [color]
 	ui = true
 [alias]
@@ -48,6 +51,7 @@
 	logw = log -p --color-words
 
 	meld = difftool -t meld --dir-diff
+	kdiff3 = difftool -t kdiff3 --dir-diff
 	# http://stackoverflow.com/questions/17558221/
 	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
 	showmeld = "!showci () { rev=${1:-HEAD}; git difftool -t meld --dir-diff $rev~1 $rev; }; showci $1"
@@ -56,15 +60,17 @@
 	sshow = stash show -p
 	ssave = stash save
 	sdrop = stash drop
-	slist = stash list
+	slist = stash list --pretty=format:\"%C(red)%h%C(reset) - %C(bold magenta)%gd%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)\"
 	sapply = stash apply
 	spop = stash pop
 
-	prp = "!git pull --rebase && git push"
+	prp = "!git pull --no-tags --rebase && git push"
 	# http://stackoverflow.com/questions/30208928/can-git-pull-automatically-stash-and-pop-pending-changes
 	prs = pull --rebase --autostash
-	prsp = "!git pull --rebase --autostash && git push"
+	prsp = "!git pull --no-tags --rebase --autostash && git push"
 
+[commit]
+	verbose = true
 [fetch]
 	# Auto-prune local branches that are tracking remote branches that don't exist anymore.
 	# https://stackoverflow.com/a/44129766
@@ -79,7 +85,20 @@
 	default = simple
 [cola]
 	fontdiff = Inconsolata,9,-1,5,50,0,0,0,0,0
+	spellcheck = false
 [gui]
 	editor = gvim
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [rerere]
 	enabled = true
