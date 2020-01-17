@@ -17,6 +17,7 @@
     '~/.indicator-chars': 'base/.indicator-chars'
     #'~/.kdiff3rc' ?
     #'~/.profile': 'base/.profile'
+    '~/.ripgreprc': 'base/.ripgreprc'
     '~/.vimrc': 'base/.vimrc'
     '~/.XCompose': 'base/.XCompose'
     '~/.Xresources': 'base/.Xresources'

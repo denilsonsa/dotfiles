@@ -22,6 +22,7 @@
 --ignore-file=match:/\.min\.js$/
 --ignore-file=match:/\.compiled\.js$/
 --ignore-file=match:/\.bundle\.js$/
+--ignore-file=is:amplitude-sdk.js
 --ignore-file=is:bootstrap.css
 --ignore-file=is:bootstrap.js
 --ignore-file=is:bootstrap-sortable.js

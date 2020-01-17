@@ -354,6 +354,7 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <minus> <underscore> <minus> : "😑" U1F611 # EXPRESSIONLESS FACE
 <Multi_key> <colon> <P>                  : "😛" U1F61B # FACE WITH STUCK-OUT TONGUE
 <Multi_key> <semicolon> <P>              : "😜" U1F61C # FACE WITH STUCK-OUT TONGUE AND WINKING EYE :wink2:
+<Multi_key> <equal> <parenright>         : "¯\\_(ツ)_/¯" # Shrug https://unix.stackexchange.com/q/511450
 #<Multi_key> <less> <3>           : "♥" U2665 # BLACK HEART SUIT
 # REMOVED! <Multi_key> <less> <greater>      : "♦" U2666 # BLACK DIAMOND SUIT
 <Multi_key> <o> <plus>            : "♀" U2640 # Female sign

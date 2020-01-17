@@ -125,7 +125,13 @@ complete -r
 
 alias ack='ack-grep'
 alias lc='ls -crAsh'
+alias ll='ls -ltrA'
+alias lss='ls -sSrAh'
 PATH="${HOME}/bin:${PATH}"
 export PATH
 
+
+export EDITOR=vim
+export VISUAL=vim
 export GTK_OVERLAY_SCROLLING=0
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"

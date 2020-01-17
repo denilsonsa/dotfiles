@@ -635,7 +635,7 @@ let NERDTreeWinSize=25
 " If I ever want to change the sort order...
 "let NERDTreeSortOrder=
 
-let NERDTreeIgnore=['\.py[co]$', '^__pycache__$', '\.class$', '\.o$', '\.sw[op]$', '\.gif', '\.png', '\.jpg', 'favicon\.ico']
+let NERDTreeIgnore=['\.py[co]$', '^__pycache__$', '\.class$', '\.o$', '\.sw[op]$', '\.gif', '\.png', '\.jpg', 'favicon\.ico', 'node_modules']
 
 " Default: 0
 "let NERDTreeShowHidden=1
@@ -711,6 +711,13 @@ let g:secure_modelines_allowed_items = [
 			\ "wrap",                "nowrap",
 			\ "number",      "nu",   "nonumber", "nonu"
 			\ ]
+
+"}}}
+
+"Configuring editorconfig plugin"{{{
+
+" I'm not sure why I need this, but README tells me to add it.
+let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
 
 "}}}
 
@@ -793,22 +800,73 @@ let g:user_emmet_mode='i'
 
 "}}}
 
+"Configuring vim-vue"{{{
+
+let g:vue_pre_processors = []
+
+"}}}
+
+"Configuring vim-prettier"{{{
+
+let g:prettier#autoformat = 0
+
+"}}}
+
+"Configuring vim-surround"{{{
+
+" Custom mappings. Because:
+" - Upper case S in surround is kinda useless.
+" - I want to use upper case S for vim-easymotion.
+let g:surround_no_mappings = 1
+
+" Default mappings below: (I'm enabling a subset of them.)
+nmap ds  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+"nmap cS  <Plug>CSurround
+nmap ys  <Plug>Ysurround
+"nmap yS  <Plug>YSurround
+nmap yss <Plug>Yssurround
+"nmap ySs <Plug>YSsurround
+"nmap ySS <Plug>YSsurround
+"xmap S   <Plug>VSurround
+xmap gS  <Plug>VgSurround
+
+" Other default mappings:
+" Conflicts with my own <C-S> to save.
+"imap    <C-S> <Plug>Isurround
+" Useless, takes too many keystrokes to type.
+"imap      <C-G>s <Plug>Isurround
+"imap      <C-G>S <Plug>ISurround
+
+" My own new bindings below:
+" Changing S to s inside visual mode.
+xmap s   <Plug>VSurround
+" Using just <C-G> instead of <C-S> or <C-G>S
+imap    <C-G> <Plug>ISurround
+
+"}}}
+
 "Configuring vim-easymotion"{{{
 
-map s <Plug>(easymotion-prefix)
+" Using 's' as prefix is easier, but it conflicts with vim-surround.
+" I can use 's' in normal mode, and 'S' in all modes.
+nmap s <Plug>(easymotion-prefix)
+map S <Plug>(easymotion-prefix)
 
-map sa <Plug>(easymotion-jumptoanywhere)
-map sl <Plug>(easymotion-bd-jk)
-map sn <Plug>(easymotion-bd-n)
-map sN <Plug>(easymotion-bd-n)
-map s. <Plug>(easymotion-repeat)
-map s, <Plug>(easymotion-next)
-map s; <Plug>(easymotion-prev)
+map Sa <Plug>(easymotion-jumptoanywhere)
+map Sl <Plug>(easymotion-bd-jk)
+map Sn <Plug>(easymotion-bd-n)
+map SN <Plug>(easymotion-bd-n)
+map S. <Plug>(easymotion-repeat)
+map S, <Plug>(easymotion-next)
+map S; <Plug>(easymotion-prev)
+nmap ss <Plug>(easymotion-s2)
+map SS <Plug>(easymotion-s2)
 
 " keep cursor colum JK motion
 let g:EasyMotion_startofline = 0
 
-let g:EasyMotion_smartcase = 1
+let g:EasyMotion_smartcase = 0
 "let g:EasyMotion_use_smartsign_us = 1
 
 " See also easyoperator_line.txt, which adds the following line-wise motion:
@@ -958,12 +1016,15 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'haya14busa/vim-easyoperator-line'
 Plug 'ciaranm/securemodelines'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'danro/rename.vim'
 Plug 'godlygeek/tabular'
 Plug 'hotchpotch/perldoc-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
+Plug 'posva/vim-vue'
+Plug 'prettier/vim-prettier'
 Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'msprev/vim-markdown-folding'
 "Plug 'nelstrom/vim-markdown-folding'
@@ -1011,6 +1072,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 "Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle'] }
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Templating has a few alternatives:
+Plug 'drmingdrmer/xptemplate'
+"Plug 'aperezdc/vim-template'
+"Plug 'thinca/vim-template'
+"Or simply :help template and add them manually.
 
 " Concealing characters… Why?
 "Plug 'calebsmith/vim-lambdify'

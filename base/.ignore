@@ -25,6 +25,9 @@ jquery.*.js
 jquery-*.css
 jquery-*.js
 
+amplitude-sdk.js
+editablegrid-*.js
+flexigrid.js
 swagger-ui.js
 swagger-ui-bundle.js
 swfupload.*.js
