@@ -12,6 +12,8 @@
 *~
 .#*
 .DS_Store
+Thumbs.db
+.stignore
 *.bak
 .*.swp
 .swp

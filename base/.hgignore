@@ -16,6 +16,8 @@ syntax: glob
 .DS_Store
 # Windows thumbnail cache:
 Thumbs.db
+# Syncthing
+.stignore
 
 # C-related compiled files:
 *.o
