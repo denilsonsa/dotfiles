@@ -916,6 +916,22 @@ let g:better_whitespace_enabled = 0
 
 "}}}
 
+"Configuring thinca/vim-fontzoom "{{{
+
+let g:fontzoom_no_default_key_mappings = 1
+
+" These mappings don't work: https://vi.stackexchange.com/questions/8856/mapping-ctrl-with-equal-sign
+"nmap <C--> <Plug>(fontzoom-smaller)
+"nmap <C-=> <Plug>(fontzoom-larger)
+"nmap <C-0> :<C-u>Fontzoom!<CR>
+
+" Let's use Alt intead of Ctrl.
+nmap <M--> <Plug>(fontzoom-smaller)
+nmap <M-=> <Plug>(fontzoom-larger)
+nmap <M-0> :<C-u>Fontzoom!<CR>
+
+"}}}
+
 "Loading Pathogen (that auto-loads plugins from ~/.vim/bundle)"{{{
 "Remember to run :Helptags after installing new plugins
 
@@ -1032,6 +1048,7 @@ Plug 'ntpeters/vim-better-whitespace'
 "Plug 'powerman/vim-plugin-viewdoc'
 Plug 'powerman/AnsiEsc.vim'
 Plug 'rhysd/open-pdf.vim'
+Plug 'thinca/vim-fontzoom'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/CRefVim'
