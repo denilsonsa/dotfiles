@@ -37,6 +37,7 @@
     '~/.config/lxqt/panel.conf': 'base/.config/lxqt/panel.conf'
     '~/.config/lxqt/session.conf': 'base/.config/lxqt/session.conf'
     '~/.config/qpdfview/qpdfview.conf': 'base/.config/qpdfview/qpdfview.conf'
+    '~/.config/terminator/config': 'base/.config/terminator/config'
     '~/.local/share/icons/default/index.theme': 'base/.local/share/icons/default/index.theme'
     #'~/.config/lxpanel/Lubuntu/config': 'base/.config/lxpanel/Lubuntu/config'
     #'~/.config/lxpanel/Lubuntu/panels/panel': 'base/.config/lxpanel/Lubuntu/panels/panel'
