@@ -3,7 +3,8 @@ set encoding=utf8
 
 " Inconsolata is a great font. Source Code Pro is almost as good.
 "set guifont=Inconsolata\ Medium\ 8
-set guifont=Inconsolata\ Medium\ 9
+"set guifont=Inconsolata\ Medium\ 9
+set guifont=Inconsolata\ Medium\ 11
 set linespace=-1
 "set guifont=Source\ Code\ Pro\ Medium\ 8
 "
@@ -214,8 +215,8 @@ function RestoreMyColorScheme()
 	"highlight Normal ctermbg=Black ctermfg=Grey
 	highlight Visual gui=reverse guifg=Gray guibg=Black
 
-	highlight Folded     term=standout cterm=none ctermfg=7 ctermbg=4 guifg=DarkGrey guibg=#000050
-	highlight FoldColumn term=standout cterm=none ctermfg=8 ctermbg=4 guifg=White    guibg=#000070
+	highlight Folded     term=standout cterm=none ctermfg=LightGray ctermbg=DarkBlue guifg=DarkGrey guibg=#000050
+	highlight FoldColumn term=standout cterm=none ctermfg=LightGray ctermbg=DarkBlue guifg=White    guibg=#000070
 
 	" This is the default CursorLine setting:
 	" highlight CursorLine term=underline cterm=underline guibg=Grey40
@@ -223,6 +224,35 @@ function RestoreMyColorScheme()
 	" I could probably have set term=NONE cterm=NONE instead.
 	highlight CursorLine NONE
 	highlight CursorLine guibg=#151515
+
+	" SignColumn is used by gitgutter. The default is ugly:
+	" highlight SignColumn term=standout ctermfg=14 ctermbg=242 guifg=Cyan guibg=Grey
+	highlight SignColumn term=none cterm=none ctermfg=LightGray ctermbg=Black guifg=White guibg=#202020
+
+	" Some defaults:
+	" highlight DiffAdd    term=bold ctermbg=1 guibg=DarkBlue
+	" highlight DiffChange term=bold ctermbg=5 guibg=DarkMagenta
+	" highlight DiffDelete term=bold ctermfg=9 ctermbg=3 gui=bold guifg=Blue guibg=DarkCyan
+	" highlight DiffText   term=reverse cterm=bold ctermbg=9 gui=bold guibg=Red
+	" highlight GitGutterAdd    ctermbg=242 guibg=Grey
+	" highlight GitGutterChange ctermbg=242 guibg=Grey
+	" highlight GitGutterDelete ctermfg=12 ctermbg=242 guifg=Blue guibg=Grey
+	" highlight GitGutterAddLine          links to DiffAdd
+	" highlight GitGutterChangeLine       links to DiffText
+	" highlight GitGutterDeleteLine       links to DiffDelete
+	" highlight GitGutterChangeDeleteLine links to GitGutterChangeLine
+
+	" cterm DarkGreen is too bright, using DarkBlue.
+	highlight DiffAdd    NONE
+	highlight DiffChange NONE
+	highlight DiffDelete NONE
+	highlight DiffAdd    term=bold ctermbg=DarkBlue    guibg=DarkGreen
+	highlight DiffChange term=bold ctermbg=DarkMagenta guibg=DarkMagenta
+	highlight DiffDelete term=bold ctermfg=Blue ctermbg=DarkGray guifg=Blue guibg=#606060
+	" Signs on the gutter: (Copying the background color from SignColumn)
+	highlight GitGutterAdd    ctermbg=Black ctermfg=LightGreen guibg=#202020 guifg=LightGreen
+	highlight GitGutterChange ctermbg=Black ctermfg=Yellow     guibg=#202020 guifg=Yellow
+	highlight GitGutterDelete ctermbg=Black ctermfg=Red        guibg=#202020 guifg=Red
 endfunction
 
 call RestoreMyColorScheme()
@@ -995,35 +1025,38 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 "Plug 'tpope/vim-unimpaired'
 
-Plug 'Shougo/vimproc.vim'
-Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
+" Disabling Unite because I never used it. It's cool, but if I don't remember
+" it exists and never use it, then it's not really needed.
+"
+" Plug 'Shougo/unite.vim'
+" " Might be worth: https://github.com/Shougo/denite.nvim
+" "Plug 'tsukkee/unite-help'  " Older
+" Plug 'Shougo/unite-help'
+" "Plug 'h1mesuke/unite-outline'  " Older, unmaintained
+" Plug 'Shougo/unite-outline'
+" Plug 'ujihisa/unite-font'
+" Plug 'ujihisa/unite-locate'
+" Plug 'tacroe/unite-mark'
+" Plug 'thinca/vim-unite-history'
+" Plug 'm2mdas/unite-file-vcs'
+" "Plug 'rhysd/unite-emoji.vim'
+" " Buggy:
+" "Plug 'sanford1/unite-unicode'
+"
+" Plug 'ujihisa/unite-colorscheme'
+" " Why? I don't need so many colorschemes…
+" Plug 'flazz/vim-colorschemes'
 
 Plug 'tpope/vim-characterize'
 Plug 'chrisbra/unicode.vim'
-Plug 'junegunn/vim-emoji'
+"Plug 'junegunn/vim-emoji'
 Plug 'mattn/emoji-vim'
-Plug 'rhysd/unite-emoji.vim'
 " Note: I have my own fork of vim-emoji-complete.
 Plug 'kyuhi/vim-emoji-complete'
 
-" Might be worth: https://github.com/Shougo/denite.nvim
-"Plug 'tsukkee/unite-help'  " Older
-Plug 'Shougo/unite-help'
-"Plug 'h1mesuke/unite-outline'  " Older, unmaintained
-Plug 'Shougo/unite-outline'
-Plug 'ujihisa/unite-font'
-Plug 'ujihisa/unite-locate'
-Plug 'tacroe/unite-mark'
-Plug 'thinca/vim-unite-history'
-Plug 'm2mdas/unite-file-vcs'
-" Buggy:
-"Plug 'sanford1/unite-unicode'
-
-Plug 'ujihisa/unite-colorscheme'
-" Why? I don't need so many colorschemes…
-Plug 'flazz/vim-colorschemes'
-
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 
 "Plug 'junegunn/fzf', {'dir': '~/stuff/fzf'}
 "Plug 'junegunn/fzf.vim'
@@ -1091,7 +1124,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Templating has a few alternatives:
-Plug 'drmingdrmer/xptemplate'
+"Plug 'drmingdrmer/xptemplate'
 "Plug 'aperezdc/vim-template'
 "Plug 'thinca/vim-template'
 "Or simply :help template and add them manually.

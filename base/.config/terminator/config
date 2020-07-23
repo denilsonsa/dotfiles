@@ -4,7 +4,7 @@
   inactive_color_offset = 1.0
   enabled_plugins = TerminalShot, Logger, ActivityWatch, InactivityWatch, TerminatorThemes
   title_use_system_font = False
-  title_font = Inconsolata Medium 9
+  title_font = Inconsolata Medium 11
 [keybindings]
   zoom_in = <Primary>equal
   rotate_cw = <Primary><Shift>r
@@ -38,10 +38,11 @@
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
-    font = Inconsolata Medium 9
+    font = Inconsolata Medium 11
     foreground_color = "#ffffff"
     scrollback_lines = 10000
     palette = "#232323:#ff000f:#8ce10b:#ffb900:#008df8:#8158bb:#00d8eb:#ffffff:#444444:#ff2740:#abe15b:#ffd242:#0092ff:#9a5feb:#67fff0:#ffffff"
+    word_chars = "-~,./?%&#:_"
     use_system_font = False
 [layouts]
   [[default]]
