@@ -1,6 +1,11 @@
 include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 #include "%S/en_US.UTF-8/Compose"
 
+# NOTE: See also these projects:
+# https://github.com/samhocevar/wincompose
+# https://github.com/samhocevar/wincompose/tree/master/src/rules
+# https://github.com/kragen/xcompose
+
 # The LC_CTYPE var defines which file to load by default
 # (actually, the locale is mapped to a directory by
 # /usr/share/X11/locale/compose.dir
