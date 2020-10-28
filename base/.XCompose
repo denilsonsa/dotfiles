@@ -298,6 +298,15 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 # U+1F514 "🔔" BELL
 # U+1F515 "🔕" BELL WITH CANCELLATION STROKE
 
+# Power-related icons
+<Multi_key> <p> <o> <w>             : "⏻" U23FB # POWER SYMBOL
+<Multi_key> <p> <o> <t>             : "⏼" U23FC # POWER ON-OFF SYMBOL
+<Multi_key> <p> <n> <f>             : "⏼" U23FC # POWER ON-OFF SYMBOL
+<Multi_key> <p> <o> <n>             : "⏽" U23FD # POWER ON SYMBOL
+<Multi_key> <p> <o> <f>             : "⭘" U2B58 # POWER OFF SYMBOL (HEAVY CIRCLE)
+<Multi_key> <p> <s> <l>             : "⏾" U23FE # POWER SLEEP SYMBOL (similar to 263E LAST QUARTER MOON)
+
+
 # Some symbols:
 # http://en.wikipedia.org/wiki/Cultural,_political,_and_religious_symbols_in_Unicode
 # http://en.wikipedia.org/wiki/Miscellaneous_Technical_(Unicode_block)
