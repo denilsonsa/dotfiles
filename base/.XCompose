@@ -257,6 +257,13 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key> <Return>              : "⏎" U23CE # RETURN SYMBOL
 <Multi_key> <KP_Enter>            : "⏎" U23CE # RETURN SYMBOL
 
+# Control characters (or control pictures)
+<Multi_key> <underscore> <space>  : "␣" U2423 # OPEN BOX
+<Multi_key> <space> <underscore>  : "␣" U2423 # OPEN BOX
+<Multi_key> <b> <space>           : "␢" U2422 # BLANK SYMBOL
+<Multi_key> <space> <b>           : "␢" U2422 # BLANK SYMBOL
+
+
 # Multimedia icons
 <Multi_key> <e> <j>                 : "⏏" U23CF # EJECT SYMBOL
 <Multi_key> <m> <f> <f>             : "⏩" U23E9 # BLACK RIGHT-POINTING DOUBLE TRIANGLE (fast forward) :fast_forward:

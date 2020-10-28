@@ -1112,7 +1112,7 @@ Plug 'sjl/gundo.vim'
 
 " Signs besides modified lines. First one works only for git, the second one
 " works for several VCS.
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 "Plug 'mhinz/vim-signify'
 
 Plug 'tpope/vim-fugitive'
@@ -1175,6 +1175,14 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " http://www.vim.org/scripts/script.php?script_id=3252
 "Plug 'vim-scripts/L9'
 
+"Plug 'chrisbra/csv.vim'
+
+Plug 'leafgarland/typescript-vim'
+"Plug 'vim-perl/vim-perl'
+Plug 'vim-perl/vim-perl', { 'branch': 'dev' }
+" See also:
+" * https://github.com/vim-perl/vim-perl/issues/259
+" * https://github.com/haarg/vim-perl/tree/fixes
 call plug#end()
 
 "}}}
