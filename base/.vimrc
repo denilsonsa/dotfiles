@@ -807,10 +807,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
 "}}}
 
 "Configuring open-pdf"{{{
-
-let g:pdf_convert_on_edit = 1
-let g:pdf_convert_on_read = 1
-
+"
+"let g:pdf_convert_on_edit = 1
+"let g:pdf_convert_on_read = 1
+"
 "}}}
 
 "Configuring vmath plugin (vim-vmath/vmath.vim)"{{{
@@ -1080,7 +1080,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 "Plug 'powerman/vim-plugin-viewdoc'
 Plug 'powerman/AnsiEsc.vim'
-Plug 'rhysd/open-pdf.vim'
+"Plug 'rhysd/open-pdf.vim'
 Plug 'thinca/vim-fontzoom'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/Align'
