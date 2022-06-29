@@ -13,3 +13,6 @@ fi
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
+
+# Import work-specific code, stuff specific for the company I'm working for.
+[ -f "${HOME}/.zsh_company_stuff" ] && . "${HOME}/.zsh_company_stuff"

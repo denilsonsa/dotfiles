@@ -11,8 +11,8 @@
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    if [ -f "${HOME}/.bashrc" ]; then
+	. "${HOME}/.bashrc"
     fi
 fi
 
@@ -30,10 +30,10 @@ shopt -s checkwinsize
 # Import the env vars set in this file.
 # This file is loaded in both bash and zsh.
 # https://superuser.com/q/187639
-. "$HOME/.profile"
+. "${HOME}/.profile"
 
 # Import bash-specific functions.
 . "${HOME}/.bash_convenience_functions"
 
 # Import work-specific code, stuff specific for the company I'm working for.
-[ -f "$HOME/.bash_company_stuff" ] && . "${HOME}/.bash_company_stuff"
+[ -f "{$HOME}/.bash_company_stuff" ] && . "${HOME}/.bash_company_stuff"
