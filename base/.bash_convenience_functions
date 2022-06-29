@@ -1,0 +1,117 @@
+# ~/.bash_convenience_functions
+#
+# Bash functions that can be loaded in interactive shells.
+# If these functions are compatible with zsh, they can be moved to ~/.profile
+
+
+# Prints a text-based table of multiple color combinations.
+# Originally from Manjaro's .bashrc
+colors() {
+	local fgc bgc vals seq0
+
+	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
+	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
+	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
+	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
+
+	# foreground colors
+	for fgc in {30..37}; do
+		# background colors
+		for bgc in {40..47}; do
+			fgc=${fgc#37} # white
+			bgc=${bgc#40} # black
+
+			vals="${fgc:+$fgc;}${bgc}"
+			vals=${vals%%;}
+
+			seq0="${vals:+\e[${vals}m}"
+			printf "  %-9s" "${seq0:-(default)}"
+			printf " ${seq0}TEXT\e[m"
+			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+		done
+		echo; echo
+	done
+}
+
+
+# In the past the bash-completion thing was annoying me so much that I have
+# disabled it. Use this function to enable it again.
+#
+# Sometimes this code is already included in the distro's /etc/bash.bashrc
+# and/or /etc/profile.
+#
+# Run "complete -r" to remove all currently-loaded completions.
+load_bash_completion() {
+    if ! shopt -oq posix; then
+		if [ -f /usr/share/bash-completion/bash_completion ]; then
+			. /usr/share/bash-completion/bash_completion
+		elif [ -f /etc/bash_completion ]; then
+			. /etc/bash_completion
+		fi
+    fi
+}
+
+
+# ext - archive extractor
+# usage: ex <file>
+# Originally named "ex" in Manjaro, but that name clashes with "/usr/bin/ex"
+# See also:
+# https://github.com/ssokolow/unball
+# https://www.nongnu.org/atool/
+ext () {
+  if [ -f "$1" ] ; then
+    case "$1" in
+      *.tar.bz2)   tar xjf "$1"   ;;
+      *.tar.gz)    tar xzf "$1"   ;;
+      *.bz2)       bunzip2 "$1"   ;;
+      *.rar)       unrar x "$1"   ;;
+      *.gz)        gunzip "$1"    ;;
+      *.tar)       tar xf "$1"    ;;
+      *.tbz2)      tar xjf "$1"   ;;
+      *.tgz)       tar xzf "$1"   ;;
+      *.zip)       unzip "$1"     ;;
+      *.Z)         uncompress "$1";;
+      *.7z)        7z x "$1"      ;;
+      *)           echo "'$1' cannot be extracted via this function" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+
+# Proxy is annoying in Linux. Mostly done through environment variables, it
+# cannot be easily changed for any long-running programs.
+# See also:
+# https://github.com/tkluck/pac4cli
+set_proxy_as() {
+	local hostport="$1:${2:=80}"
+	export _JAVA_OPTIONS="-Dhttp.proxyHost=$1 -Dhttp.proxyPort=$2 -Dhttps.proxyHost=$1 -Dhttps.proxyPort=$2"
+	export http_proxy="http://$hostport/"
+	export HTTP_PROXY="http://$hostport/"
+	export https_proxy="http://$hostport/"
+	export HTTPS_PROXY="http://$hostport/"
+	export ftp_proxy="http://$hostport/"
+	export FTP_PROXY="http://$hostport/"
+	#export rsync_proxy="$hostport"
+	#export RSYNC_PROXY="$hostport"
+
+	#export no_proxy="localhost,localaddress,127.0.0.1,.example.com"
+
+	echo "Proxy set as '$hostport'"
+}
+set_noproxy() {
+	#set_proxy_as ''
+
+	unset _JAVA_OPTIONS
+	unset http_proxy
+	unset HTTP_PROXY
+	unset https_proxy
+	unset HTTPS_PROXY
+	unset ftp_proxy
+	unset FTP_PROXY
+}
+# Example function to set a commonly-used proxy:
+# set_proxy() {
+# 	set_proxy_as proxy.server.from.example.com 1234
+# }

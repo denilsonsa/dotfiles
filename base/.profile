@@ -1,22 +1,90 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+# ~/.profile
+#
+# Be careful with the syntax.
+# This file is being loaded by both bash and zsh.
+#
+# See also: .bash_convenience_functions
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+export EDITOR=vim
+export VISUAL=vim
+export GTK_OVERLAY_SCROLLING=0
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
+# Custom Perl on my home directory.
+# PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+# Java and/or IntelliJ refuses to work properly without this on my Ubuntu system.
+#export JAVA_HOME="/usr/lib/jvm/default-java"
+
+# Non-root NPM setup
+# https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+# Remember to run this once:
+#npm config set prefix "${NPM_PACKAGES}"
+# Which creates a file ~/.npmrc
+NPM_PACKAGES="${HOME}/.npm-packages"
+#
+export PATH="${NPM_PACKAGES}/bin:${PATH}"
+export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
+
+# Go uses ~/go/ by default
+# https://golang.org/cmd/go/#hdr-GOPATH_environment_variable
+# I only need this variable if I want to customize it.
+#export GOPATH=${HOME}/go
+
+# Some nice tools:
+# https://github.com/ricardobeat/git-commands
+export PATH="${HOME}/stuff/git-commands:${PATH}"
+
+export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/go/bin:${PATH}"
+
+
+alias la='ls -A'
+alias lc='ls -crAsh'
+alias ll='ls -ltrA'
+alias lss='ls -sSrAh'
+
+
+# Add an "alert" alias for long running commands. Use like so:
+#   sleep 10; alert Your message here
+alert() {
+	# Single-line version. Very simple, but it swallows the $? value.
+	#notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$*"
+
+	# More complex version, should run fine in bash and zsh.
+	# Preserves the $? value.
+	local exitcode=$?
+	notify-send --urgency=low -i "$([ $exitcode = 0 ] && echo terminal || echo error)" "$*"
+	return $exitcode
+
+	# Originally inspired by the following alias:
+	# (that requires `history` and doesn't accept parameters)
+	#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+}
+
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+#alias df='df -h'      # human-readable sizes
+#alias free='free -m'  # show sizes in MB
+
+# Needed on old Ubuntu/Debian.
+# https://beyondgrep.com/install/
+#alias ack='ack-grep'
+
+# Safer aliases. Kind of.
+# However, that can train the user to expect "-i" to always be
+# set, which can be dangerous when the user runs those commands on a different
+# server/machine/environment.
+# Don't ask me how I learned this, but you can imagine it.
+#alias cp="cp -i"
+#alias mv="mv -i"
+#alias rm="rm -i"
+
+# No idea why I would need one of these:
+# export QT_SELECT=4
+# export QT_SELECT=5

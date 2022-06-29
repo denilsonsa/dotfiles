@@ -6,22 +6,21 @@
 - clean: ['~']
 - link:
     '~/.ackrc': 'base/.ackrc'
-    #'~/.bashrc': 'base/.hgrc'
+    '~/.bashrc': 'base/.bashrc'
+    '~/.bash_profile': 'base/.bash_profile'
+    '~/.bash_convenience_functions': 'base/.bash_convenience_functions'
     '~/.cplayrc': 'base/.cplayrc'
     #'~/.gitconfig': 'base/.gitconfig'
     '~/.gitignore': 'base/.gitignore'
-    '~/.gtkrc-2.0': 'base/.gtkrc-2.0'
-    '~/.config/gtk-3.0/settings.ini': 'base/.config/gtk-3.0/settings.ini'
     '~/.hgignore': 'base/.hgignore'
     #'~/.hgrc': 'base/.hgrc'
     '~/.indicator-chars': 'base/.indicator-chars'
     #'~/.kdiff3rc' ?
-    #'~/.profile': 'base/.profile'
+    '~/.profile': 'base/.profile'
     '~/.ripgreprc': 'base/.ripgreprc'
     '~/.vimrc': 'base/.vimrc'
     '~/.XCompose': 'base/.XCompose'
-    '~/.Xresources': 'base/.Xresources'
-    '~/.xinputrc': 'base/.xinputrc'
+    '~/.zshrc': 'base/.zshrc'
     '~/.vim/scripts.vim': 'base/.vim/scripts.vim'
     '~/.config/htop/htoprc': 'base/.config/htop/htoprc'
     '~/.config/pudb/pudb.cfg': 'base/.config/pudb/pudb.cfg'
@@ -38,7 +37,19 @@
     '~/.config/lxqt/session.conf': 'base/.config/lxqt/session.conf'
     '~/.config/qpdfview/qpdfview.conf': 'base/.config/qpdfview/qpdfview.conf'
     '~/.config/terminator/config': 'base/.config/terminator/config'
-    '~/.local/share/icons/default/index.theme': 'base/.local/share/icons/default/index.theme'
+
+    ### Shared files that I used in LXDE and LXQt, but I'm not using in KDE Plasma ###
+    # These do not include files used exclusively by LXQt.
+    #
+    # crystalblue mouse cursor. File written by lxqt-config-appearance
+    #'~/.local/share/icons/default/index.theme': 'base/.local/share/icons/default/index.theme'
+    #'~/.Xresources': 'base/.Xresources'
+    #
+    #'~/.xinputrc': 'base/.xinputrc'
+    #'~/.gtkrc-2.0': 'base/.gtkrc-2.0'
+    #'~/.config/gtk-3.0/settings.ini': 'base/.config/gtk-3.0/settings.ini'
+    ####
+
     #'~/.config/lxpanel/Lubuntu/config': 'base/.config/lxpanel/Lubuntu/config'
     #'~/.config/lxpanel/Lubuntu/panels/panel': 'base/.config/lxpanel/Lubuntu/panels/panel'
     #'~/.config/lxsession-default-apps/settings.conf': 'base/.config/lxsession-default-apps/settings.conf'
@@ -66,6 +77,7 @@
     # '~/.config/gpick/settings.xml'
 - shell:
     - ['test -f ~/.vim/autoload/plug.vim || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', 'Installing vim-plug (if needed)']
+    - ['test -d ~/XDG || { mkdir ~/XDG ; mv -v ~/Desktop ~/XDG/Desktop ; mv -v ~/Templates ~/XDG/Templates ; mv -v ~/Public ~/XDG/Public ; mv -v ~/Music ~/XDG/Music ; mv -v ~/Pictures ~/XDG/Pictures ; mv -v ~/Videos ~/XDG/Videos ; }']
     - 
         command: ['vim -c PlugInstall', 'Please observe any error messages and quit vim afterwards.']
         stdin: true

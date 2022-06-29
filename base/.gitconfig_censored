@@ -9,13 +9,28 @@
 
 	# Look at gc.writeCommitGraph for more info
 	commitGraph = true
+
+	# https://github.com/so-fancy/diff-so-fancy
+	#pager = diff-so-fancy | less -RFX
 [color]
 	ui = true
+[pager]
+	# https://github.com/git/git/tree/master/contrib/diff-highlight
+    # Undefined subroutine &DiffHighlight::highlight_stdin called at /usr/share/doc/git/contrib/diff-highlight/diff-highlight.perl line 7.
+	# log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight.perl | less
+	# show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight.perl | less
+	# diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight.perl | less
+	# log  = diff-highlight | less
+	# show = diff-highlight | less
+	# diff = diff-highlight | less
 [alias]
 	br = branch
 	ci = commit
 	co = checkout
 	st = status --short --branch
+
+	# WARNING! This also deletes the stash.
+	gc-everything = !git reflog expire --expire-unreachable=now --all && git gc --prune=now
 
 	# Note: git log does not show reverted commits.
 	#       Use --full-history to show those.
@@ -64,13 +79,16 @@
 	sapply = stash apply
 	spop = stash pop
 
-	prp = "!git pull --no-tags --rebase && git push"
+	prp = "!git pull --no-tags --rebase origin HEAD && git push"
 	# http://stackoverflow.com/questions/30208928/can-git-pull-automatically-stash-and-pop-pending-changes
 	prs = pull --rebase --autostash
-	prsp = "!git pull --no-tags --rebase --autostash && git push"
+	prsp = "!git pull --no-tags --rebase --autostash origin HEAD && git push"
 
 [commit]
 	verbose = true
+[gc]
+	# https://blogs.msdn.microsoft.com/devops/2018/06/25/supercharging-the-git-commit-graph/
+	writeCommitGraph = true
 [fetch]
 	# Auto-prune local branches that are tracking remote branches that don't exist anymore.
 	# https://stackoverflow.com/a/44129766
@@ -100,5 +118,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[diff-so-fancy]
+	stripLeadingSymbols = false
 [rerere]
 	enabled = true
