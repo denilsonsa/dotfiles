@@ -1,9 +1,24 @@
+# Nice gitconfig file with a few clever ideas:
+# https://codeberg.org/scy/dotfiles/src/branch/main/.gitconfig
+
 [user]
+	# Avoid trying to guess defaults for user.email and user.name, and instead
+	# retrieve the values only from the configuration.
+	#
+	# Requires either manually setting the name/email manually for each
+	# repository, or manually editing this file (or .gitconfig-local) for each
+	# machine. This will avoid accidentally commiting using the wrong
+	# name/email.
+	useConfigOnly = true
 	name = Denilson Sá Maia
-	email = denilsonsa@gmail.com
+	#email = denilsonsa@gmail.com
 [github]
 	user = denilsonsa
-	token = THIS_MUST_BE_SECRET
+	#token = THIS_MUST_BE_SECRET
+[init]
+	# Name the default branch "main", not "master".
+	# https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/
+	defaultBranch = main
 [core]
 	excludesfile = ~/.gitignore
 
@@ -86,6 +101,7 @@
 
 [commit]
 	verbose = true
+	#template = ~/gitmessage.txt
 [gc]
 	# https://blogs.msdn.microsoft.com/devops/2018/06/25/supercharging-the-git-commit-graph/
 	writeCommitGraph = true
@@ -122,3 +138,8 @@
 	stripLeadingSymbols = false
 [rerere]
 	enabled = true
+
+[include]
+	# Use an additional, host-specific Git config (if it exists).
+	# It should be the last line in the config file.
+	path = ~/.gitconfig-local

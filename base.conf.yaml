@@ -10,7 +10,7 @@
     '~/.bash_profile': 'base/.bash_profile'
     '~/.bash_convenience_functions': 'base/.bash_convenience_functions'
     '~/.cplayrc': 'base/.cplayrc'
-    #'~/.gitconfig': 'base/.gitconfig'
+    '~/.gitconfig': 'base/.gitconfig'
     '~/.gitignore': 'base/.gitignore'
     '~/.hgignore': 'base/.hgignore'
     #'~/.hgrc': 'base/.hgrc'
