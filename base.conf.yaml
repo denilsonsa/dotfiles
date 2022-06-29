@@ -16,8 +16,10 @@
     #'~/.hgrc': 'base/.hgrc'
     '~/.indicator-chars': 'base/.indicator-chars'
     #'~/.kdiff3rc' ?
+    '~/.my.cnf': 'base/.my.cnf'
     '~/.profile': 'base/.profile'
     '~/.ripgreprc': 'base/.ripgreprc'
+    '~/.screenrc': 'base/.screenrc'
     '~/.vimrc': 'base/.vimrc'
     '~/.XCompose': 'base/.XCompose'
     '~/.zshrc': 'base/.zshrc'

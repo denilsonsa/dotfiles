@@ -1,0 +1,59 @@
+defutf8 on
+defencoding utf8
+term screen-256color
+autodetach on
+startup_message off
+nethack off
+vbell off
+vbell_msg " BELL "
+vbellwait 1
+bell_msg " BELL @ %n "
+defmonitor on
+monitor on
+defscrollback 16384
+scrollback 16384
+
+# http://vim.wikia.com/wiki/GNU_Screen_integration#Getting_the_Esc_key_to_work
+maptimeout 5
+# And for tmux: https://unix.stackexchange.com/a/25638
+
+# make the shell in every window a login shell
+#shell -$SHELL
+
+#hardstatus alwayslastline "%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}"
+#hardstatus alwayslastline "%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}]"
+# Search for "STRING ESCAPES" in "man screen"
+# http://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/
+# https://stackoverflow.com/a/31921034
+#hardstatus alwayslastline "%H | %-Lw%n%f %t%+Lw %=%Y-%M-%d %c"
+hardstatus alwayslastline "%{.Kw}%{..C}%H%{-} : %{..Y}%S%{-} | %-Lw%{+b .KG}%n%f %t%{-}%+Lw %=%Y-%m-%d %c"
+#caption always ""
+
+# Use X scrolling mechanism
+# https://wiki.archlinux.org/index.php/GNU_Screen
+#termcapinfo xterm* ti@:te@
+
+##################################################
+# Key bindings
+
+# Making "kill" harder to type by mistake.
+bind k
+bind ^k
+bind K kill
+
+# Disabling "quit" (kill all windows).
+bind ^\
+bind \\
+
+# Disabling "dumptermcap" (writes out a .termcap file).
+bind .
+
+# Default "L" binding will toggle the login slot for the current window.
+# The manpage suggests having specific on/off bindings.
+# Not sure why I would need this.
+bind I login on
+bind O login off
+
+# Not disabling "hardcopy", as it can be useful sometimes.
+#bind ^h
+#bind h

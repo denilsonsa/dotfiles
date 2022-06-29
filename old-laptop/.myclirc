@@ -1,0 +1,18 @@
+# https://www.mycli.net/config
+[main]
+smart_completion = True
+multi_line = True
+destructive_warning = True
+timing = True
+# fancy_grid, grid, html, latex, latex_booktabs, mediawiki, orgtbl, pipe, plain, psql, rst, simple, tsv
+# Some examples:
+# https://bitbucket.org/astanin/python-tabulate#rst-header-table-format
+# You can change it by running "tableformat" (or "\T") command.
+table_format = psql
+# https://www.mycli.net/syntax
+syntax_style = monokai
+#key_bindings = emacs
+#key_bindings = vi
+wider_completion_menu = False
+less_chatty = False
+auto_vertical_output = False
