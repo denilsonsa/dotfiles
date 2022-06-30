@@ -1,6 +1,28 @@
 scriptencoding utf8
 set encoding=utf8
 
+" Hard-coding ~/.vim/ as the directory for this file.
+" This should work fine for Linux, Mac OS X, or any unix-like system.
+" This will fail to find the file on systems like Windows, Haiku, Amiga.
+" However, it's unlikely I'm gonna share my dotfiles with those systems
+" anyway.
+if filereadable($HOME . '/.vim/vimrc-local')
+	source ~/.vim/vimrc-local
+endif
+
+" The alternative is to try to manipulate the <sfile> to find the directory.
+" It's ugly, potentially dangerous, and may not work on certain cases.
+" https://stackoverflow.com/q/840900
+" https://stackoverflow.com/q/18048841
+"if filereadable(expand('<sfile>:p:h') . '/vimrc-local')
+"	" This works, but executing strings without proper escaping is dangerous,
+"	" it's a vulnerability waiting to be exploited under the right conditions.
+"	"exec 'source ' . expand('<sfile>:p:h') . '/vimrc-local'
+"	" This fails because shellescape() will return the filename surrounded by
+"	" single-quotes, and :source can't handle that.
+"	"exec 'source ' . shellescape(expand('<sfile>:p:h') . '/vimrc-local')
+"endif
+
 " Inconsolata is a great font. Source Code Pro is almost as good.
 "set guifont=Inconsolata\ Medium\ 8
 "set guifont=Inconsolata\ Medium\ 9
@@ -1183,6 +1205,18 @@ Plug 'vim-perl/vim-perl', { 'branch': 'dev' }
 " See also:
 " * https://github.com/vim-perl/vim-perl/issues/259
 " * https://github.com/haarg/vim-perl/tree/fixes
+
+"Plug 'othree/html5.vim'
+
+" Integrating https://vale.sh/ into Vim, which is a linter for natural
+" language, useful when writing documentation.
+" Formerly hosted at 'w0rp/ale'
+"Plug 'dense-analysis/ale'
+
+if exists('*VimrcLocalVimPlug')
+	call VimrcLocalVimPlug()
+endif
+
 call plug#end()
 
 "}}}
@@ -1739,3 +1773,7 @@ function! ExecuteMacroOverVisualRange()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 "}}}
+
+if exists('*VimrcLocalLateInit')
+	call VimrcLocalLateInit()
+endif
