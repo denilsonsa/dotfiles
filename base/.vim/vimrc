@@ -1036,9 +1036,6 @@ endif
 
 call plug#begin()
 
-" Goodbye, Pathogen!
-"Plug 'tpope/vim-pathogen'
-
 Plug 'nixon/vim-vmath'
 Plug 'tpope/vim-repeat'
 
@@ -1078,11 +1075,6 @@ Plug 'mattn/emoji-vim'
 " Note: I have my own fork of vim-emoji-complete.
 Plug 'kyuhi/vim-emoji-complete'
 
-"Plug 'ctrlpvim/ctrlp.vim'
-
-"Plug 'junegunn/fzf', {'dir': '~/stuff/fzf'}
-"Plug 'junegunn/fzf.vim'
-
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'haya14busa/vim-easyoperator-line'
@@ -1094,7 +1086,6 @@ Plug 'hotchpotch/perldoc-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
-Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier'
 Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'msprev/vim-markdown-folding'
@@ -1102,7 +1093,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 "Plug 'powerman/vim-plugin-viewdoc'
 Plug 'powerman/AnsiEsc.vim'
-"Plug 'rhysd/open-pdf.vim'
 Plug 'thinca/vim-fontzoom'
 Plug 'tmhedberg/simpylfold'
 Plug 'vim-scripts/Align'
@@ -1114,7 +1104,6 @@ Plug 'vim-scripts/LaTeX-Help'
 Plug 'vim-scripts/LargeFile'
 Plug 'vim-scripts/TaskList.vim'
 Plug 'vim-scripts/ZoomWin'
-Plug 'vim-scripts/icalendar.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/pep8'
 
@@ -1176,42 +1165,62 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'vim-scripts/sokoban.vim'
 "Plug 'vim-scripts/TeTrIs.vim'
 "Plug 'haya14busa/vim-easyoperator-phrase'
-"Plug 'tpope/vim-surround'
 "Plug 'vim-scripts/pdftotext'
+"Plug 'rhysd/open-pdf.vim'
 "Plug 'vim-scripts/AnsiEsc.vim'
 "Plug 'koron/minimap-vim'
 "Plug 'severin-lemaignan/vim-minimap'
-
-"One of these, not sure if they work:
-"Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-"Plug 'vim-latex/vim-latex'
 
 " FuzzyFinder
 " Not needed, if we use Unite.
 " https://bitbucket.org/ns9tks/vim-fuzzyfinder/
 " http://www.vim.org/scripts/script.php?script_id=1984
 "Plug 'vim-scripts/FuzzyFinder'
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'junegunn/fzf', {'dir': '~/stuff/fzf'}
+"Plug 'junegunn/fzf.vim'
+
 "
-" Requires l9 library
+" Requires l9 library, bitbucket repository not found anymore.
 " https://bitbucket.org/ns9tks/vim-l9/
 " http://www.vim.org/scripts/script.php?script_id=3252
 "Plug 'vim-scripts/L9'
 
-"Plug 'chrisbra/csv.vim'
+" Integrating https://vale.sh/ into Vim, which is a linter for natural
+" language, useful when writing documentation.
+" Formerly hosted at 'w0rp/ale'
+"Plug 'dense-analysis/ale'
 
-Plug 'leafgarland/typescript-vim'
+" -- Syntax/language plugins --
+
+" -> Either pick each individual language plugin:
+
 "Plug 'vim-perl/vim-perl'
 Plug 'vim-perl/vim-perl', { 'branch': 'dev' }
 " See also:
 " * https://github.com/vim-perl/vim-perl/issues/259
 " * https://github.com/haarg/vim-perl/tree/fixes
 
+"Plug 'chrisbra/csv.vim'
 "Plug 'othree/html5.vim'
+Plug 'posva/vim-vue'
 
-" Integrating https://vale.sh/ into Vim, which is a linter for natural
-" language, useful when writing documentation.
-" Formerly hosted at 'w0rp/ale'
-"Plug 'dense-analysis/ale'
+"Plug 'vim-scripts/icalendar.vim'
+Plug 'chutzpah/icalendar.vim'
+
+" Two options for TypeScript:
+"Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+
+" -> Or pick a huge pack with a bunch of them:
+
+"Plug 'sheerun/vim-polyglot'
+
+" -> Plus a few other plugins not included in the pack:
+
+"One of these, not sure if they work:
+"Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+"Plug 'vim-latex/vim-latex'
 
 if exists('*VimrcLocalVimPlug')
 	call VimrcLocalVimPlug()
