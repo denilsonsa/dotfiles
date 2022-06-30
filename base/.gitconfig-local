@@ -1,0 +1,8 @@
+# ~/.gitconfig-local
+# Example file for local changes not saved in the dotfiles repository.
+
+[user]
+	# name = Denilson Sá
+	# email = denilsonsa@example.com
+
+# vim:ft=gitconfig

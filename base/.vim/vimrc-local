@@ -1,0 +1,32 @@
+" ~/.vim/vimrc-local
+" Example file for local changes not saved in the dotfiles repository.
+
+" Executed while setting up vim-plug
+function VimrcLocalVimPlug()
+
+	"Plug 'git@git.example.com:example/vim-example.git'
+
+endfunction
+
+" Executed after the main vimrc has finished loading
+function VimrcLocalLateInit()
+
+	set guifont=Inconsolata\ Medium\ 9
+
+	" Custom file settings, such as tabs/spaces and indentation.
+	"au FileType foobar setlocal et ts=4 sw=4
+
+	" Group for detecting filetype
+	augroup filetypedetect
+		"au BufNewFile,BufRead *.foobar      setf foobar
+		"au BufNewFile,BufRead ~/example/* setl et
+		"au BufNewFile,BufRead ~/example/*.yaml setl ts=2 sw=2
+
+		" Prettier
+		"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+		"autocmd BufWritePre ~/example/*.js,~/example/*.css,~/example/*.less,~/example/*.scss,~/example/*.json,~/example/*.vue,~/example/*.html PrettierAsync
+	augroup END
+
+endfunction
+
+" vim:ft=vim
