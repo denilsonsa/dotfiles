@@ -20,7 +20,7 @@
     '~/.profile': 'base/.profile'
     '~/.ripgreprc': 'base/.ripgreprc'
     '~/.screenrc': 'base/.screenrc'
-    '~/.vimrc': 'base/.vimrc'
+    '~/.vim/vimrc': 'base/.vim/vimrc'
     '~/.XCompose': 'base/.XCompose'
     '~/.zshrc': 'base/.zshrc'
     '~/.vim/scripts.vim': 'base/.vim/scripts.vim'
