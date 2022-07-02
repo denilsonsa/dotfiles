@@ -56,8 +56,11 @@ load_bash_completion() {
 # usage: ex <file>
 # Originally named "ex" in Manjaro, but that name clashes with "/usr/bin/ex"
 # See also:
+# https://wiki.archlinux.org/title/Bash/Functions#Extract
 # https://github.com/ssokolow/unball
 # https://www.nongnu.org/atool/
+# https://github.com/mitsuhiko/unp
+# https://github.com/githaff/unpack
 ext () {
   if [ -f "$1" ] ; then
     case "$1" in
