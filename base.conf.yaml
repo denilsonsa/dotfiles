@@ -79,7 +79,7 @@
     # '~/.config/gpick/settings.xml'
 - shell:
     - ['test -f ~/.vim/autoload/plug.vim || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', 'Installing vim-plug (if needed)']
-    - ['test -d ~/XDG || { mkdir ~/XDG ; mv -v ~/Desktop ~/XDG/Desktop ; mv -v ~/Templates ~/XDG/Templates ; mv -v ~/Public ~/XDG/Public ; mv -v ~/Music ~/XDG/Music ; mv -v ~/Pictures ~/XDG/Pictures ; mv -v ~/Videos ~/XDG/Videos ; }']
+    - ['test -d ~/XDG || { mkdir ~/XDG ; mv -v ~/Desktop ~/XDG/Desktop ; mv -v ~/Documents ~/XDG/Documents ; mv -v ~/Templates ~/XDG/Templates ; mv -v ~/Public ~/XDG/Public ; mv -v ~/Music ~/XDG/Music ; mv -v ~/Pictures ~/XDG/Pictures ; mv -v ~/Videos ~/XDG/Videos ; }']
     - 
         command: ['vim -c PlugInstall', 'Please observe any error messages and quit vim afterwards.']
         stdin: true
