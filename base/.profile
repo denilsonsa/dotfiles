@@ -40,7 +40,30 @@ export PATH="${HOME}/stuff/git-commands:${PATH}"
 
 export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/go/bin:${PATH}"
 
+# Colored GCC warnings and errors
+# https://stackoverflow.com/q/26070873
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# Color-enabling aliases:
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip -color=auto'
+
+# ls color rules:
+eval "$(dircolors -b ~/.dir_colors)"
+
+# Do you want even more colors? See:
+# * https://github.com/Efreak/awesome-colorterm
+# * https://github.com/garabik/grc
+#     * https://github.com/garabik/grc/blob/master/grc.zsh
+# * https://wiki.archlinux.org/title/Color_output_in_console
+
+# My own ls aliases:
 alias la='ls -A'
 alias lc='ls -crAsh'
 alias ll='ls -ltrA'
@@ -70,10 +93,6 @@ alert() {
 # https://dystroy.org/broot/install
 [ -f "{$HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
-
-# colored GCC warnings and errors
-# https://stackoverflow.com/q/26070873
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Needed on old Ubuntu/Debian.
 # https://beyondgrep.com/install/

@@ -1,15 +1,16 @@
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.
 
-# Copyright (C) 1996-2014 Free Software Foundation, Inc.
-# Copying and distribution of this file, with or without modification,
-# are permitted provided the copyright notice and this notice are preserved.
-
 # The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
 # slackware version of dircolors) are recognized but ignored.
 
 # You can copy this file to .dir_colors in your $HOME directory to override
 # the system defaults.
+
+# TODO: Try using this one, as it has a large collection of rules:
+# https://github.com/trapd00r/LS_COLORS/blob/master/LS_COLORS
+# However, the colors are quite different from the default colors
+# (e.g. the executable files and the directories)
 
 # Below, there should be one TERM entry for each termtype that is colorizable
 TERM Eterm

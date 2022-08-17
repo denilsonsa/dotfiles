@@ -92,42 +92,47 @@ esac
 ##################################################
 # Color-related code below this line
 #
-# This was mostly copied from Manjaro, with minor alterations.
+# This was mostly copied/adapted from a couple of distros.
 
 use_color=true
 
-# Set colorful PS1 only on colorful terminals.
-# dircolors --print-database uses its own built-in database
-# instead of using /etc/DIR_COLORS.  Try to use the external file
-# first to take advantage of user additions.  Use internal bash
-# globbing instead of external grep binary.
-safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
-match_lhs=""
-[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
-[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
-[[ -z ${match_lhs}    ]] \
-	&& type -P dircolors >/dev/null \
-	&& match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+# Note: dircolors code is disabled here, because I'm always running it on
+# ~/.profile, which gets loaded on both bash and zsh.
 
-# Ubuntu version of the same code, it's way simpler:
-#
+## Manjaro version of the dircolors
+##
+## dircolors --print-database uses its own built-in database
+## instead of using /etc/DIR_COLORS.  Try to use the external file
+## first to take advantage of user additions.  Use internal bash
+## globbing instead of external grep binary.
+#safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
+#match_lhs=""
+#[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
+#[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
+#[[ -z ${match_lhs}    ]] \
+#	&& type -P dircolors >/dev/null \
+#	&& match_lhs=$(dircolors --print-database)
+#[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+#unset safe_term match_lhs
+
+## Ubuntu version of the same code, it's way simpler:
+##
 ## enable color support of ls and also add handy aliases
 #if [ -x /usr/bin/dircolors ]; then
 #    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 #fi
 
+## Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+#if type -P dircolors >/dev/null ; then
+#	if [[ -f ~/.dir_colors ]] ; then
+#		eval $(dircolors -b ~/.dir_colors)
+#	elif [[ -f /etc/DIR_COLORS ]] ; then
+#		eval $(dircolors -b /etc/DIR_COLORS)
+#	fi
+#fi
 
+# Set colorful PS1 only on colorful terminals.
 if ${use_color} ; then
-	# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
-	if type -P dircolors >/dev/null ; then
-		if [[ -f ~/.dir_colors ]] ; then
-			eval $(dircolors -b ~/.dir_colors)
-		elif [[ -f /etc/DIR_COLORS ]] ; then
-			eval $(dircolors -b /etc/DIR_COLORS)
-		fi
-	fi
-
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
@@ -136,13 +141,6 @@ if ${use_color} ; then
 		# Ubuntu variant:
 		#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	fi
-
-	alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-	alias grep='grep --colour=auto'
-	alias egrep='egrep --colour=auto'
-	alias fgrep='fgrep --colour=auto'
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
@@ -155,4 +153,4 @@ else
 	fi
 fi
 
-unset use_color safe_term match_lhs sh
+unset use_color
