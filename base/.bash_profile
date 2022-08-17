@@ -16,17 +16,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-shopt -s histappend
-HISTSIZE=5000
-HISTFILESIZE=20000
-HISTCONTROL=ignoreboth
-
-# Bash won't get SIGWINCH if another process is in the foreground.
-# Enable checkwinsize so that bash will check the terminal size when
-# it regains control.  #65623
-# http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
-shopt -s checkwinsize
-
 # Import the env vars set in this file.
 # This file is loaded in both bash and zsh.
 # https://superuser.com/q/187639
