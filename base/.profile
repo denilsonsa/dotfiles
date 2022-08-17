@@ -91,7 +91,7 @@ alert() {
 # `broot` is supposed to be called from a shell alias `br` in order to provide
 # `cd` functionality.
 # https://dystroy.org/broot/install
-[ -f "{$HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
+[ -f "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
 
 # Needed on old Ubuntu/Debian.
