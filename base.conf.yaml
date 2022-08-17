@@ -10,6 +10,7 @@
     '~/.bash_profile': 'base/.bash_profile'
     '~/.bash_convenience_functions': 'base/.bash_convenience_functions'
     '~/.cplayrc': 'base/.cplayrc'
+    '~/.dir_colors': 'base/.dir_colors'
     '~/.gitconfig': 'base/.gitconfig'
     '~/.gitignore': 'base/.gitignore'
     '~/.hgignore': 'base/.hgignore'
@@ -86,6 +87,6 @@
         stdout: true
         stderr: true
     -
-        command: ["echo 'You may also want to install:\n https://bitbucket.org/mozbugbox/byteonpanel/overview (apt-get install gnome-common libgtk-3-dev valac)\n https://github.com/denilsonsa/indicator-chars\n https://github.com/denilsonsa/arandr-indicator\n https://bitbucket.org/denilsonsa/small_scripts/overview'"]
+        command: ["echo 'You may also want to install:\n https://github.com/denilsonsa/indicator-chars\n https://github.com/denilsonsa/arandr-indicator\n https://github.com/denilsonsa/small_scripts'"]
         stdout: true
         stderr: true
