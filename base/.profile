@@ -26,7 +26,6 @@ export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 #npm config set prefix "${NPM_PACKAGES}"
 # Which creates a file ~/.npmrc
 NPM_PACKAGES="${HOME}/.npm-packages"
-#
 export PATH="${NPM_PACKAGES}/bin:${PATH}"
 export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
 
@@ -66,11 +65,15 @@ alert() {
 }
 
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+# `broot` is supposed to be called from a shell alias `br` in order to provide
+# `cd` functionality.
+# https://dystroy.org/broot/install
+[ -f "{$HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
-#alias df='df -h'      # human-readable sizes
-#alias free='free -m'  # show sizes in MB
+
+# colored GCC warnings and errors
+# https://stackoverflow.com/q/26070873
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Needed on old Ubuntu/Debian.
 # https://beyondgrep.com/install/
