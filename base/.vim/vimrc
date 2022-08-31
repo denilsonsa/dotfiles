@@ -454,8 +454,9 @@ nnoremap Y y$
 
 "Keep the cursor at the same location after a visual-yank.
 "https://ddrscott.github.io/blog/2016/yank-without-jank/
-vnoremap y myy`y
-vnoremap Y myY`y
+"https://github.com/ddrscott/config-nvim/commit/9907af804793d92bf30096e437dab6586636dab9
+vnoremap <expr>y "my\"".v:register."y`y"
+vnoremap <expr>Y "my\"".v:register."Y`y"
 
 "Allows undoing i_CTRL-W (delete word) and i_CTRL-U (delete line).
 "http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
