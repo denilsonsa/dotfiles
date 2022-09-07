@@ -501,6 +501,10 @@ nnoremap <M-Down> <C-W>j
 nnoremap <M-Up> <C-W>k
 nnoremap <M-Right> <C-W>l
 
+"<C-W>f does an horizontal split, but there is no built-in command to vertical
+"split. Let's remap this synonym to vertical.
+nnoremap <C-W><C-F> :vsplit<CR>gf
+
 "ABNT-2 keyboard has ç in the place of ;/:
 nnoremap ç ;
 vnoremap ç ;
