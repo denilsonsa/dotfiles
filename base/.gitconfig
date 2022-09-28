@@ -27,6 +27,8 @@
 
 	# https://github.com/so-fancy/diff-so-fancy
 	#pager = diff-so-fancy | less -RFX
+	# Default pager is usually "less -RFX", but it is also affected by the $LESS variable.
+	pager = less -RFX
 [color]
 	ui = true
 [pager]
@@ -38,6 +40,7 @@
 	# log  = diff-highlight | less
 	# show = diff-highlight | less
 	# diff = diff-highlight | less
+	blame = less -RFXS
 [alias]
 	br = branch
 	ci = commit
