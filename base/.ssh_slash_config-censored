@@ -1,24 +1,29 @@
 Protocol 2
 HashKnownHosts no
+
+# https://www.qualys.com/2016/01/14/cve-2016-0777-cve-2016-0778/openssh-cve-2016-0777-cve-2016-0778.txt
 UseRoaming no
 
-Host *
-	ControlMaster auto
-	ControlPath ~/.ssh/control_master_%r@%h-%p
-	Protocol 2
-	Compression yes
-	# SendEnv LANG LC_*
-	SendEnv 
+# http://unix.stackexchange.com/questions/16571/multiple-host-in-ssh-config
+# Since the first obtained value for each parameter is used, more host-specific
+# declarations should be given near the beginning of the file, and general
+# defaults at the end.
+
+ControlPath ~/.ssh/ssh_control_%r@%h:%p
+ControlPersist 4h
+#ControlMaster auto
+
+#Compression yes
+
+#SendEnv LANG LC_*
+
+
 
 # Host 10.0.0.1
 # 	ForwardX11 yes
 # 	ForwardX11Trusted yes
 # 	Compression yes
-# Host 10.0.1.1
-# 	ForwardX11 yes
-# 	ForwardX11Trusted yes
-# 	Compression yes
-
-Host openwrt
-	HostName 192.168.0.1
-	User root
+# Host openwrt
+# 	HostName 192.168.0.1
+# 	User root
+# 	Port 22222
