@@ -40,6 +40,7 @@
     '~/.config/lxqt/session.conf': 'base/.config/lxqt/session.conf'
     '~/.config/qpdfview/qpdfview.conf': 'base/.config/qpdfview/qpdfview.conf'
     '~/.config/terminator/config': 'base/.config/terminator/config'
+    '~/.local/share/konsole/my_zsh.profile': 'base/.local/share/konsole/my_zsh.profile'
 
     ### Shared files that I used in LXDE and LXQt, but I'm not using in KDE Plasma ###
     # These do not include files used exclusively by LXQt.
