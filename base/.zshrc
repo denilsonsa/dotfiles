@@ -21,5 +21,9 @@ fi
 # https://superuser.com/q/187639
 . "$HOME/.profile"
 
+# thefuck works by looking at the most recent history entry.
+# It won't work if I keep prefixing my commands with space.
+#command -v thefuck &> /dev/null && eval $(thefuck --alias)
+
 # Import work-specific code, stuff specific for the company I'm working for.
 [ -f "${HOME}/.zsh_company_stuff" ] && . "${HOME}/.zsh_company_stuff"

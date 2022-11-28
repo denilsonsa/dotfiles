@@ -10,6 +10,9 @@ export VISUAL=vim
 export GTK_OVERLAY_SCROLLING=0
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 
+# https://github.com/nvbn/thefuck#settings
+#export THEFUCK_ALTER_HISTORY=false
+
 # Custom Perl on my home directory.
 # PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
 # PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

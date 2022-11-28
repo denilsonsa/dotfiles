@@ -1,4 +1,5 @@
 # ~/.bash_convenience_functions
+# vim:ft=bash
 #
 # Bash functions that can be loaded in interactive shells.
 # If these functions are compatible with zsh, they can be moved to ~/.profile

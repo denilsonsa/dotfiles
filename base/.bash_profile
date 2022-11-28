@@ -24,5 +24,9 @@ fi
 # Import bash-specific functions.
 . "${HOME}/.bash_convenience_functions"
 
+# thefuck works by looking at the most recent history entry.
+# It won't work if I keep prefixing my commands with space.
+#command -v thefuck &> /dev/null && eval $(thefuck --alias)
+
 # Import work-specific code, stuff specific for the company I'm working for.
 [ -f "{$HOME}/.bash_company_stuff" ] && . "${HOME}/.bash_company_stuff"
