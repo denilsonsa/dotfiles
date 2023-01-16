@@ -40,6 +40,8 @@
     '~/.config/lxqt/session.conf': 'base/.config/lxqt/session.conf'
     '~/.config/qpdfview/qpdfview.conf': 'base/.config/qpdfview/qpdfview.conf'
     '~/.config/terminator/config': 'base/.config/terminator/config'
+    '~/.config/vlc/vlc-qt-interface.conf': 'base/.config/vlc/vlc-qt-interface.conf'
+    '~/.config/vlc/vlcrc': 'base/.config/vlc/vlcrc'
     '~/.local/share/konsole/my_zsh.profile': 'base/.local/share/konsole/my_zsh.profile'
 
     ### Shared files that I used in LXDE and LXQt, but I'm not using in KDE Plasma ###
