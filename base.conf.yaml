@@ -35,6 +35,7 @@
     '~/.config/lxtask.conf': 'base/.config/lxtask.conf'
     '~/.config/pudb/pudb.cfg': 'base/.config/pudb/pudb.cfg'
     '~/.config/qpdfview/qpdfview.conf': 'base/.config/qpdfview/qpdfview.conf'
+    '~/.config/qpdfview/shortcuts.conf': 'base/.config/qpdfview/shortcuts.conf'
     #'~/.config/rofi/config.rasi': 'base/.config/rofi/config.rasi'
     '~/.config/skippy-xd/skippy-xd.rc': 'base/.config/skippy-xd/skippy-xd.rc'
     '~/.config/terminator/config': 'base/.config/terminator/config'
