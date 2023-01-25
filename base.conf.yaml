@@ -39,12 +39,14 @@
     #'~/.config/rofi/config.rasi': 'base/.config/rofi/config.rasi'
     '~/.config/skippy-xd/skippy-xd.rc': 'base/.config/skippy-xd/skippy-xd.rc'
     '~/.config/terminator/config': 'base/.config/terminator/config'
-    '~/.config/upstart': 'base/.config/upstart'
     '~/.config/user-dirs.dirs': 'base/.config/user-dirs.dirs'
     '~/.config/user-dirs.locale': 'base/.config/user-dirs.locale'
-    '~/.config/vlc/vlc-qt-interface.conf': 'base/.config/vlc/vlc-qt-interface.conf'
-    '~/.config/vlc/vlcrc': 'base/.config/vlc/vlcrc'
     '~/.local/share/konsole/my_zsh.profile': 'base/.local/share/konsole/my_zsh.profile'
+
+    # Directories:
+    '~/.config/upstart': 'base/.config/upstart'
+    '~/.config/vlc': 'base/.config/vlc'
+    '~/.local/share/color-schemes': 'base/.local/share/color-schemes'
 
     ### Shared files that I used in LXDE and LXQt, but I'm not using in KDE Plasma ###
     # These do not include files used exclusively by LXQt.
