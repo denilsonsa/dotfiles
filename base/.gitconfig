@@ -119,6 +119,7 @@
 	main-window-maximized = false
 	main-window-geometry = 1189x758+0+0
 [push]
+	autoSetupRemote = true
 	default = simple
 [cola]
 	fontdiff = Inconsolata,9,-1,5,50,0,0,0,0,0
