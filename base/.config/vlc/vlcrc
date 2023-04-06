@@ -435,7 +435,7 @@
 #wall-cols=3
 
 # Number of rows (integer)
-#wall-rows=3
+wall-rows=1
 
 # Active windows (string)
 #wall-active=

@@ -57,6 +57,9 @@ alias fgrep='fgrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 
+# Make cvlc automatically quit after playing everything, similar to mplayer.
+alias cvlc='cvlc --play-and-exit'
+
 # ls color rules:
 eval "$(dircolors -b ~/.dir_colors)"
 
