@@ -3113,13 +3113,13 @@ qt-privacy-ask=0
 [puzzle] # Puzzle interactive game video filter
 
 # Number of puzzle rows (integer)
-#puzzle-rows=4
+puzzle-rows=5
 
 # Number of puzzle columns (integer)
-#puzzle-cols=4
+puzzle-cols=7
 
 # Border (integer)
-#puzzle-border=3
+puzzle-border=2
 
 # Small preview (boolean)
 #puzzle-preview=0
@@ -3137,7 +3137,7 @@ qt-privacy-ask=0
 #puzzle-auto-solve=0
 
 # Rotation (integer)
-#puzzle-rotation=0
+puzzle-rotation=1
 
 # Game mode (integer)
 #puzzle-mode=0
