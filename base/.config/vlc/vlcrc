@@ -432,7 +432,7 @@
 [wall] # Wall video filter
 
 # Number of columns (integer)
-#wall-cols=3
+wall-cols=2
 
 # Number of rows (integer)
 wall-rows=1
