@@ -1170,6 +1170,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'Lokaltog/vim-powerline'
 "Plug 'vim-airline/vim-airline'
 
+" Nice idea: have a .vimdir or .lvimrc file at the root of a project directory
+" to load settings specific for that project.
+" https://github.com/embear/vim-localvimrc
+" https://github.com/chazy/dirsettings
+" https://github.com/mantiz/vim-plugin-dirsettings
+
 " Interesting idea, creating a "window" submode to avoid pressing <C-W> too
 " many times.
 " http://ddrscott.github.io/blog/2016/making-a-window-submode/#solution-b-submode-to-the-rescue
