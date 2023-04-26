@@ -121,6 +121,10 @@
 [push]
 	autoSetupRemote = true
 	default = simple
+[merge]
+	# Suppress the git diff --stat after both git merge and git pull.
+	# https://stackoverflow.com/a/54865245
+	stat = false
 [cola]
 	fontdiff = Inconsolata,9,-1,5,50,0,0,0,0,0
 	spellcheck = false
