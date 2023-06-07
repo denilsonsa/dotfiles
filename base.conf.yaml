@@ -42,6 +42,13 @@
     '~/.config/terminator/config': 'base/.config/terminator/config'
     '~/.config/user-dirs.dirs': 'base/.config/user-dirs.dirs'
     '~/.config/user-dirs.locale': 'base/.config/user-dirs.locale'
+    '~/.config/vdu_controls/Preset_A-darkest-0-0.conf': 'base/.config/vdu_controls/Preset_A-darkest-0-0.conf'
+    '~/.config/vdu_controls/Preset_B-darker-0-25.conf': 'base/.config/vdu_controls/Preset_B-darker-0-25.conf'
+    '~/.config/vdu_controls/Preset_C-dark-25-50.conf': 'base/.config/vdu_controls/Preset_C-dark-25-50.conf'
+    '~/.config/vdu_controls/Preset_D-medium-50-50.conf': 'base/.config/vdu_controls/Preset_D-medium-50-50.conf'
+    '~/.config/vdu_controls/Preset_E-bright-75-50.conf': 'base/.config/vdu_controls/Preset_E-bright-75-50.conf'
+    '~/.config/vdu_controls/Preset_F-brighter-100-50.conf': 'base/.config/vdu_controls/Preset_F-brighter-100-50.conf'
+    '~/.config/vdu_controls/Q27P1B.conf': 'base/.config/vdu_controls/Q27P1B.conf'
     '~/.local/share/konsole/my_zsh.profile': 'base/.local/share/konsole/my_zsh.profile'
 
     # Directories:
