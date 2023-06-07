@@ -10,6 +10,18 @@ export VISUAL=vim
 export GTK_OVERLAY_SCROLLING=0
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 
+# Disable Wine logging to reduce noise and improve performance.
+# https://wiki.winehq.org/Wine_User%27s_Guide#Environment_variables
+export WINEDEBUG=-all
+# Disable Wine trying to associate itself to files on my host desktop/OS.
+# https://wiki.winehq.org/FAQ#How_can_I_prevent_Wine_from_changing_the_filetype_associations_on_my_system_or_adding_unwanted_menu_entries.2Fdesktop_links.3F
+export WINEDLLOVERRIDES=winemenubuilder.exe=d
+# There are two other variables:
+# export WINEARCH=win32
+# export WINEARCH=win64
+# export WINEPREFIX="${XDG_DATA_HOME}/wineprefixes"
+# export WINEPREFIX="${HOME}/.local/share/wineprefixes"
+
 # https://github.com/nvbn/thefuck#settings
 #export THEFUCK_ALTER_HISTORY=false
 
