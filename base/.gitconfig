@@ -10,8 +10,13 @@
 	# machine. This will avoid accidentally commiting using the wrong
 	# name/email.
 	useConfigOnly = true
-	name = Denilson Sá Maia
+	#name = Denilson Sá Maia
 	#email = denilsonsa@gmail.com
+	#
+	# A newer solution is to use Conditional Includes:
+	# https://stackoverflow.com/a/43654115/124946
+	# https://git-scm.com/docs/git-config#_conditional_includes
+	# Look at the bottom of this file.
 [github]
 	user = denilsonsa
 	#token = THIS_MUST_BE_SECRET
@@ -102,6 +107,9 @@
 	prs = pull --rebase --autostash
 	prsp = "!git pull --no-tags --rebase --autostash origin HEAD && git push"
 
+	configsetuser = "!git config --local user.name 'Denilson Sá Maia' && git config --local user.email 'denilsonsa@gmail.com' && echo 'Please consider updating [includeIf …] at ~/.gitconfig'"
+	configunsetuser = "!git config --local --unset user.name && git config --local --unset user.email"
+
 [commit]
 	verbose = true
 	#template = ~/gitmessage.txt
@@ -146,6 +154,18 @@
 	stripLeadingSymbols = false
 [rerere]
 	enabled = true
+
+[filter "dotfiles"]
+	clean = ~/dotfiles/git_filter.sh clean
+	smudge = ~/dotfiles/git_filter.sh smudge
+
+# Per-directory configuration.
+[includeIf "gitdir:~/dotfiles/"]
+	path = ~/.gitconfig-personal
+[includeIf "gitdir:~/myrepos/"]
+	path = ~/.gitconfig-personal
+[includeIf "gitdir:~/otherrepos/aur/"]
+	path = ~/.gitconfig-personal
 
 [include]
 	# Use an additional, host-specific Git config (if it exists).

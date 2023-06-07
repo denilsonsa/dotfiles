@@ -12,6 +12,7 @@
     '~/.cplayrc': 'base/.cplayrc'
     '~/.dir_colors': 'base/.dir_colors'
     '~/.gitconfig': 'base/.gitconfig'
+    '~/.gitconfig-personal': 'base/.gitconfig-personal'
     '~/.gitignore': 'base/.gitignore'
     '~/.hgignore': 'base/.hgignore'
     #'~/.hgrc': 'base/.hgrc'

@@ -1984,7 +1984,7 @@ qt-system-tray=0
 #qt-fs-opacity=0.800000
 
 # Resize interface to the native video size (boolean)
-qt-video-autoresize=1
+#qt-video-autoresize=1
 
 # Show playing item name in window title (boolean)
 #qt-name-in-title=1

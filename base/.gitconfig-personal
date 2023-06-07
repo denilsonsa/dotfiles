@@ -1,0 +1,11 @@
+# ~/.gitconfig-personal
+# Configuration for repositories that use my personal e-mail.
+# Read more about it:
+# https://stackoverflow.com/a/43654115/124946
+# https://git-scm.com/docs/git-config#_conditional_includes
+
+[user]
+	name = Denilson Sá Maia
+	email = denilsonsa@gmail.com
+
+# vim:ft=gitconfig
