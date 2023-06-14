@@ -1,0 +1,13 @@
+[General]
+ActivateWhenTypingOnDesktop=false
+FreeFloating=true
+
+[PlasmaRunnerManager]
+migrated=true
+
+[Plugins]
+baloosearchEnabled=false
+bookmarksEnabled=false
+browserhistoryEnabled=false
+desktopsessionsEnabled=false
+webshortcutsEnabled=false
