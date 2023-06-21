@@ -1,6 +1,5 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
-switch-to-activity-4ca4d07c-216b-4b44-9a1c-650ec43d4236=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch to Next Keyboard Layout=,none,Switch to Next Keyboard Layout
@@ -304,13 +303,6 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
-activate widget 122=none,none,Activate Application Launcher Widget
-activate widget 27=none,none,Activate P-state and CPUFreq Widget
-activate widget 31=Alt+F1,none,Activate Application Dashboard Widget
-activate widget 64=none,none,Activate Lock/Logout Widget
-activate widget 74=none,none,Activate Minimal Desktop Indicator Widget
-activate widget 94=Meta+Q,none,Activate Qalculate! Widget
-activate widget 98=none,none,Activate Application Launcher Widget
 clear-history=none,,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Meta+Ctrl+X,Automatic Action Popup Menu
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Move keyboard focus between panels

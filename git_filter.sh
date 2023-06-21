@@ -41,8 +41,8 @@ if [ "$1" = 'clean' ] ; then
 		}
 
 		# Removing arbitrary ids from kglobalshortcutsrc
-		/^switch-to-activity-[-0-9a-fA-F]{36}=.*,.*,.*/d
-		/^activate widget [0-9]\+=.*,.*,.*
+		/^switch-to-activity-[-0-9a-fA-F]\{36\}=.*,.*,.*/d
+		/^activate widget [0-9]\+=.*,.*,.*/d
 	'
 elif [ "$1" = 'smudge' ] ; then
 	# Do nothing.
