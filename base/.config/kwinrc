@@ -64,16 +64,52 @@ LayoutName=thumbnail_grid
 [Tiling]
 padding=4
 
+[Tiling][00a078e2-2194-5a55-8be1-5b96e6b32725]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][07a31256-5838-518c-92f4-cd691e1a0fae]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][11b557f4-754b-555d-8d11-a0fe8a6cd024]
 tiles={"layoutDirection":"horizontal","tiles":[{"layoutDirection":"vertical","tiles":[{"height":0.25},{"height":0.25},{"height":0.5}],"width":1}]}
 
+[Tiling][213a9620-187e-58a6-b80b-85d8fb95dfce]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][2ad8f96f-f62d-5410-bf54-91520f515f4b]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][42b9bfc5-c317-5f12-8521-f5026c633dc0]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][4beab2df-2625-5e1d-9c28-fa7ed0097c89]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.25},{"width":0.25},{"width":0.25}]}
+
+[Tiling][5b7a5ba4-43cc-5910-8e98-f358f9d54b43]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][69dc3e15-0b73-5abf-9a33-e9dd3de83947]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][6a46b772-78f0-53f6-949f-074263d2de9d]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][6a755bc5-7a87-5481-9438-148456d467f3]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][8cb0f21e-f350-5380-a0bc-6c03b3fe485e]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][c7d9ee4a-2f11-5dc4-aa79-4cbb86c51cb5]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][c8cd8c5e-d857-5111-bae4-d7adc178ad95]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][d6680bd7-056f-5c15-a1b4-4dc5b397ff6d]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][e17726ed-4a03-5ca4-961b-99d2952682ed]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Windows]
