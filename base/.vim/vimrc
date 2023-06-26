@@ -1117,7 +1117,7 @@ Plug 'vim-scripts/pep8'
 " For automatically tracking how much time I spend on stuff.
 " Requires https://activitywatch.net/ running on the local machine.
 " Requires curl.
-Plug 'ActivityWatch/aw-watcher-vim'
+"Plug 'ActivityWatch/aw-watcher-vim'
 
 " Coloring matching parentheses:
 Plug 'luochen1990/rainbow'
