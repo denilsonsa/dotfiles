@@ -65,6 +65,19 @@
 	lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr / %ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr / %ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	#hist = log --graph --color=always --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' --all
+
+	# Some more logging aliases that can be useful sometimes.
+	#
+	# --follow is good when files have been renamed/moved in the repository history.
+	# -p shows the changes for each matched commit.
+	#
+	# --author=<regex> tries to exclude commits whose author matches the regex,
+	# which is useful in case of many automated commits that bring no value to
+	# the person doing archeology on the repository.
+	#
+	#lf = log --follow -p --perl-regexp --author='^.*<(?!bot@example.com).*>.*$'
+	#lp = log          -p --perl-regexp --author='^.*<(?!bot@example.com).*>.*$'
+
 	dirdiff = difftool --dir-diff
 
 	# "git branch foobar" creates a new branch.
@@ -81,6 +94,9 @@
 	in       = !git fetch && git log ..FETCH_HEAD
 	incoming = !git fetch && git log ..FETCH_HEAD
 
+	# -w to ignore whitespace.
+	# -M to detect moved lines within the file.
+	# -C to detect moved lines across files.
 	bl = blame -w -M
 
 	# --color-words is an alias to --word-diff=color
@@ -102,10 +118,17 @@
 	sapply = stash apply
 	spop = stash pop
 
+	# prp means Pull-Rebase-Push
 	prp = "!git pull --no-tags --rebase origin HEAD && git push"
+	# prs means Pull-Rebase-autoStash
 	# http://stackoverflow.com/questions/30208928/can-git-pull-automatically-stash-and-pop-pending-changes
 	prs = pull --rebase --autostash
+	# prsp means Pull-Rebase-autoStash-Push
 	prsp = "!git pull --no-tags --rebase --autostash origin HEAD && git push"
+
+	# When using GitLab, automatically create a Merge Request after pushing.
+	# https://docs.gitlab.com/ee/user/project/push_options.html
+	pushmr = push -o merge_request.create
 
 	configsetuser = "!git config --local user.name 'Denilson Sá Maia' && git config --local user.email 'denilsonsa@gmail.com' && echo 'Please consider updating [includeIf …] at ~/.gitconfig'"
 	configunsetuser = "!git config --local --unset user.name && git config --local --unset user.email"
