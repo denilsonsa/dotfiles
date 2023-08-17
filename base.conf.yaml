@@ -11,6 +11,7 @@
     '~/.bash_convenience_functions': 'base/.bash_convenience_functions'
     '~/.cplayrc': 'base/.cplayrc'
     '~/.dir_colors': 'base/.dir_colors'
+    '~/.festivalrc': 'base/.festivalrc'
     '~/.gitconfig': 'base/.gitconfig'
     '~/.gitconfig-personal': 'base/.gitconfig-personal'
     '~/.gitignore': 'base/.gitignore'
