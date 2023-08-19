@@ -20,7 +20,7 @@ if [ "$1" = 'clean' ] ; then
 		/^size *= *@Size([-0-9 ]\+)/d
 		/^bgSize *= *@Size([-0-9 ]\+)/d
 		/^playlistSize *= *@Size([-0-9 ]\+)/d
-		/^headerStateV2 *= *@ByteArray.*/d
+		# /^headerStateV2 *= *@ByteArray.*/d  # This is useful, the list of enabled headers in the playlist view.
 		/^leftSplitterGeometry *= *@ByteArray.*/d
 		/^splitterSizes *= *@ByteArray.*/d
 		/^Header-State *= *@ByteArray.*/d
@@ -38,6 +38,11 @@ if [ "$1" = 'clean' ] ; then
 		# Removing qpdfview entries that change all the time.
 		/^\[mainWindow\]$/,/^$/ {
 			/^openPath *=/d
+		}
+
+		# Resetting the zoom factor from qpdfview
+		/^\[documentView\]$/,/^$/ {
+			s/scaleFactor=.*/scaleFactor=1/
 		}
 
 		# Removing arbitrary ids from kglobalshortcutsrc
