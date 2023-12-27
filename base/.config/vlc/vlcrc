@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 3.0.18
+###  vlc 3.0.20
 ###
 
 ###
@@ -207,7 +207,7 @@
 #sout-avi-subject=
 
 # Encoder (string)
-#sout-avi-encoder=VLC Media Player - 3.0.18 Vetinari
+#sout-avi-encoder=VLC Media Player - 3.0.20 Vetinari
 
 # Keywords (string)
 #sout-avi-keywords=
@@ -684,6 +684,11 @@ wall-rows=1
 
 # TCP command input (string)
 #rc-host=
+
+[lirc] # Infrared remote control interface
+
+# Change the lirc configuration file (string)
+#lirc-file=
 
 [motion] # motion control interface
 
@@ -1237,6 +1242,14 @@ wall-rows=1
 
 # Advanced options (string)
 #sout-avcodec-options=
+
+[aribsub] # ARIB subtitles decoder
+
+# Ignore ruby (furigana) (boolean)
+#aribsub-ignore-ruby=0
+
+# Use Core Text renderer (boolean)
+#aribsub-use-coretext=0
 
 [theora] # Theora video decoder
 
@@ -2805,6 +2818,47 @@ qt-privacy-ask=0
 # Aspect ratio (string)
 #rawvid-aspect-ratio=
 
+[ts] # MPEG Transport Stream demuxer
+
+# Digital TV Standard (string)
+#ts-standard=auto
+
+# Extra PMT (string)
+#ts-extra-pmt=
+
+# Trust in-stream PCR (boolean)
+#ts-trust-pcr=1
+
+# Set id of ES to PID (boolean)
+#ts-es-id-pid=1
+
+# CSA Key (string)
+#ts-csa-ck=
+
+# Second CSA Key (string)
+#ts-csa2-ck=
+
+# Packet size in bytes to decrypt (integer)
+#ts-csa-pkt=188
+
+# Separate sub-streams (boolean)
+#ts-split-es=1
+
+# Seek based on percent not time (boolean)
+#ts-seek-percent=0
+
+# Check packets continuity counter (boolean)
+#ts-cc-check=1
+
+# Only create ES on program sending data (boolean)
+#ts-pmtfix-waitdata=1
+
+# Try to generate PAT/PMT if missing (boolean)
+#ts-patfix=1
+
+# Try to fix too early PCR (or late DTS) (boolean)
+#ts-pcr-offsetfix=1
+
 [playlist] # Playlist
 
 # Skip ads (boolean)
@@ -3001,7 +3055,7 @@ qt-privacy-ask=0
 #sout-avformat-options=
 
 # Reset timestamps (boolean)
-#sout-avformat-reset-ts=0
+#sout-avformat-reset-ts=1
 
 [rtsp] # Legacy RTSP VoD server
 
