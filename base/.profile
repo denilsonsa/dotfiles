@@ -10,6 +10,12 @@ export VISUAL=vim
 export GTK_OVERLAY_SCROLLING=0
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 
+# This makes the touchpad two-finger scrolling very smooth and natural.
+# https://wiki.archlinux.org/title/Firefox/Tweaks#Pixel-perfect_trackpad_scrolling
+# It also has the potential of improving touch/pen input.
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1606832
+export MOZ_USE_XINPUT2=1
+
 # Disable Wine logging to reduce noise and improve performance.
 # https://wiki.winehq.org/Wine_User%27s_Guide#Environment_variables
 export WINEDEBUG=-all
