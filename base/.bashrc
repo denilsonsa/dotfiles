@@ -59,7 +59,7 @@ shopt -s checkwinsize
 # Some distros have it configured by default (e.g. /etc/profile.d/lesspipe.sh).
 # Please uncomment whatever lines make sense for you:
 
-# From Ubuntu:
+# From Debian/Ubuntu:
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # From Manjaro: (not needed, it's automatically added)
