@@ -56,7 +56,7 @@ layoutsJson=[\n    {\n        "name": "Vertical display",\n        "padding": 0,
 osdTimeout=500
 
 [Script-videowall]
-Whitelist=vlc, xv, vdpau, smplayer, dragon, xine, ffplay, mplayer, gridplayer
+Whitelist=vlc, xv, vdpau, smplayer, dragon, xine, ffplay, mplayer, gridplayer, freetube, feh
 
 [TabBox]
 LayoutName=thumbnail_grid
