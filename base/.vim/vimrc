@@ -1358,7 +1358,7 @@ au BufRead /tmp/qmv* setlocal ts=8 nosol
 
 " aceitaFacil
 " See also :help autocmd-patterns
-au BufNewFile,BufRead ~/aceitafacil/*.php setlocal et sw=2
+"au BufNewFile,BufRead ~/aceitafacil/*.php setlocal et sw=2
 
 "Group for detecting filetype
 augroup filetypedetect
@@ -1608,8 +1608,8 @@ function SetMakeprgIfExistsMakefile()
 	endif
 endfunc
 
-au FileType c,*.c     setl makeprg=~/bin/ccomp\ %:p:r
-au FileType cpp,*.cpp setl makeprg=~/bin/cppcomp\ %:p:r
+" au FileType c,*.c     setl makeprg=~/bin/ccomp\ %:p:r
+" au FileType cpp,*.cpp setl makeprg=~/bin/cppcomp\ %:p:r
 au FileType c,*.c,cpp,*.cpp call SetMakeprgIfExistsMakefile()
 
 "F9 compiles the current file
