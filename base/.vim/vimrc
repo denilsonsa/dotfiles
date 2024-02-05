@@ -58,13 +58,6 @@ let g:leave_my_textwidth_alone=1
 
 "set autoindent smartindent cindent
 set  ai         nosi        nocin
-" Do not reindent the line if the first typed character is #.
-" Use-case: visual-block several lines, then I, then #. If the line is
-" reindented, it doesn't work as I expect.
-set indentkeys-=0#
-" These have been moved to AFTER pathogen plugin
-filetype indent on
-filetype plugin on
 
 "This makes backspace work correctly!
 "set backspace=2
@@ -78,9 +71,21 @@ set  shm=at
 "set whichwrap=<,>,b,s
 set ww=<,>,b,s,[,]
 
+" Learn about the silly order of these settings:
+" https://vi.stackexchange.com/a/43478
+filetype plugin indent on
 "Syntax highlighting
-" This have been moved to AFTER pathogen plugin
 syn on
+
+" Do not reindent the line if the first typed character is #.
+" Use-case: visual-block several lines, then I, then #. If the line is
+" reindented, it doesn't work as I expect.
+set indentkeys-=0#
+" It seems this gets re-enabled by many filetype plugins:
+" grep -E -R '(indentkeys|indk).*0#' --color=always /usr/share/vim | grep -v -- '-=' | sort
+" So, let's disable it again.
+" https://stackoverflow.com/a/54175510
+autocmd FileType cucumber,elixir,gitconfig,nginx,sshconfig,yaml setlocal indentkeys-=0#
 
 "Highlight search pattern (use :noh to set it off)
 "set hlsearch
