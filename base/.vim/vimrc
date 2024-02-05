@@ -1242,6 +1242,8 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'peterhoeg/vim-qml'
 
+Plug 'denilsonsa/vim-edir-syntax'
+
 " -> Or pick a huge pack with a bunch of them:
 
 "Plug 'sheerun/vim-polyglot'
@@ -1355,6 +1357,9 @@ autocmd FileType crontab set backupcopy=yes
 
 "Temporary files from http://www.nongnu.org/renameutils/
 au BufRead /tmp/qmv* setlocal ts=8 nosol
+"Temporary files from https://github.com/bulletmark/edir
+au BufRead /tmp/*/edir.sh setlocal nosol
+au BufRead /tmp/*/edir.edir setlocal nosol
 
 " aceitaFacil
 " See also :help autocmd-patterns
