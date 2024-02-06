@@ -57,7 +57,7 @@ export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
 
 # Some nice tools:
 # https://github.com/ricardobeat/git-commands
-export PATH="${HOME}/stuff/git-commands:${PATH}"
+export PATH="${HOME}/otherrepos/git-commands:${PATH}"
 
 export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/go/bin:${PATH}"
 
@@ -93,6 +93,10 @@ alias lc='ls -crAsh'
 alias ll='ls -ltrA'
 alias lss='ls -sSrAh'
 
+# Debian installs `fd` as `fdfind`:
+# https://packages.debian.org/sid/amd64/fd-find/filelist
+# https://github.com/sharkdp/fd?tab=readme-ov-file#on-ubuntu
+[ -x "/usr/bin/fdfind" ] && alias fd='fdfind'
 
 # Add an "alert" alias for long running commands. Use like so:
 #   sleep 10; alert Your message here
