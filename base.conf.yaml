@@ -28,6 +28,7 @@
     '~/.zshrc': 'base/.zshrc'
     '~/.vim/scripts.vim': 'base/.vim/scripts.vim'
     '~/.config/compton.conf': 'base/.config/compton.conf'
+    '~/.config/edir-flags.conf': 'base/.config/edir-flags.conf'
     '~/.config/htop/htoprc': 'base/.config/htop/htoprc'
     '~/.config/kglobalshortcutsrc': 'base/.config/kglobalshortcutsrc'
     '~/.config/krunnerrc': 'base/.config/krunnerrc'
