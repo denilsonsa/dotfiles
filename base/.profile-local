@@ -1,0 +1,8 @@
+# ~/.profile-local
+#
+# Be careful with the syntax.
+# This file is being loaded by both bash and zsh.
+
+# Web browser notifications via https://notica.us/
+# Please leave that page open forever in a browser, and insert the token/topic/ID here.
+#notica() { curl --data "d:$*" "https://notica.us/?INSERT_TOKEN_HERE" ; }
