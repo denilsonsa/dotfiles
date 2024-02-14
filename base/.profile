@@ -117,7 +117,8 @@ alert() {
 
 
 # Prints a text-based table of multiple color combinations.
-# Originally from Manjaro's .bashrc
+# Modified from Manjaro's .bashrc
+# See also: https://github.com/funcoeszz/funcoeszz/blob/master/zz/zzcores.sh
 colors() {
 	local fgc bgc vals seq0
 
@@ -126,22 +127,21 @@ colors() {
 	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
 	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
 
-	# foreground colors
-	for fgc in {30..37}; do
-		# background colors
-		for bgc in {40..47}; do
-			fgc=${fgc#37} # white
-			bgc=${bgc#40} # black
+	for fgc in '' {30..37}; do
+		for bold in '' ';1'; do
+			for bgc in '' {40..47}; do
+				vals="${fgc};${bgc}"
+				vals="${vals##;}" # Removing prefix ;
+				vals="${vals%%;}" # Removing suffix ;
+				vals="${vals}${bold}"
+				vals="${vals##;}" # Removing prefix ;
 
-			vals="${fgc:+$fgc;}${bgc}"
-			vals=${vals%%;}
+				seq0="\e[${vals}m"
 
-			seq0="${vals:+\e[${vals}m}"
-			printf "  %-9s" "${seq0:-(default)}"
-			printf " ${seq0}TEXT\e[m"
-			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+				printf " ${seq0}%-11s\e[m" "${seq0}"
+			done
+			echo
 		done
-		echo; echo
 	done
 }
 
