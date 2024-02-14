@@ -3,6 +3,10 @@
         create: true
         relink: true
         relative: true
+    shell:
+        stdin: true
+        stdout: true
+        stderr: true
 - clean: ['~']
 - link:
     '~/.ackrc': 'base/.ackrc'
@@ -103,12 +107,7 @@
 - shell:
     - ['test -f ~/.vim/autoload/plug.vim || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', 'Installing vim-plug (if needed)']
     - ['test -d ~/XDG || { mkdir ~/XDG ; mv -v ~/Desktop ~/XDG/Desktop ; mv -v ~/Documents ~/XDG/Documents ; mv -v ~/Templates ~/XDG/Templates ; mv -v ~/Public ~/XDG/Public ; mv -v ~/Music ~/XDG/Music ; mv -v ~/Pictures ~/XDG/Pictures ; mv -v ~/Videos ~/XDG/Videos ; }']
-    - 
-        command: ['vim -c PlugInstall', 'Please observe any error messages and quit vim afterwards.']
-        stdin: true
-        stdout: true
-        stderr: true
-    -
-        command: ["echo 'You may also want to install:\n https://github.com/denilsonsa/indicator-chars\n https://github.com/denilsonsa/arandr-indicator\n https://github.com/denilsonsa/small_scripts'"]
-        stdout: true
-        stderr: true
+    - ['test -e ~/.profile-local || cp -v base/.profile-local ~/.profile-local', 'Installing local shell config skeleton (if missing)']
+    - ['test -e ~/.vim/vimrc-local || cp -v base/.vim/vimrc-local ~/.vim/vimrc-local', 'Installing local vim config skeleton (if missing)']
+    - ['vim -c PlugInstall', 'Please observe any error messages and quit vim afterwards.']
+    - ["echo 'You may also want to install:\n https://github.com/denilsonsa/indicator-chars\n https://github.com/denilsonsa/arandr-indicator\n https://github.com/denilsonsa/small_scripts'"]

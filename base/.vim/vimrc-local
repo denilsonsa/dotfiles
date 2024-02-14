@@ -11,7 +11,7 @@ endfunction
 " Executed after the main vimrc has finished loading
 function VimrcLocalLateInit()
 
-	set guifont=Inconsolata\ Medium\ 9
+	"set guifont=Inconsolata\ Medium\ 9
 
 	" Custom file settings, such as tabs/spaces and indentation.
 	"au FileType foobar setlocal et ts=4 sw=4
