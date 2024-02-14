@@ -7,6 +7,7 @@
 - link:
     '~/.ackrc': 'base/.ackrc'
     '~/.bashrc': 'base/.bashrc'
+    '~/.bash_logout': 'base/.bash_logout'
     '~/.bash_profile': 'base/.bash_profile'
     '~/.bash_convenience_functions': 'base/.bash_convenience_functions'
     '~/.cplayrc': 'base/.cplayrc'
