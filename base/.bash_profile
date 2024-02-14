@@ -28,5 +28,6 @@ fi
 # It won't work if I keep prefixing my commands with space.
 #command -v thefuck &> /dev/null && eval $(thefuck --alias)
 
-# Import work-specific code, stuff specific for the company I'm working for.
-[ -f "{$HOME}/.bash_company_stuff" ] && . "${HOME}/.bash_company_stuff"
+# Import shell configuration specific for the current machine, not saved in the dotfiles repository.
+[ -f "{$HOME}/.profile-local" ] && . "${HOME}/.profile-local"
+[ -f "{$HOME}/.bash-local" ] && . "${HOME}/.bash-local"
