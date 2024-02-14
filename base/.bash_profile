@@ -29,5 +29,5 @@ fi
 #command -v thefuck &> /dev/null && eval $(thefuck --alias)
 
 # Import shell configuration specific for the current machine, not saved in the dotfiles repository.
-[ -f "{$HOME}/.profile-local" ] && . "${HOME}/.profile-local"
-[ -f "{$HOME}/.bash-local" ] && . "${HOME}/.bash-local"
+[ -f "${HOME}/.profile-local" ] && . "${HOME}/.profile-local"
+[ -f "${HOME}/.bash-local" ] && . "${HOME}/.bash-local"
