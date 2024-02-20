@@ -4562,7 +4562,7 @@ key-rate-normal=Backspace
 #global-key-quit=
 
 # Quit (string)
-#key-quit=Ctrl+q
+key-quit=q
 
 # Volume up (string)
 #global-key-vol-up=
