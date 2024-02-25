@@ -48,7 +48,7 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 # Which creates a file ~/.npmrc
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="${NPM_PACKAGES}/bin:${PATH}"
-export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
+manpath -q &> /dev/null && export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
 
 # Go uses ~/go/ by default
 # https://golang.org/cmd/go/#hdr-GOPATH_environment_variable
