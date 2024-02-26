@@ -44,6 +44,7 @@
     '~/.config/lxqt/panel.conf': 'base/.config/lxqt/panel.conf'
     '~/.config/lxqt/session.conf': 'base/.config/lxqt/session.conf'
     '~/.config/lxtask.conf': 'base/.config/lxtask.conf'
+    '~/.config/plasma-workspace/env/locale.sh': 'base/.config/plasma-workspace/env/locale.sh'
     '~/.config/pudb/pudb.cfg': 'base/.config/pudb/pudb.cfg'
     '~/.config/qpdfview/qpdfview.conf': 'base/.config/qpdfview/qpdfview.conf'
     '~/.config/qpdfview/shortcuts.conf': 'base/.config/qpdfview/shortcuts.conf'
