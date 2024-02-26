@@ -61,6 +61,7 @@
     '~/.config/vdu_controls/Preset_F-bright-75-50.conf': 'base/.config/vdu_controls/Preset_F-bright-75-50.conf'
     '~/.config/vdu_controls/Preset_G-brighter-100-50.conf': 'base/.config/vdu_controls/Preset_G-brighter-100-50.conf'
     '~/.config/vdu_controls/Q27P1B.conf': 'base/.config/vdu_controls/Q27P1B.conf'
+    '~/.local/share/konsole/BreathSilverfox.colorscheme': 'base/.local/share/konsole/BreathSilverfox.colorscheme'
     '~/.local/share/konsole/my_zsh.profile': 'base/.local/share/konsole/my_zsh.profile'
 
     # Directories:
