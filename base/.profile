@@ -81,6 +81,13 @@ alias cvlc='cvlc --play-and-exit'
 # ls color rules:
 eval "$(dircolors -b ~/.dir_colors)"
 
+# ls date/time format can be: full-iso, long-iso, iso, locale, +FORMAT.
+# * full-iso includes fractions of seconds and the timezone. It's too verbose.
+# * long-iso is the best: YYYY-MM-DD HH:MM
+# * iso sometimes shows just the date (YYYY-MM-DD) but sometimes a partial datetime without the year (MM-DD HH:MM). Ugh.
+# * locale seems to be the default.
+export TIME_STYLE=long-iso
+
 # Do you want even more colors? See:
 # * https://github.com/Efreak/awesome-colorterm
 # * https://github.com/garabik/grc
