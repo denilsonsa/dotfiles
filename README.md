@@ -5,14 +5,14 @@ My own "dotfiles", or configuration files.
 Upon getting to a new machine, I repeat these steps:
 
 ```bash
-mkdir ~/dotfiles
-cd ~/dotfiles
+cd ~/
 
 # Do I want to have push/write access to update the dotfiles?
 git clone git@github.com:denilsonsa/dotfiles.git
 # Do I want a read-only copy of the dotfiles?
 git clone https://github.com/denilsonsa/dotfiles.git
 
+cd ~/dotfiles
 ./install
 ```
 
