@@ -158,6 +158,9 @@ colors() {
 # https://dystroy.org/broot/install
 [ -f "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
+# `bat` is renamed to `batcat` on Debian.
+[ -f "/usr/bin/batcat" -a ! -f "/usr/bin/bar" ] && alias bat='batcat'
+
 
 # Needed on old Ubuntu/Debian.
 # https://beyondgrep.com/install/
