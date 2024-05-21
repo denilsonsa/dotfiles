@@ -13,6 +13,9 @@ monitor on
 defscrollback 16384
 scrollback 16384
 
+# "alternate screen" support is enabled in virtual terminals, just like in xterm.
+altscreen on
+
 # http://vim.wikia.com/wiki/GNU_Screen_integration#Getting_the_Esc_key_to_work
 maptimeout 5
 # And for tmux: https://unix.stackexchange.com/a/25638
