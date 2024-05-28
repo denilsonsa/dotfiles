@@ -11,8 +11,11 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 # Removing htop configuration to let dotbot symlink it.
-# Current htop version is replacing the symlink with a plain file.
-rm -v ~/.config/htop/htoprc
+# htop version 3.3.0 is replacing the symlink with a plain file.
+# htop version 3.4.0 will respect symlinks again.
+if [ "$(htop --version)" = "htop 3.3.0" ] ; then
+	rm -v ~/.config/htop/htoprc
+fi
 
 # Base configuration that should apply to any system:
 echo "Configuring BASE dotfiles"
