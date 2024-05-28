@@ -2,7 +2,6 @@
 
 set -e
 
-CONFIG="base.conf.yaml"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
@@ -11,4 +10,11 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+# Base configuration that should apply to any system:
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "base.conf.yaml" "${@}"
+
+# Auto-detecting systems with GUI:
+if [ -x /usr/bin/plasmashell ] || [ -x /usr/bin/konsole ] || [ -x /usr/bin/qpdfview ] ; then
+	# Configuration files only relevant to Linux/X11/Xorg/Wayland systems:
+	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "gui.conf.yaml" "${@}"
+fi
