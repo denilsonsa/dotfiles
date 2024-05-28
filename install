@@ -10,6 +10,10 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
+# Removing htop configuration to let dotbot symlink it.
+# Current htop version is replacing the symlink with a plain file.
+rm -v ~/.config/htop/htoprc
+
 # Base configuration that should apply to any system:
 echo "Configuring BASE dotfiles"
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "base.conf.yaml" "${@}"
