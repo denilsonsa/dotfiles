@@ -1,0 +1,90 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+        relative: true
+    shell:
+        stdin: true
+        stdout: true
+        stderr: true
+- clean: ['~']
+- link:
+    '~/.festivalrc': 'base/.festivalrc'
+    '~/.indicator-chars': 'base/.indicator-chars'
+    #'~/.kdiff3rc' ?
+    '~/.XCompose': 'base/.XCompose'
+    '~/.config/compton.conf': 'base/.config/compton.conf'
+    '~/.config/kglobalshortcutsrc': 'base/.config/kglobalshortcutsrc'
+    '~/.config/krunnerrc': 'base/.config/krunnerrc'
+    '~/.config/kwinrc': 'base/.config/kwinrc'
+    '~/.config/lxqt/globalkeyshortcuts.conf': 'base/.config/lxqt/globalkeyshortcuts.conf'
+    '~/.config/lxqt/lxqt-config-locale.conf': 'base/.config/lxqt/lxqt-config-locale.conf'
+    '~/.config/lxqt/lxqt.conf': 'base/.config/lxqt/lxqt.conf'
+    '~/.config/lxqt/panel.conf': 'base/.config/lxqt/panel.conf'
+    '~/.config/lxqt/session.conf': 'base/.config/lxqt/session.conf'
+    '~/.config/lxtask.conf': 'base/.config/lxtask.conf'
+    '~/.config/plasma-workspace/env/locale.sh': 'base/.config/plasma-workspace/env/locale.sh'
+    '~/.config/qpdfview/qpdfview.conf': 'base/.config/qpdfview/qpdfview.conf'
+    '~/.config/qpdfview/shortcuts.conf': 'base/.config/qpdfview/shortcuts.conf'
+    #'~/.config/rofi/config.rasi': 'base/.config/rofi/config.rasi'
+    '~/.config/skippy-xd/skippy-xd.rc': 'base/.config/skippy-xd/skippy-xd.rc'
+    '~/.config/terminator/config': 'base/.config/terminator/config'
+    '~/.config/user-dirs.dirs': 'base/.config/user-dirs.dirs'
+    '~/.config/user-dirs.locale': 'base/.config/user-dirs.locale'
+    '~/.config/vdu_controls/Preset_A-darkest-0-0.conf': 'base/.config/vdu_controls/Preset_A-darkest-0-0.conf'
+    '~/.config/vdu_controls/Preset_B-darker-0-25.conf': 'base/.config/vdu_controls/Preset_B-darker-0-25.conf'
+    '~/.config/vdu_controls/Preset_C-dark-0-50.conf': 'base/.config/vdu_controls/Preset_C-dark-0-50.conf'
+    '~/.config/vdu_controls/Preset_D-medium-dark-25-50.conf': 'base/.config/vdu_controls/Preset_D-medium-dark-25-50.conf'
+    '~/.config/vdu_controls/Preset_E-medium-bright-50-50.conf': 'base/.config/vdu_controls/Preset_E-medium-bright-50-50.conf'
+    '~/.config/vdu_controls/Preset_F-bright-75-50.conf': 'base/.config/vdu_controls/Preset_F-bright-75-50.conf'
+    '~/.config/vdu_controls/Preset_G-brighter-100-50.conf': 'base/.config/vdu_controls/Preset_G-brighter-100-50.conf'
+    '~/.config/vdu_controls/Q27P1B.conf': 'base/.config/vdu_controls/Q27P1B.conf'
+    '~/.local/share/konsole/BreathSilverfox.colorscheme': 'base/.local/share/konsole/BreathSilverfox.colorscheme'
+    '~/.local/share/konsole/my_zsh.profile': 'base/.local/share/konsole/my_zsh.profile'
+
+    # Directories:
+    '~/.config/upstart': 'base/.config/upstart'
+    '~/.config/vlc': 'base/.config/vlc'
+    '~/.local/share/color-schemes': 'base/.local/share/color-schemes'
+
+    ### Shared files that I used in LXDE and LXQt, but I'm not using in KDE Plasma ###
+    # These do not include files used exclusively by LXQt.
+    #
+    # crystalblue mouse cursor. File written by lxqt-config-appearance
+    #'~/.local/share/icons/default/index.theme': 'base/.local/share/icons/default/index.theme'
+    #'~/.Xresources': 'base/.Xresources'
+    #
+    #'~/.xinputrc': 'base/.xinputrc'
+    #'~/.gtkrc-2.0': 'base/.gtkrc-2.0'
+    #'~/.config/gtk-3.0/settings.ini': 'base/.config/gtk-3.0/settings.ini'
+    ####
+
+    #'~/.config/lxpanel/Lubuntu/config': 'base/.config/lxpanel/Lubuntu/config'
+    #'~/.config/lxpanel/Lubuntu/panels/panel': 'base/.config/lxpanel/Lubuntu/panels/panel'
+    #'~/.config/lxsession-default-apps/settings.conf': 'base/.config/lxsession-default-apps/settings.conf'
+    #'~/.config/lxsession/Lubuntu/autostart': 'base/.config/lxsession/Lubuntu/autostart'
+    #'~/.config/lxsession/Lubuntu/desktop.conf': 'base/.config/lxsession/Lubuntu/desktop.conf'
+    #'~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml': 'base/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml'
+    #'~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml': 'base/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml'
+    '~/.config/openbox/lxqt-rc.xml': 'base/.config/openbox/lxqt-rc.xml'
+    #'~/.config/fontconfig/fonts.conf': 'base/.config/fontconfig/fonts.conf'
+    #'~/.config/pcmanfm/*': ?
+
+    # TODO:
+    # '~/.screenlayout/'
+    # '~/.mednafen/mednafen-09x.cfg' -> Set this line: sound.device sexyal-literal-default
+    # '~/.local/share/applications/mimeapps.list':
+    # '~/.local/share/applications/mimeinfo.cache':
+    # '~/.local/share/applications/defaults.list':
+    # '~/.config/mimeapps.list':
+    # '~/.gimp-2.8/'
+    # '~/.config/inkscape/'
+    # '~/.fluxbox/'
+    # '~/.dosbox/dosbox-0.74.conf'
+    # '~/.dosbox/dosbox-SVN.conf'
+    # '~/.config/autostart/'
+    # '~/.config/gpick/settings.xml'
+
+- shell:
+    - ['test -d ~/XDG || { mkdir ~/XDG ; mv -v ~/Desktop ~/XDG/Desktop ; mv -v ~/Documents ~/XDG/Documents ; mv -v ~/Templates ~/XDG/Templates ; mv -v ~/Public ~/XDG/Public ; mv -v ~/Music ~/XDG/Music ; mv -v ~/Pictures ~/XDG/Pictures ; mv -v ~/Videos ~/XDG/Videos ; }']
+    - ["echo 'You may also want to install:\n https://github.com/denilsonsa/indicator-chars\n https://github.com/denilsonsa/arandr-indicator'"]

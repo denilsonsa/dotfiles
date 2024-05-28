@@ -41,7 +41,7 @@ mouseclickEnabled=true
 movewindowEnabled=true
 screenedgeEnabled=false
 ultrawidewindowsEnabled=false
-videowallEnabled=false
+videowallEnabled=true
 windowgeometryinfoEnabled=true
 
 [Script-desktopchangeosd]
