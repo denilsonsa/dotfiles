@@ -23,30 +23,36 @@ endif
 "	"exec 'source ' . shellescape(expand('<sfile>:p:h') . '/vimrc-local')
 "endif
 
-" Inconsolata is a great font. Source Code Pro is almost as good.
-"set guifont=Inconsolata\ Medium\ 8
-"set guifont=Inconsolata\ Medium\ 9
-set guifont=Inconsolata\ Medium\ 11
-"set guifont=Hack\ 10
-"set guifont=Hack\ 11
-set linespace=-1
-"set guifont=Source\ Code\ Pro\ Medium\ 8
-"
-" Very similar:
-"set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-"set guifont=Droid\ Sans\ Mono\ 9
-"set guifont=Liberation\ Mono\ 9
-"
-" Seems to be the same as Bitstream Vera Sans Mono
-"set guifont=Monospace\ 9
-"
-" Proggy fonts:
-" SZ = Slashed Zero
-" BP = Bold Punctuation
-"set guifont=ProggyTinyTT\ 11
-"set guifont=ProggySquareTT\ 11
-"set guifont=ProggySmallTT\ 11
-"set guifont=ProggyCleanTT\ 11
+if has("gui")
+	if has("gui_mac") || has("gui_macvim")
+		set guifont=Monaco:h12
+	else
+		" Inconsolata is a great font. Source Code Pro is almost as good.
+		"set guifont=Inconsolata\ Medium\ 8
+		"set guifont=Inconsolata\ Medium\ 9
+		set guifont=Inconsolata\ Medium\ 11
+		"set guifont=Hack\ 10
+		"set guifont=Hack\ 11
+		set linespace=-1
+		"set guifont=Source\ Code\ Pro\ Medium\ 8
+		"
+		" Very similar:
+		"set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+		"set guifont=Droid\ Sans\ Mono\ 9
+		"set guifont=Liberation\ Mono\ 9
+		"
+		" Seems to be the same as Bitstream Vera Sans Mono
+		"set guifont=Monospace\ 9
+		"
+		" Proggy fonts:
+		" SZ = Slashed Zero
+		" BP = Bold Punctuation
+		"set guifont=ProggyTinyTT\ 11
+		"set guifont=ProggySquareTT\ 11
+		"set guifont=ProggySmallTT\ 11
+		"set guifont=ProggyCleanTT\ 11
+	endif
+endif
 
 "set nocompatible ruler laststatus=2 showcmd esckeys
 set  nocp         ruler ls=2         sc      ek
@@ -160,10 +166,11 @@ set breakindent
 
 "set listchars=eol:$,tab:>.,trail:@,extends:>,precedes:<,nbsp:~
 set listchars=eol:⏎,tab:↹_,trail:•,extends:»,precedes:«,nbsp:␣
-" Ideas for showbreak: ↳‖⁞⁝⋮⍿⎸⏐│┆┊╎║❘⦀⦙⦚⫶⫼⸽⸾
+" Ideas for showbreak: ↳‖⁞⁝⋮⍿⎸⏐│┆┊╎║❘⦀⦙⦚⫶⫼
+" Too bad Mac OS X doesn't support these: ⸽⸾
 "set showbreak=>>\ 
 "set showbreak=↳\ 
-set showbreak=⸾
+set showbreak=┆
 set sidescroll=10
 set winminheight=0
 set noequalalways
@@ -235,7 +242,10 @@ endif
 " Assuming /bin/sh is a link to a POSIX compliant shell - even minimal shells like 'ash' or 'dash' will do.
 
 function RestoreMyColorScheme()
-	"colorscheme default
+	" Resets back to the default color scheme. My muscle memory is too strong.
+	" Usually not needed, but required by MacVim GUI, as it defaults to
+	" colorscheme macvim
+	colorscheme default
 
 	"Some colors and background
 	"set background=dark
