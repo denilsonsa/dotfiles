@@ -173,7 +173,6 @@ colors() {
 # `bat` is renamed to `batcat` on Debian.
 [ -f "/usr/bin/batcat" -a ! -f "/usr/bin/bar" ] && alias bat='batcat'
 
-
 # Needed on old Ubuntu/Debian.
 # https://beyondgrep.com/install/
 #alias ack='ack-grep'
