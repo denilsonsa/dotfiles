@@ -22,6 +22,6 @@
     - '~/.local'
     - '~/.local/share'
     - '~/.local/share/konsole'
-- link: []
+- link: {}
 - shell:
     - ["echo 'There is no Mac-specific configuration in the dotfiles... yet!'"]

@@ -35,6 +35,10 @@ There are some configurations that should not be stored in dotfiles. Thus, the f
 * `~/.gitconfig-local` for git.
 * `~/.vim/vimrc-local` for vim, should be based on the example in this repository.
 
+## TODO
+
+* [ ] Oh-my-zsh manual installation: <https://github.com/ohmyzsh/ohmyzsh?tab=readme-ov-file#manual-installation>
+
 ## See also
 
 * <https://dotfiles.github.io/>
