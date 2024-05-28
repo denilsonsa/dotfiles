@@ -38,3 +38,5 @@
 #         #NoOffsetPlayer("aplaymidi --port 17:0 %s", "\.(mid|rmi)$"),
 #     ]
 # )
+
+# vim:ft=python

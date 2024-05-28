@@ -1,3 +1,6 @@
+# ~/.ssh/config
+# vim:ft=sshconfig
+
 Protocol 2
 HashKnownHosts no
 
