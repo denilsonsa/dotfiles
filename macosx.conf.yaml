@@ -1,0 +1,27 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+        relative: true
+    shell:
+        stdin: true
+        stdout: true
+        stderr: true
+- clean:
+    - '~'
+    - '~/.config'
+    - '~/.config/lxqt'
+    - '~/.config/openbox'
+    - '~/.config/plasma-workspace'
+    - '~/.config/plasma-workspace/env'
+    - '~/.config/qpdfview'
+    - '~/.config/rofi'
+    - '~/.config/skippy-xd'
+    - '~/.config/terminator'
+    - '~/.config/vdu_controls'
+    - '~/.local'
+    - '~/.local/share'
+    - '~/.local/share/konsole'
+- link: []
+- shell:
+    - ["echo 'There is no Mac-specific configuration in the dotfiles... yet!'"]

@@ -11,10 +11,18 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 # Base configuration that should apply to any system:
+echo "Configuring BASE dotfiles"
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "base.conf.yaml" "${@}"
 
 # Auto-detecting systems with GUI:
 if [ -x /usr/bin/plasmashell ] || [ -x /usr/bin/konsole ] || [ -x /usr/bin/qpdfview ] ; then
 	# Configuration files only relevant to Linux/X11/Xorg/Wayland systems:
+	echo "Configuring GUI dotfiles"
 	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "gui.conf.yaml" "${@}"
+fi
+
+if [ "$(uname -s)" = "Darwin" ] ; then
+	# Mac OS X configuration.
+	echo "Configuring MAC OS X dotfiles"
+	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "macosx.conf.yaml" "${@}"
 fi
