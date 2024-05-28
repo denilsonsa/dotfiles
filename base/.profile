@@ -112,11 +112,6 @@ alias lc='ls -crAsh'
 alias ll='ls -ltrA'
 alias lss='ls -sSrAh'
 
-# Debian installs `fd` as `fdfind`:
-# https://packages.debian.org/sid/amd64/fd-find/filelist
-# https://github.com/sharkdp/fd?tab=readme-ov-file#on-ubuntu
-[ -x "/usr/bin/fdfind" ] && alias fd='fdfind'
-
 # Add an "alert" alias for long running commands. Use like so:
 #   sleep 10; alert Your message here
 alert() {
@@ -165,13 +160,18 @@ colors() {
 }
 
 
+# `bat` is renamed to `batcat` on Debian.
+[ -f "/usr/bin/batcat" -a ! -f "/usr/bin/bar" ] && alias bat='batcat'
+
 # `broot` is supposed to be called from a shell alias `br` in order to provide
 # `cd` functionality.
 # https://dystroy.org/broot/install
 [ -f "${HOME}/.config/broot/launcher/bash/br" ] && . "${HOME}/.config/broot/launcher/bash/br"
 
-# `bat` is renamed to `batcat` on Debian.
-[ -f "/usr/bin/batcat" -a ! -f "/usr/bin/bar" ] && alias bat='batcat'
+# Debian installs `fd` as `fdfind`:
+# https://packages.debian.org/sid/amd64/fd-find/filelist
+# https://github.com/sharkdp/fd?tab=readme-ov-file#on-ubuntu
+[ -x "/usr/bin/fdfind" ] && alias fd='fdfind'
 
 # Needed on old Ubuntu/Debian.
 # https://beyondgrep.com/install/
