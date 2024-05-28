@@ -14,6 +14,11 @@ fi
 # Use manjaro zsh prompt
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
+else
+	# Some very basic prompt for now.
+	# TODO: configure oh-my-zsh
+	#export PS1='%F{green}[%n@%m%F{gray} %1~%F{green}] %#%f '
+	export PS1='%F{green}[%n%F{gray} %1~%F{green}] %#%f '
 fi
 
 # Import the env vars set in this file.
