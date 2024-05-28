@@ -43,11 +43,10 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 
 # Non-root NPM setup
 # https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
-# Remember to run this once:
-#npm config set prefix "${NPM_PACKAGES}"
-# Which creates a file ~/.npmrc
-NPM_PACKAGES="${HOME}/.npm-packages"
-export PATH="${NPM_PACKAGES}/bin:${PATH}"
+# Any environment variables starting with `npm_config_` prefix are interpreted
+# as configuration parameters.
+export NPM_CONFIG_PREFIX="${HOME}/.npm-global-prefix"
+export PATH="${PATH}:${NPM_CONFIG_PREFIX}/bin"
 manpath -q &> /dev/null && export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
 
 # Go uses ~/go/ by default
