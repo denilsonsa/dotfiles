@@ -40,7 +40,6 @@
     '~/.config/plasma-workspace/env/locale.sh': 'gui/.config/plasma-workspace/env/locale.sh'
     '~/.config/qpdfview/qpdfview.conf': 'gui/.config/qpdfview/qpdfview.conf'
     '~/.config/qpdfview/shortcuts.conf': 'gui/.config/qpdfview/shortcuts.conf'
-    #'~/.config/rofi/config.rasi': 'gui/.config/rofi/config.rasi'
     '~/.config/skippy-xd/skippy-xd.rc': 'gui/.config/skippy-xd/skippy-xd.rc'
     '~/.config/terminator/config': 'gui/.config/terminator/config'
     '~/.config/user-dirs.dirs': 'gui/.config/user-dirs.dirs'
@@ -98,6 +97,10 @@
     # '~/.dosbox/dosbox-SVN.conf'
     # '~/.config/autostart/'
     # '~/.config/gpick/settings.xml'
+
+    # I started playing around with Rofi on 2022-11-17, but never fully learned it nor configured it.
+    # This Rofi configuration here is untested/incomplete/unused.
+    #'~/.config/rofi/config.rasi': 'gui/.config/rofi/config.rasi'
 
 - shell:
     - ['test -d ~/XDG || { mkdir ~/XDG ; mv -v ~/Desktop ~/XDG/Desktop ; mv -v ~/Documents ~/XDG/Documents ; mv -v ~/Templates ~/XDG/Templates ; mv -v ~/Public ~/XDG/Public ; mv -v ~/Music ~/XDG/Music ; mv -v ~/Pictures ~/XDG/Pictures ; mv -v ~/Videos ~/XDG/Videos ; }']
