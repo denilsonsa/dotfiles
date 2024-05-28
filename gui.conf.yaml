@@ -7,7 +7,21 @@
         stdin: true
         stdout: true
         stderr: true
-- clean: ['~']
+- clean:
+    - '~'
+    - '~/.config'
+    - '~/.config/lxqt'
+    - '~/.config/openbox'
+    - '~/.config/plasma-workspace'
+    - '~/.config/plasma-workspace/env'
+    - '~/.config/qpdfview'
+    - '~/.config/rofi'
+    - '~/.config/skippy-xd'
+    - '~/.config/terminator'
+    - '~/.config/vdu_controls'
+    - '~/.local'
+    - '~/.local/share'
+    - '~/.local/share/konsole'
 - link:
     '~/.festivalrc': 'base/.festivalrc'
     '~/.indicator-chars': 'base/.indicator-chars'
