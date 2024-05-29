@@ -4,19 +4,36 @@ My own "dotfiles", or configuration files.
 
 Upon getting to a new machine, I repeat these steps:
 
-```bash
-cd ~/
+1. Set up ssh, if read-write access is desired.
 
-# Do I want to have push/write access to update the dotfiles?
-git clone git@github.com:denilsonsa/dotfiles.git
-# Do I want a read-only copy of the dotfiles?
-git clone https://github.com/denilsonsa/dotfiles.git
+    ```bash
+    ssh-keygen
+    # Or, if generating RSA keys:
+    ssh-keygen -b 4096
+    ```
 
-cd ~/dotfiles
-./install
-```
+2. [Add the public key to GitHub](https://github.com/settings/keys), if read-write access is desired:
 
-It is desirable to set SSH before setting up the dotfiles. SSH is required when cloning the repository with read/write support. Due to the sensitive nature and due to the strict permissions required on `~/.ssh/`, there is no SSH configuration stored in this repository.
+    ```bash
+    cat ~/.ssh/id_*.pub
+    ```
+
+3. Clone the dotfiles repository:
+
+    ```bash
+    cd ~/
+
+    # Do I want to have push/write access to update the dotfiles?
+    git clone git@github.com:denilsonsa/dotfiles.git
+    # Do I want a read-only copy of the dotfiles?
+    git clone https://github.com/denilsonsa/dotfiles.git
+
+    cd ~/dotfiles
+    ./install
+    ```
+4. Setup `~/.ssh/config` as desired.
+    * Due to the sensitive nature and due to the strict permissions required on `~/.ssh/`, SSH configuration is not managed by this repository.
+    * There is a basic template available: [ssh_slash_config-template](ssh_slash_config-template)
 
 ### Hard-coded paths
 
