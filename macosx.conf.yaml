@@ -22,6 +22,7 @@
     - '~/.local'
     - '~/.local/share'
     - '~/.local/share/konsole'
-- link: {}
+- link:
+    '~/.iterm2_shell_integration.zsh': 'macosx/.iterm2_shell_integration.zsh'
 - shell:
     - ['./macosx/import_iTerm2_colors.sh']

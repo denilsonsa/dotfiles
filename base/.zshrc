@@ -30,6 +30,8 @@ fi
 # It won't work if I keep prefixing my commands with space.
 #command -v thefuck &> /dev/null && eval $(thefuck --alias)
 
+[ -f "${HOME}/.iterm2_shell_integration.zsh" ] && . "${HOME}/.iterm2_shell_integration.zsh"
+
 # Import shell configuration specific for the current machine, not saved in the dotfiles repository.
 [ -f "${HOME}/.profile-local" ] && . "${HOME}/.profile-local"
 [ -f "${HOME}/.zsh-local" ] && . "${HOME}/.zsh-local"
