@@ -24,4 +24,4 @@
     - '~/.local/share/konsole'
 - link: {}
 - shell:
-    - ["echo 'There is no Mac-specific configuration in the dotfiles... yet!'"]
+    - ['./macosx/import_iTerm2_colors.sh']
