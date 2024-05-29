@@ -95,10 +95,12 @@ if which dircolors &> /dev/null ; then
 	# syntax.
 	#
 	# If you really want, you can install coreutils with
-    # `brew install coreutils`
-    # and then execute HOMEBREW_ROOT/opt/coreutils/libexec/gnubin/dircolors
-    # https://unix.stackexchange.com/questions/91937/mac-os-x-dircolors-not-found
+	# `brew install coreutils`
+	# and then execute HOMEBREW_ROOT/opt/coreutils/libexec/gnubin/dircolors
+	# https://unix.stackexchange.com/questions/91937/mac-os-x-dircolors-not-found
 	# https://superuser.com/questions/772922/how-to-change-the-colors-of-ls-output-terminal-on-mac-osx
+elif [ -x "$HOME/.homebrew/opt/coreutils/libexec/gnubin/dircolors" ] ; then
+	eval "$("$HOME/.homebrew/opt/coreutils/libexec/gnubin/dircolors" -b ~/.dir_colors)"
 fi
 
 # ls date/time format can be: full-iso, long-iso, iso, locale, +FORMAT.
@@ -113,6 +115,10 @@ export TIME_STYLE=long-iso
 # * https://github.com/garabik/grc
 #     * https://github.com/garabik/grc/blob/master/grc.zsh
 # * https://wiki.archlinux.org/title/Color_output_in_console
+
+# Mac OS X `ls` is more limited, and can't even display the file sizes.
+# Let me use GNU `ls` whenever possible.
+[ -x "$HOME/.homebrew/opt/coreutils/libexec/gnubin/ls" ] && alias ls="$HOME/.homebrew/opt/coreutils/libexec/gnubin/ls --color=auto"
 
 # My own ls aliases:
 alias la='ls -A'
