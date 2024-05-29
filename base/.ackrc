@@ -17,6 +17,7 @@
 
 
 --ignore-dir=jscript/jquery
+--ignore-dir=node_modules
 
 --ignore-file=match:/\.min\.css$/
 --ignore-file=match:/\.min\.js$/

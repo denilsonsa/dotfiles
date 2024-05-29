@@ -3,6 +3,8 @@
 # http://geoff.greer.fm/2016/09/26/ignore/
 # See also: ~/.ackrc
 
+node_modules
+
 *.min.css
 *.min.js
 
