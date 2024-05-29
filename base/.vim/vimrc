@@ -176,11 +176,20 @@ set winminheight=0
 set noequalalways
 set nojoinspaces
 set cpoptions+=$
-set guioptions-=T
 set nrformats=alpha,hex
 set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~
 set path+=/usr/local/include
 set history=1000
+
+" Removing the toolbar. I don't use it, and it just wastes valuable screen
+" space.
+set guioptions-=T
+" Auto-select, makes vim automatically copy the selection to the system
+" selection buffer.
+" This is the default behavior on GTK/Motif.
+" This isn't the default behavior on Mac OS X, but I'm so used to it that I
+" want it.
+set guioptions+=a
 
 " I don't want to search included files.
 set complete-=i
