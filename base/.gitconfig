@@ -52,6 +52,11 @@
 	co = checkout
 	st = status --short --branch
 
+	# If a `commit-msg` git hook fails, the commit message is still available.
+	# https://stackoverflow.com/questions/52975103/how-can-i-recover-the-commit-message-when-the-git-commit-msg-hook-fails
+	ce = !git commit --edit --file="$(git rev-parse --git-dir)/COMMIT_EDITMSG"
+	recommit = !git commit --edit --file="$(git rev-parse --git-dir)/COMMIT_EDITMSG"
+
 	# WARNING! This also deletes the stash.
 	gc-everything = !git reflog expire --expire-unreachable=now --all && git gc --prune=now
 
