@@ -9,6 +9,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive "ohmyzsh"
 
 # Removing htop configuration to let dotbot symlink it.
 # htop version 3.3.0 is replacing the symlink with a plain file.

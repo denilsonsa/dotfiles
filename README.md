@@ -37,10 +37,14 @@ Upon getting to a new machine, I repeat these steps:
 
 ### Hard-coded paths
 
-There are a few hard-coded paths in `.gitconfig`:
+There are a few hard-coded paths in [base/.gitconfig](base/.gitconfig):
 
 * `~/dotfiles/`, and that's why this repository should be cloned there.
 * `~/myrepos/`, which should contain clones of any other personal repository.
+
+There is one hard-coded path in [base/.zshrc](base/.zshrc):
+
+* `~/dotfiles/`, and that's why this repository should be cloned there.
 
 ## Local customization outside dotfiles
 
