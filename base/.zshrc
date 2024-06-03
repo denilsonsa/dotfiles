@@ -1,3 +1,12 @@
+# This has to be set before loading ohmyzsh.
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+if [ -d "${HOME}/.homebrew" ] ; then
+	# Non-root installation of Homebrew on Mac OS X:
+	FPATH="${HOME}/.homebrew/share/zsh/site-functions:${FPATH}"
+elif type brew &> /dev/null ; then
+	FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 export ZSH="${HOME}/dotfiles/ohmyzsh"
 if [ -d "${ZSH}" ] ; then
 	# The following was copied from:
@@ -72,7 +81,7 @@ if [ -d "${ZSH}" ] ; then
 	# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 	# Example format: plugins=(rails git textmate ruby lighthouse)
 	# Add wisely, as too many plugins slow down shell startup.
-	plugins=(git-prompt)
+	plugins=(adb ag git-prompt ripgrep)
 
 	source $ZSH/oh-my-zsh.sh
 else
