@@ -59,6 +59,10 @@ There are some configurations that should not be stored in dotfiles. Thus, the f
 ## TODO
 
 * [ ] Oh-my-zsh manual installation: <https://github.com/ohmyzsh/ohmyzsh?tab=readme-ov-file#manual-installation>
+    * <https://gitlab.manjaro.org/packages/community/manjaro-zsh-config/-/blob/master/PKGBUILD>
+    * <https://github.com/Chrysostomus/manjaro-zsh-config>
+    * <https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh>
+    * <https://gist.github.com/yovko/becf16eecd3a1f69a4e320a95689249e>
 
 ## See also
 
