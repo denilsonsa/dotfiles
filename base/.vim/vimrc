@@ -303,6 +303,8 @@ function RestoreMyColorScheme()
 	highlight GitGutterDelete ctermbg=Black ctermfg=Red        guibg=#202020 guifg=Red
 endfunction
 
+let macvim_skip_colorscheme = 1
+
 call RestoreMyColorScheme()
 
 "Folding settings"{{{
@@ -469,6 +471,11 @@ autocmd BufReadPost *
 " Either way, g~ always behaves as an operator.
 "set tildeop
 
+" Some MacVim mappings.
+" https://github.com/macvim-dev/macvim/blob/master/src/MacVim/gvimrc
+"let macvim_skip_cmd_opt_movement = 1
+"let macvim_hig_shift_movement = 1
+
 "This cleans the "highlight search" (only works on GUI)
 nnoremap <M-/> :nohlsearch<CR>
 
@@ -527,6 +534,13 @@ nnoremap <M-Left> <C-W>h
 nnoremap <M-Down> <C-W>j
 nnoremap <M-Up> <C-W>k
 nnoremap <M-Right> <C-W>l
+if has("gui_mac") || has("gui_macvim")
+	"Or Ctrl+Arrows on Mac.
+	nnoremap <C-Left> <C-W>h
+	nnoremap <C-Down> <C-W>j
+	nnoremap <C-Up> <C-W>k
+	nnoremap <C-Right> <C-W>l
+endif
 
 "<C-W>f does an horizontal split, but there is no built-in command to vertical
 "split. Let's remap this synonym to vertical.
