@@ -10,6 +10,10 @@ export VISUAL=vim
 export GTK_OVERLAY_SCROLLING=0
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 
+# Better fzf (Fuzzy Finder)
+# https://github.com/junegunn/fzf#tips
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+
 # This makes the touchpad two-finger scrolling very smooth and natural.
 # https://wiki.archlinux.org/title/Firefox/Tweaks#Pixel-perfect_trackpad_scrolling
 # It also has the potential of improving touch/pen input.
@@ -61,7 +65,8 @@ export PATH="${HOME}/otherrepos/git-commands:${PATH}"
 export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/go/bin:${PATH}"
 
 # Non-root installation of Homebrew on Mac OS X:
-export PATH="$PATH:$HOME/.homebrew/bin"
+#export PATH="$PATH:$HOME/.homebrew/bin"
+export PATH="$HOME/.homebrew/bin:$PATH"
 
 # Color-enabling aliases:
 alias ls='ls --color=auto'

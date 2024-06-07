@@ -309,12 +309,15 @@ call RestoreMyColorScheme()
 "set foldmethod=marker
 "set foldtext=MyFoldText()
 set fillchars=vert:\ ,fold:\ 
+set foldcolumn=3
 
-"Set folding options for CSS files
-au FileType css,*.css setlocal foldmethod=marker foldmarker={,} foldcolumn=3
+" Set folding options for CSS files
+" Not needed if I'm using coc-css.
+"au FileType css,*.css setlocal foldmethod=marker foldmarker={,} foldcolumn=3
 
-"Set folding for HTMLTemplate files
-au FileType tmpl,*.tmpl setlocal foldmethod=marker foldmarker=<TMPL_BLOCK,</TMPL_BLOCK> foldtext=v:folddashes.getline(v:foldstart)
+" Set folding for HTMLTemplate files
+" Well, I don't use those files anymore.
+"au FileType tmpl,*.tmpl setlocal foldmethod=marker foldmarker=<TMPL_BLOCK,</TMPL_BLOCK> foldtext=v:folddashes.getline(v:foldstart)
 
 " Perl folding in Vim doesn't work well. In fact, it is pretty bad.
 " :help perl.vim
@@ -638,26 +641,26 @@ let g:tagbar_show_visibility = 0
 " See also:
 " https://gist.github.com/ecoleman/1525027
 " :help :TagbarGetTypeConfig
-let g:tagbar_type_php = {
-    \ 'kinds' : [
-        \ 'i:interfaces',
-        \ 'c:classes',
-        \ 'd:constant definitions:0:0',
-        \ 'f:functions',
-        \ 'j:javascript functions',
-    \ ],
-\ }
+"let g:tagbar_type_php = {
+"    \ 'kinds' : [
+"        \ 'i:interfaces',
+"        \ 'c:classes',
+"        \ 'd:constant definitions:0:0',
+"        \ 'f:functions',
+"        \ 'j:javascript functions',
+"    \ ],
+"\ }
 
 " Removing variables from Python list.
 " See also:
-let g:tagbar_type_python = {
-    \ 'kinds' : [
-        \ 'i:imports:1:0',
-        \ 'c:classes',
-        \ 'f:functions',
-        \ 'm:members',
-    \ ],
-\ }
+"let g:tagbar_type_python = {
+"    \ 'kinds' : [
+"        \ 'i:imports:1:0',
+"        \ 'c:classes',
+"        \ 'f:functions',
+"        \ 'm:members',
+"    \ ],
+"\ }
 
 "Open/focus tagbar
 nnoremap <silent> <F2>   :TagbarOpen<CR>
@@ -739,6 +742,34 @@ let NERDTreeShowBookmarks=1
 
 " Default: 1
 let NERDTreeHighlightCursorline=0
+
+"}}}
+
+"Configuring Conquer of Completion plugin (coc.nvim)"{{{
+
+" - sh for bash
+" - vetur for Vue.js
+" - tsserver for both JavaScript and TypeScript
+let g:coc_global_extensions = [
+	\ 'coc-sh',
+	\ 'coc-highlight',
+	\ 'coc-git',
+	\ 'coc-go',
+	\ 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver',
+	\ 'coc-lit-html',
+	\ 'coc-vetur',
+	\ 'coc-java',
+	\ 'coc-markdownlint',
+	\ 'coc-perl',
+	\ 'coc-yaml',
+	\ 'coc-emoji-shortcodes'
+	\ ]
+" Others:
+" https://github.com/neoclide/coc.nvim/wiki/Language-servers#python
+" - coc-pyright
+" - coc-pylsp
+" - coc-jedi
+" - coc-ruff  <- Probably a good idea
 
 "}}}
 
@@ -880,6 +911,40 @@ let g:user_emmet_mode='i'
 " Default is <C-Y>
 "let g:user_emmet_leader_key='<C-Z>'
 "let g:user_emmet_leader_key='<C-L>'
+
+"}}}
+
+"Configuring pangloss/vim-javascript"{{{
+
+"let g:javascript_plugin_jsdoc = 1
+"let g:javascript_plugin_ngdoc = 1
+"let g:javascript_plugin_flow = 1
+
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+"let g:javascript_conceal_function             = "ƒ"
+"let g:javascript_conceal_null                 = "ø"
+"let g:javascript_conceal_this                 = "@"
+"let g:javascript_conceal_return               = "⇚"
+"let g:javascript_conceal_undefined            = "¿"
+"let g:javascript_conceal_NaN                  = "ℕ"
+"let g:javascript_conceal_prototype            = "¶"
+"let g:javascript_conceal_static               = "•"
+"let g:javascript_conceal_super                = "Ω"
+"let g:javascript_conceal_arrow_function       = "⇒"
+"let g:javascript_conceal_noarg_arrow_function = "🞅"
+"let g:javascript_conceal_underscore_arrow_function = "🞅"
+"set conceallevel=1
+"map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+
+"}}}
+
+"Configuring vim-json"{{{
+
+let g:vim_json_syntax_conceal = 0
 
 "}}}
 
@@ -1048,7 +1113,18 @@ nmap <M-0> :<C-u>Fontzoom!<CR>
 
 "let g:fzf_launcher = 'xterm -e bash -ic %s'
 
+" Other suggestions:
+" https://github.com/universal-ctags/ctags/issues/218
+let g:fzf_vim = {}
+let g:fzf_vim.tags_command = 'ctags -R --exclude=node_modules --exclude=.git'
+
 "}}}
+
+" ludovicchabant/vim-gutentags "{{{
+
+let g:gutentags_ctags_exclude = [ 'node_modules', '.git', '.test-results' ]
+
+" }}}
 
 "luochen1990/rainbow "{{{
 " Use :RainbowToggle
@@ -1115,7 +1191,8 @@ Plug 'danro/rename.vim'
 Plug 'godlygeek/tabular'
 Plug 'hotchpotch/perldoc-vim'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -1159,7 +1236,7 @@ Plug 'sjl/gundo.vim'
 
 " Signs besides modified lines. First one works only for git, the second one
 " works for several VCS.
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 "Plug 'mhinz/vim-signify'
 
 Plug 'tpope/vim-fugitive'
@@ -1225,9 +1302,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'vim-scripts/FuzzyFinder'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'junegunn/fzf', {'dir': '~/stuff/fzf'}
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
-"
+Plug 'ludovicchabant/vim-gutentags'
+
 " Requires l9 library, bitbucket repository not found anymore.
 " https://bitbucket.org/ns9tks/vim-l9/
 " http://www.vim.org/scripts/script.php?script_id=3252
@@ -1237,6 +1316,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " language, useful when writing documentation.
 " Formerly hosted at 'w0rp/ale'
 "Plug 'dense-analysis/ale'
+
+" Language auto-completion
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
 
 " -- Syntax/language plugins --
 
@@ -1248,26 +1330,33 @@ Plug 'vim-perl/vim-perl', { 'branch': 'dev' }
 " * https://github.com/vim-perl/vim-perl/issues/259
 " * https://github.com/haarg/vim-perl/tree/fixes
 
-"Plug 'chrisbra/csv.vim'
-"Plug 'othree/html5.vim'
-Plug 'posva/vim-vue'
-
 "Plug 'vim-scripts/icalendar.vim'
 Plug 'chutzpah/icalendar.vim'
 
+"Plug 'chrisbra/csv.vim'
+
+Plug 'pangloss/vim-javascript'
+
+Plug 'elzr/vim-json'
+
 " Two options for TypeScript:
-"Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'leafgarland/typescript-vim'
+
+"Plug 'othree/html5.vim'
+Plug 'posva/vim-vue'
+
+Plug 'vito-c/jq.vim'
 
 Plug 'peterhoeg/vim-qml'
-
-Plug 'denilsonsa/vim-edir-syntax'
 
 " -> Or pick a huge pack with a bunch of them:
 
 "Plug 'sheerun/vim-polyglot'
 
 " -> Plus a few other plugins not included in the pack:
+
+Plug 'denilsonsa/vim-edir-syntax'
 
 "One of these, not sure if they work:
 "Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
@@ -1287,10 +1376,10 @@ call plug#end()
 "call unite#custom#profile('files', 'filters', 'sorter_rank')
 "call unite#custom#source('file,file/new,buffer,file_rec', 'matchers', 'matcher_fuzzy')
 
-nnoremap U  :<C-u>Unite -start-insert<CR>
-nnoremap UU :<C-u>Unite -start-insert<CR>
-nnoremap Uf :<C-u>Unite -start-insert -buffer-name=files buffer file_rec/async<CR>
-nnoremap UF :<C-u>Unite -start-insert -buffer-name=files buffer file_rec/async<CR>
+" nnoremap U  :<C-u>Unite -start-insert<CR>
+" nnoremap UU :<C-u>Unite -start-insert<CR>
+" nnoremap Uf :<C-u>Unite -start-insert -buffer-name=files buffer file_rec/async<CR>
+" nnoremap UF :<C-u>Unite -start-insert -buffer-name=files buffer file_rec/async<CR>
 
 " Directly copied from :help unite-source-grep
 	if executable('hw')
