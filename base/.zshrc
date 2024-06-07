@@ -81,7 +81,7 @@ if [ -d "${ZSH}" ] ; then
 	# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 	# Example format: plugins=(rails git textmate ruby lighthouse)
 	# Add wisely, as too many plugins slow down shell startup.
-	plugins=(adb ag git-prompt ripgrep)
+	plugins=(adb ag git-prompt ripgrep z)
 
 	source $ZSH/oh-my-zsh.sh
 else
