@@ -1,9 +1,15 @@
+[Desktop Entry]
+DefaultProfile=my_zsh.profile
+
 [General]
 ConfigVersion=1
 
 [MainWindow]
 MenuBar=Enabled
 ToolBarsMovable=Disabled
+
+[TabBar]
+CloseTabButton=OnTabBar
 
 [UiSettings]
 ColorScheme=
