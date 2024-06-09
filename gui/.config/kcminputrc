@@ -1,0 +1,6 @@
+[Keyboard]
+NumLock=0
+RepeatDelay=300
+
+[Mouse]
+XLbInptAccelProfileFlat=true
