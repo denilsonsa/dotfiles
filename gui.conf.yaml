@@ -38,6 +38,7 @@
     '~/.config/kdedefaults/plasmarc': 'gui/.config/kdedefaults/plasmarc'
     '~/.config/kdeglobals': 'gui/.config/kdeglobals'
     '~/.config/kglobalshortcutsrc': 'gui/.config/kglobalshortcutsrc'
+    '~/.config/klipperrc': 'gui/.config/klipperrc'
     '~/.config/konsolerc': 'gui/.config/konsolerc'
     '~/.config/krunnerrc': 'gui/.config/krunnerrc'
     # This only contains the wallpaper location for the lock screen.
