@@ -184,6 +184,28 @@ colors() {
 			echo
 		done
 	done
+
+	printf "\n"
+	printf "256-color escape codes are:\n"
+	printf " %s for foreground\n" '\e[38;5;${value}m'
+	printf " %s for background\n" '\e[48;5;${value}m'
+	printf "The delimiter was supposed to be ':', but ';' is commonly supported.\n"
+	printf "\n"
+
+	for code in {0..255}; do
+		printf "\e[48;5;%dm%3d\e[m" "${code}" "${code}"
+		case "${code}" in
+			7) printf "\n" ;;
+			15|231|255) printf "\n\n" ;;
+
+			#21|57|93|129|165|201) printf "\n" ;;
+			#27|63|99|135|171|207) printf "\n" ;;
+			#33|69|105|141|177|213) printf "\n" ;;
+			#39|75|111|147|183|219) printf "\n" ;;
+			#45|81|117|153|189|225) printf "\n" ;;
+			51|87|123|159|195|231) printf "\n" ;;
+		esac
+	done
 }
 
 
