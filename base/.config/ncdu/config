@@ -1,0 +1,33 @@
+# https://dev.yorhel.nl/ncdu/man
+
+#--graph-style hash
+#--graph-style half-block
+--graph-style eighth-block
+
+# off to disable colors
+#--color off
+# dark for a color scheme intended for dark backgrounds
+--color dark
+# dark-bg for a variation of the dark color scheme that also works in terminals with a light background
+#--color dark-bg
+
+# Over SSH or slow connections, this is better:
+#--slow-ui-updates
+# Everywhere else, the default option gives a better UX:
+#--fast-ui-updates
+
+# Other interesting settings:
+# -r (for read-only mode)
+# --enable-shell   --disable-shell   (shortcut key=b)
+# --enable-delete  --disable-delete  (shortcut key=d)
+# --enable-refresh --disable-refresh (shortcut key=r)
+# --show-hidden    --hide-hidden     (shortcut key=e)
+# --show-itemcount --hide-itemcount  (shortcut key=c)
+# --show-mtime     --hide-mtime      (shortcut key=m; requires -e)
+# --show-graph     --hide-graph      (shortcut key=g)
+# --show-percent   --hide-percent    (shortcut key=g)
+# --confirm-quit   --no-confirm-quit
+# --confirm-delete --no-confirm-delete
+# --group-directories-first --no-group-directories-first (shortcut key=t)
+
+--show-itemcount

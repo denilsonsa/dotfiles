@@ -51,6 +51,7 @@
     '~/.vim/scripts.vim': 'base/.vim/scripts.vim'
     '~/.config/edir-flags.conf': 'base/.config/edir-flags.conf'
     '~/.config/htop/htoprc': 'base/.config/htop/htoprc'
+    '~/.config/ncdu/config': 'base/.config/ncdu/config'
     '~/.config/pudb/pudb.cfg': 'base/.config/pudb/pudb.cfg'
 
     # cplay was great, but it's not maintained for years. And I myself haven't used it anymore.
