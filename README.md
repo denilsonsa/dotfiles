@@ -63,6 +63,8 @@ There are some configurations that should not be stored in dotfiles. Thus, the f
     * <https://github.com/Chrysostomus/manjaro-zsh-config>
     * <https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh>
     * <https://gist.github.com/yovko/becf16eecd3a1f69a4e320a95689249e>
+* [ ] Per-machine vim plugin configuration
+    * coc and gutentags (ctags) should be disabled on the Steam Deck and on other systems.
 
 ## See also
 
