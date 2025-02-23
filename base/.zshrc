@@ -161,12 +161,12 @@ else
 	# Machine-specific prompts:
 	if [ "$(uname -s)" = "Darwin" ] ; then
 		# Colors for my work laptop:
-		PS1='%F{231}%k🯩%F{61}%K{231} %n %F{231}%K{202} %1~ %F{202}%k🯫%(?|| %F{9}%? )%F{202}%#%f '
+		PS1='%F{231}%k🯩%F{61}%K{231} %n %F{231}%K{202} %1~ %F{202}%k🯫%(?||%F{9}%?⏎)%(#|%F{202}%#|)%f '
 		# Simpler version without Unicode glyphs:
 		#PS1='%F{61}%K{231} %n %F{231}%K{202} %1~ %k%(?|| %F{9}%? )%F{202}%#%f '
 	elif [ "$USER" = "deck" ] ; then
 		# Steam Deck
-		PS1='%F{68}%K{234}%n%F{234}%K{15}🯫%F{234}%1~%F{15}%k🯫%(?|| %F{9}%? )%F{68}%#%f '
+		PS1='%F{68}%K{234}%n%F{234}%K{15}🯫%F{234}%1~%F{15}%k🯫%(?||%F{9}%?⏎)%(#|%F{68}%#|)%f '
 	fi
 fi
 
