@@ -76,12 +76,22 @@ if [ -d "${ZSH}" ] ; then
 	# Would you like to use another custom folder than $ZSH/custom?
 	# ZSH_CUSTOM=/path/to/new-custom-folder
 
+	# Timer plugin: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/timer
+	# The `timer` plugin is bad, because it overwrites the last few characters from the last line, potentially overwriting important characters that I wish to read (or copy).
+	# TIMER_PRECISION=1
+	# TIMER_FORMAT='/%d'
+	# TIMER_THRESHOLD=0
+
 	# Which plugins would you like to load?
 	# Standard plugins can be found in $ZSH/plugins/
 	# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 	# Example format: plugins=(rails git textmate ruby lighthouse)
 	# Add wisely, as too many plugins slow down shell startup.
-	plugins=(adb ag git-prompt ripgrep z)
+	plugins=(git-prompt z)
+	# Other interesting plugins:
+	# - battery
+	# - bgnotify
+	# - emoji-clock (interesting idea, but the glyphs are hard to read)
 
 	source $ZSH/oh-my-zsh.sh
 else
@@ -92,13 +102,13 @@ else
 	# Source manjaro-zsh-configuration
 	# https://github.com/Chrysostomus/manjaro-zsh-config
 	if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-	source /usr/share/zsh/manjaro-zsh-config
+		source /usr/share/zsh/manjaro-zsh-config
 
-	# Removing stupid aliases from Manjaro:
-	unalias cp    # cp -i
-	unalias df    # df -h
-	unalias free  # free -m
-	unalias gitu  # git add . && git commit && git push
+		# Removing stupid aliases from Manjaro:
+		unalias cp    # cp -i
+		unalias df    # df -h
+		unalias free  # free -m
+		unalias gitu  # git add . && git commit && git push
 	fi
 fi
 
@@ -106,10 +116,58 @@ fi
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 	source /usr/share/zsh/manjaro-zsh-prompt
 else
-	# Some very basic prompt for now.
-	# TODO: configure oh-my-zsh
-	#export PS1='%F{green}[%n@%m%F{gray} %1~%F{green}] %#%f '
-	export PS1='%F{green}[%n%F{gray} %1~%F{green}] %#%f '
+	# Learn more: `man zshmisc` and search for `EXPANSION OF PROMPT SEQUENCES`
+	#
+	# Quick summary of useful escapes:
+	# %m        hostname (up to the first `.`)
+	# %n        $USERNAME
+	# %#        either `#` if root privileges, or `%`
+	# $?        exit code of the last command
+	# %d or %/  $PWD, can have an integer to specify the amount of trailing components
+	# %~        $PWD, but replacing $HOME with ~
+	# %j        number of jobs
+	# %T        current time of the day, 24h format
+	# %*        current time of the day, 24h format, with seconds
+	# $D{...}   strftime formatted string
+	# %E        clear to the end of line
+	#
+	# Upper-case starts, lower-case stops:
+	# %B  %b  bold
+	# %U  %u  underline
+	# %S  %s  standout
+	# %F  %f  foreground color
+	# %K  %k  bacKground color
+	#
+	# Conditionals:
+	# %n(x.true.false)
+	#   n is an optional positive integer, defaults to zero
+	#   x is the test character (about 20 possible characters)
+	#   . is any separator character
+	#   true and false are the strings to be printed
+
+	# Some interesting functions:
+	# -  $(battery_pct_prompt) from `battery` plugin
+	# -  $(emoji-clock) from `emoji-clock` plugin
+
+	# Two very basic prompts by default:
+	# With username@hostname:
+	#PS1='%F{green}[%n@%m%F{gray} %1~%F{green}] %#%f '
+	# Without hostname, just username:
+	PS1='%F{green}[%n%F{gray} %1~%F{green}] %#%f '
+
+	# Right prompt, which is set by the `git-prompt` plugin:
+	# RPROMPT='$(git_super_status)'
+
+	# Machine-specific prompts:
+	if [ "$(uname -s)" = "Darwin" ] ; then
+		# Colors for my work laptop:
+		PS1='%F{231}%k🯩%F{61}%K{231} %n %F{231}%K{202} %1~ %F{202}%k🯫%(?|| %F{9}%? )%F{202}%#%f '
+		# Simpler version without Unicode glyphs:
+		#PS1='%F{61}%K{231} %n %F{231}%K{202} %1~ %k%(?|| %F{9}%? )%F{202}%#%f '
+	elif [ "$USER" = "deck" ] ; then
+		# Steam Deck
+		PS1='%F{68}%K{234}%n%F{234}%K{15}🯫%F{234}%1~%F{15}%k🯫%(?|| %F{9}%? )%F{68}%#%f '
+	fi
 fi
 
 # Import the env vars set in this file.
