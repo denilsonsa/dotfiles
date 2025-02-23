@@ -131,6 +131,13 @@ alias lc='ls -crAsh'
 alias ll='ls -ltrA'
 alias lss='ls -sSrAh'
 
+if [ -n "$ITERM_SESSION_ID" ] ; then
+	# Use "sixels" as default on iTerm2.
+	# Using "iterm" is heavier and requires a confirmation.
+	alias chafa='chafa -f sixels'
+	# Or we can use "symbols", because it's widely supported anyway.
+fi
+
 # Add an "alert" alias for long running commands. Use like so:
 #   sleep 10; alert Your message here
 alert() {
