@@ -166,7 +166,9 @@ else
 		#PS1='%F{61}%K{231} %n %F{231}%K{202} %1~ %k%(?|| %F{9}%? )%F{202}%#%f '
 	elif [ "$USER" = "deck" ] ; then
 		# Steam Deck
-		PS1='%F{68}%K{234}%n%F{234}%K{15}🯫%F{234}%1~%F{15}%k🯫%(?||%F{9}%?⏎)%(#|%F{68}%#|)%f '
+		# The font doesn't have `🯫`, so I'm using `🭬` instead.
+		# Fake Steam Deck logo using `●` and either `)` or `❫`.
+		PS1='%F{68}%K{234}●%F{15}%B❫%b%F{68}%n%F{234}%K{15}🭬%F{234}%1~%F{15}%k🭬%(?||%F{9}%?⏎)%(#|%F{68}%#|)%f '
 	fi
 fi
 
