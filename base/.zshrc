@@ -186,3 +186,7 @@ fi
 # Import shell configuration specific for the current machine, not saved in the dotfiles repository.
 [ -f "${HOME}/.profile-local" ] && . "${HOME}/.profile-local"
 [ -f "${HOME}/.zsh-local" ] && . "${HOME}/.zsh-local"
+
+# Make sure the last command returns success.
+# Otherwise the first shell prompt will already display the error code (exit code) from the last command.
+true
