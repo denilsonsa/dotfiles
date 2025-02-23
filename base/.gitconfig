@@ -124,16 +124,19 @@
 	spop = stash pop
 
 	# prp means Pull-Rebase-Push
-	prp = "!git pull --no-tags --rebase origin HEAD && git push"
+	#prp = "!git pull --no-tags --rebase origin HEAD && git push"
 	# prs means Pull-Rebase-autoStash
 	# http://stackoverflow.com/questions/30208928/can-git-pull-automatically-stash-and-pop-pending-changes
 	prs = pull --rebase --autostash
 	# prsp means Pull-Rebase-autoStash-Push
-	prsp = "!git pull --no-tags --rebase --autostash origin HEAD && git push"
+	#prsp = "!git pull --no-tags --rebase --autostash origin HEAD && git push"
 
 	# When using GitLab, automatically create a Merge Request after pushing.
 	# https://docs.gitlab.com/ee/user/project/push_options.html
 	pushmr = push -o merge_request.create
+
+	# I could have tried to make this a reference to Star Wars, but I couldn't think of anything clever.
+	pushforce = push --no-verify --force-with-lease
 
 	configsetuser = "!git config --local user.name 'Denilson Sá Maia' && git config --local user.email 'denilsonsa@gmail.com' && echo 'Please consider updating [includeIf …] at ~/.gitconfig'"
 	configunsetuser = "!git config --local --unset user.name && git config --local --unset user.email"
@@ -161,6 +164,7 @@
 	# Suppress the git diff --stat after both git merge and git pull.
 	# https://stackoverflow.com/a/54865245
 	stat = false
+	tool = kdiff3
 [cola]
 	fontdiff = Inconsolata,9,-1,5,50,0,0,0,0,0
 	spellcheck = false
