@@ -21,14 +21,17 @@
 
 --ignore-file=match:/\.min\.css$/
 --ignore-file=match:/\.min\.js$/
---ignore-file=match:/\.compiled\.js$/
+--ignore-file=match:/\.css\.map$/
+--ignore-file=match:/\.js\.map$/
 --ignore-file=match:/\.bundle\.js$/
+--ignore-file=match:/\.compiled\.js$/
 --ignore-file=is:amplitude-sdk.js
 --ignore-file=is:bootstrap.css
 --ignore-file=is:bootstrap.js
 --ignore-file=is:bootstrap-sortable.js
 --ignore-file=is:jquery.js
 --ignore-file=is:moment.js
+--ignore-file=is:package-lock.json
 --ignore-file=is:swagger-ui.js
 --ignore-file=is:swagger-ui-bundle.js
 --ignore-file=match:/^jquery\..*\.css$/
