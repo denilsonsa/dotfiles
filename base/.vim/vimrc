@@ -766,30 +766,59 @@ let NERDTreeHighlightCursorline=0
 
 "Configuring Conquer of Completion plugin (coc.nvim)"{{{
 
-" - sh for bash
-" - vetur for Vue.js
-" - tsserver for both JavaScript and TypeScript
-let g:coc_global_extensions = [
-	\ 'coc-sh',
-	\ 'coc-highlight',
-	\ 'coc-git',
-	\ 'coc-go',
-	\ 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver',
-	\ 'coc-lit-html',
-	\ 'coc-vetur',
-	\ 'coc-java',
-	\ 'coc-markdownlint',
-	\ 'coc-perl',
-	\ 'coc-yaml',
-	\ 'coc-emoji-shortcodes'
-	\ ]
-" Others:
-" https://github.com/neoclide/coc.nvim/wiki/Language-servers#python
-" - coc-pyright
-" - coc-pylsp
-" - coc-jedi
-" - coc-ruff  <- Probably a good idea
+if executable("node") == 1
 
+	" - sh for bash
+	" - vetur for Vue.js
+	" - tsserver for both JavaScript and TypeScript
+	let g:coc_global_extensions = [
+		\ 'coc-sh',
+		\ 'coc-highlight',
+		\ 'coc-git',
+		\ 'coc-go',
+		\ 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver',
+		\ 'coc-lit-html',
+		\ 'coc-vetur',
+		\ 'coc-java',
+		\ 'coc-markdownlint',
+		\ 'coc-perl',
+		\ 'coc-yaml',
+		\ 'coc-emoji-shortcodes'
+		\ ]
+	" Others:
+	" https://github.com/neoclide/coc.nvim/wiki/Language-servers#python
+	" - coc-pyright
+	" - coc-pylsp
+	" - coc-jedi
+	" - coc-ruff  <- Probably a good idea
+
+	" Some configuration from https://github.com/neoclide/coc.nvim?tab=readme-ov-file#example-vim-configuration
+
+	" Always show the signcolumn, otherwise it would shift the text each time
+	" diagnostics appear/become resolved
+	set signcolumn=yes
+
+	" Make <CR> to accept selected completion item or notify coc.nvim to format
+	" <C-g>u breaks current undo, please make your own choice
+	inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+	" GoTo code navigation
+	nmap <silent> <Leader>gd <Plug>(coc-definition)
+	nmap <silent> <Leader>gy <Plug>(coc-type-definition)
+	nmap <silent> <Leader>gi <Plug>(coc-implementation)
+	nmap <silent> <Leader>gr <Plug>(coc-references)
+
+	" Symbol renaming
+	nmap <leader>rn <Plug>(coc-rename)
+
+	" Formatting selected code
+	xmap <leader>f  <Plug>(coc-format-selected)
+	nmap <leader>f  <Plug>(coc-format-selected)
+
+	" Use K to show documentation in preview window
+	nnoremap <silent> K :call ShowDocumentation()<CR>
+
+endif
 "}}}
 
 "Configuring vim-indent-guides plugin"{{{
@@ -1344,7 +1373,9 @@ Plug 'ludovicchabant/vim-gutentags'
 "Plug 'dense-analysis/ale'
 
 " Language auto-completion
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
+if executable("node") == 1
+	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
+endif
 
 " -- Syntax/language plugins --
 
