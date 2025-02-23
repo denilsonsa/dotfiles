@@ -25,7 +25,10 @@ endif
 
 if has("gui")
 	if has("gui_mac") || has("gui_macvim")
-		set guifont=Monaco:h12
+		" Monaco font doesn't have Bold or Italic.
+		"set guifont=Monaco:h12
+		set guifont=Menlo:h12
+		"set guifont=Hack\ Nerd\ Font\ Mono:h12
 	else
 		" Inconsolata is a great font. Source Code Pro is almost as good.
 		"set guifont=Inconsolata\ Medium\ 8
@@ -312,6 +315,7 @@ call RestoreMyColorScheme()
 "set foldtext=MyFoldText()
 set fillchars=vert:\ ,fold:\ 
 set foldcolumn=3
+set foldlevelstart=99
 
 " Set folding options for CSS files
 " Not needed if I'm using coc-css.
@@ -477,7 +481,10 @@ autocmd BufReadPost *
 "let macvim_hig_shift_movement = 1
 
 "This cleans the "highlight search" (only works on GUI)
+" Alt+/ (Linux)
 nnoremap <M-/> :nohlsearch<CR>
+" Cmd+/ (Mac OS X)
+nnoremap <D-/> :nohlsearch<CR>
 
 "<C-L> will clear the search highlighting and will update the diff.
 "Copied from https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
@@ -534,13 +541,11 @@ nnoremap <M-Left> <C-W>h
 nnoremap <M-Down> <C-W>j
 nnoremap <M-Up> <C-W>k
 nnoremap <M-Right> <C-W>l
-if has("gui_mac") || has("gui_macvim")
-	"Or Ctrl+Arrows on Mac.
-	nnoremap <C-Left> <C-W>h
-	nnoremap <C-Down> <C-W>j
-	nnoremap <C-Up> <C-W>k
-	nnoremap <C-Right> <C-W>l
-endif
+"Or Opt+Cmd+Arrows on Mac, similar to iTerm2 shortcuts.
+nnoremap <M-D-Left> <C-W>h
+nnoremap <M-D-Down> <C-W>j
+nnoremap <M-D-Up> <C-W>k
+nnoremap <M-D-Right> <C-W>l
 
 "<C-W>f does an horizontal split, but there is no built-in command to vertical
 "split. Let's remap this synonym to vertical.
@@ -1092,6 +1097,8 @@ nmap <M--> <Plug>(fontzoom-smaller)
 nmap <M-=> <Plug>(fontzoom-larger)
 nmap <M-0> :<C-u>Fontzoom!<CR>
 
+" Note: MacVim has native support for Cmd+Plus and Cmd+Equals
+
 "}}}
 
 "Loading Pathogen (that auto-loads plugins from ~/.vim/bundle)"{{{
@@ -1131,6 +1138,11 @@ nmap <M-0> :<C-u>Fontzoom!<CR>
 " https://github.com/universal-ctags/ctags/issues/218
 let g:fzf_vim = {}
 let g:fzf_vim.tags_command = 'ctags -R --exclude=node_modules --exclude=.git'
+
+" New :RG command that supports file parameters.
+" https://github.com/junegunn/fzf.vim/issues/1533#issuecomment-2015075571
+command! -complete=file -bang -nargs=* RG
+  \ call fzf#vim#grep("rg --with-filename --column --line-number --no-heading --color=always --smart-case -- ".<q-args>, fzf#vim#with_preview(), <bang>0)
 
 "}}}
 
