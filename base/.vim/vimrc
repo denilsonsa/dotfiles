@@ -1360,7 +1360,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-Plug 'ludovicchabant/vim-gutentags'
+if executable("ctags") == 1
+	Plug 'ludovicchabant/vim-gutentags'
+endif
 
 " Requires l9 library, bitbucket repository not found anymore.
 " https://bitbucket.org/ns9tks/vim-l9/
