@@ -16,6 +16,7 @@ Thumbs.db
 .stignore
 *.bak
 .*.swp
+.*.swo
 .swp
 .swo
 .swx
