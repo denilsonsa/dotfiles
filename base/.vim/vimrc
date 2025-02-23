@@ -1206,7 +1206,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 "Plug 'tpope/vim-unimpaired'
 
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+if executable("make") == 1
+	Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+endif
 
 " Disabling Unite because I never used it. It's cool, but if I don't remember
 " it exists and never use it, then it's not really needed.
