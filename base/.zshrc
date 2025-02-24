@@ -113,8 +113,12 @@ else
 fi
 
 # Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+if false && [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 	source /usr/share/zsh/manjaro-zsh-prompt
+	# Manjaro uses powerlevel9k/powerlevel10k
+	# https://github.com/romkatv/powerlevel10k
+	# It might be worth using it as a prompt instead of plain oh-my-zsh.
+	# But its configuration file is giant, almost 2000 lines.
 else
 	# Learn more: `man zshmisc` and search for `EXPANSION OF PROMPT SEQUENCES`
 	#
@@ -166,9 +170,20 @@ else
 		#PS1='%F{61}%K{231} %n %F{231}%K{202} %1~ %k%(?|| %F{9}%? )%F{202}%#%f '
 	elif [ "$USER" = "deck" ] ; then
 		# Steam Deck
-		# The font doesn't have `🯫`, so I'm using `🭬` instead.
+		# The Hack font doesn't have `🯫`, so I'm using `🭬` instead.
+		# The "Cascadia Mono" font includes everything.
+		# https://devblogs.microsoft.com/commandline/cascadia-code-2404-23/
 		# Fake Steam Deck logo using `●` and either `)` or `❫`.
 		PS1='%F{68}%K{234}●%F{15}%B❫%b%F{68}%n%F{234}%K{15}🭬%F{234}%1~%F{15}%k🭬%(?||%F{9}%?⏎)%(#|%F{68}%#|)%f '
+	elif [ "$USER" = "denilson" ] ; then
+		if [ "$HOST" = "hpelitedesk800g2" ] ; then
+			# By having "Cascadia" installed, I can have all those fancy glyphs
+			# from "Symbols for Legacy Computing" on any font.
+			# (Because the system gets missing glyphs from other fonts.)
+			PS1='%F{15}%K{30}🖳 🯩%F{30}%K{15}%~%F{15}%k🯫%(?||%F{9}%?⏎)%(#|%F{30}%#|)%f '
+		else
+			PS1='%F{40}%K{237}%m%F{237}%K{40}🭬%F{232}%~%F{40}%k🭬%(?||%F{9}%?⏎)%(#|%F{30}%#|)%f '
+		fi
 	fi
 fi
 
