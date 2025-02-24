@@ -180,7 +180,7 @@ else
 			# By having "Cascadia" installed, I can have all those fancy glyphs
 			# from "Symbols for Legacy Computing" on any font.
 			# (Because the system gets missing glyphs from other fonts.)
-			PS1='%F{15}%K{30}🖳 🯩%F{30}%K{15}%~%F{15}%k🯫%(?||%F{9}%?⏎)%(#|%F{30}%#|)%f '
+			PS1='%F{30}%k🯩%F{15}%K{30}🖳  %F{30}%K{15} %~%F{15}%k🯫%(?||%F{9}%?⏎)%(#|%F{30}%#|)%f '
 		else
 			PS1='%F{40}%K{237}%m%F{237}%K{40}🭬%F{232}%~%F{40}%k🭬%(?||%F{9}%?⏎)%(#|%F{30}%#|)%f '
 		fi
