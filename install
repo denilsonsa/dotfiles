@@ -14,7 +14,7 @@ git submodule update --init --recursive "ohmyzsh"
 # Removing htop configuration to let dotbot symlink it.
 # htop version 3.3.0 is replacing the symlink with a plain file.
 # htop version 3.4.0 will respect symlinks again.
-if [ "$(htop --version)" = "htop 3.3.0" ] ; then
+if type htop &> /dev/null && [ "$(htop --version)" = "htop 3.3.0" ] ; then
 	rm -v ~/.config/htop/htoprc
 fi
 
