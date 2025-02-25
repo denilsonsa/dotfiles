@@ -1,11 +1,16 @@
 # ~/.ssh/config
 # vim:ft=sshconfig
 
+# Obsolete option:
 Protocol 2
-HashKnownHosts no
 
 # https://www.qualys.com/2016/01/14/cve-2016-0777-cve-2016-0778/openssh-cve-2016-0777-cve-2016-0778.txt
+# Other obsolete option:
 UseRoaming no
+
+# https://infosec.mozilla.org/guidelines/openssh.html
+# HashKnownHosts is safer turned on. But also very inconvenient to use.
+HashKnownHosts no
 
 # http://unix.stackexchange.com/questions/16571/multiple-host-in-ssh-config
 # Since the first obtained value for each parameter is used, more host-specific
@@ -20,7 +25,9 @@ ControlPersist 4h
 
 #SendEnv LANG LC_*
 
-
+# https://wiki.archlinux.org/title/AUR_submission_guidelines#Authentication
+Host aur.archlinux.org
+	User aur
 
 # Host 10.0.0.1
 # 	ForwardX11 yes
@@ -30,3 +37,11 @@ ControlPersist 4h
 # 	HostName 192.168.0.1
 # 	User root
 # 	Port 22222
+
+# https://lackof.org/taggart/hacking/ssh/
+Host *
+	# It relies on completely trusting any intermediate host it is running on.
+	# Turn it off globally and then only turn it on when necessary (with -A on the commandline).
+	ForwardAgent no
+	# Disable it by default and enable it when needed on the command line (-X).
+	ForwardX11 no
