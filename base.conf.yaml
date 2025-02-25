@@ -44,6 +44,9 @@
     '~/.ignore': 'base/.ignore'
     '~/.ripgreprc': 'base/.ripgreprc'
 
+    # Termux is only used on Android, but it is harmless to "install" this file everywhere.
+    '~/.termux/termux.properties': 'base/.termux/termux.properties'
+
     # Other terminal tools
     '~/.my.cnf': 'base/.my.cnf'
     '~/.screenrc': 'base/.screenrc'
