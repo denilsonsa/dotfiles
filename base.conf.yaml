@@ -67,4 +67,5 @@
     - ['test -e ~/.profile-local || cp -v base/.profile-local ~/.profile-local', 'Installing local shell config skeleton (if missing)']
     - ['test -e ~/.vim/vimrc-local || cp -v base/.vim/vimrc-local ~/.vim/vimrc-local', 'Installing local vim config skeleton (if missing)']
     - ['vim -c PlugInstall', 'Please observe any error messages and quit vim afterwards.']
-    - ["echo 'You may also want to install:\n https://github.com/denilsonsa/small_scripts'"]
+    - ['mkdir -p ~/myrepos/', 'Creating ~/myrepos/.']
+    - ["test -d ~/myrepos/small_scripts/ || echo 'You may also want to install:\n https://github.com/denilsonsa/small_scripts'"]
