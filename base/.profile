@@ -139,6 +139,11 @@ if [ -n "$ITERM_SESSION_ID" ] ; then
 	# Or we can use "symbols", because it's widely supported anyway.
 fi
 
+# ssh-agent-setup() {
+#     eval "$(ssh-agent -s)"
+#     ssh-add ~/.ssh/id_rsa
+# }
+
 # Add an "alert" alias for long running commands. Use like so:
 #   sleep 10; alert Your message here
 alert() {
@@ -210,7 +215,7 @@ colors() {
 
 
 # `bat` is renamed to `batcat` on Debian.
-[ -f "/usr/bin/batcat" -a ! -f "/usr/bin/bar" ] && alias bat='batcat'
+[ -f "/usr/bin/batcat" -a ! -f "/usr/bin/bat" ] && alias bat='batcat'
 
 # `broot` is supposed to be called from a shell alias `br` in order to provide
 # `cd` functionality.

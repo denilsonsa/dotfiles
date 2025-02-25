@@ -140,6 +140,13 @@ if ${use_color} ; then
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 		# Ubuntu variant:
 		#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+		# Termux prompt I used years ago.
+		# # Printing the exit code followed by the PWD and then the $ sign.
+		# # The variable PROMPT_DIRTRIM can be used to avoid very long PWD.
+		# PS1='\[\033[01;34m\]$?\[\033[00m\] \[\033[01;32m\]\w\[\033[00m\]\$ '
+		# # Showing this as the title of the terminal.
+		# PS1="\[\e]0;\w\a\]$PS1"
 	fi
 else
 	if [[ ${EUID} == 0 ]] ; then
