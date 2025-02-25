@@ -65,8 +65,8 @@ export PATH="${HOME}/otherrepos/git-commands:${PATH}"
 export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/go/bin:${PATH}"
 
 # Non-root installation of Homebrew on Mac OS X:
-#export PATH="$PATH:$HOME/.homebrew/bin"
-export PATH="$HOME/.homebrew/bin:$PATH"
+#export PATH="$PATH:${HOME}/.homebrew/bin"
+export PATH="${HOME}/.homebrew/bin:$PATH"
 
 # Color-enabling aliases:
 alias ls='ls --color=auto'
@@ -105,8 +105,8 @@ if which dircolors &> /dev/null ; then
 	# and then execute HOMEBREW_ROOT/opt/coreutils/libexec/gnubin/dircolors
 	# https://unix.stackexchange.com/questions/91937/mac-os-x-dircolors-not-found
 	# https://superuser.com/questions/772922/how-to-change-the-colors-of-ls-output-terminal-on-mac-osx
-elif [ -x "$HOME/.homebrew/opt/coreutils/libexec/gnubin/dircolors" ] ; then
-	eval "$("$HOME/.homebrew/opt/coreutils/libexec/gnubin/dircolors" -b ~/.dir_colors)"
+elif [ -x "${HOME}/.homebrew/opt/coreutils/libexec/gnubin/dircolors" ] ; then
+	eval "$("${HOME}/.homebrew/opt/coreutils/libexec/gnubin/dircolors" -b ~/.dir_colors)"
 fi
 
 # ls date/time format can be: full-iso, long-iso, iso, locale, +FORMAT.
@@ -124,7 +124,7 @@ export TIME_STYLE=long-iso
 
 # Mac OS X `ls` is more limited, and can't even display the file sizes.
 # Let me use GNU `ls` whenever possible.
-[ -x "$HOME/.homebrew/opt/coreutils/libexec/gnubin/ls" ] && alias ls="$HOME/.homebrew/opt/coreutils/libexec/gnubin/ls --color=auto"
+[ -x "${HOME}/.homebrew/opt/coreutils/libexec/gnubin/ls" ] && alias ls="${HOME}/.homebrew/opt/coreutils/libexec/gnubin/ls --color=auto"
 
 # My own ls aliases:
 alias la='ls -A'
