@@ -67,8 +67,8 @@
 	#glog = log --graph --decorate --pretty=oneline --abbrev-commit
 	# http://www.jukie.net/bart/blog/pimping-out-git-log
 	# --graph is really slow for large repositories.
-	lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr / %ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr / %ar) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr / %ar) %C(bold blue)<%aN>%Creset' --abbrev-commit --date=relative
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr / %ar) %C(bold blue)<%aN>%Creset' --abbrev-commit --date=relative
 	#hist = log --graph --color=always --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' --all
 
 	# Some more logging aliases that can be useful sometimes.
