@@ -1381,6 +1381,9 @@ endif
 if executable("node") == 1
 	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
 endif
+" CoC works fine for JavaScript and TypeScript.
+" Some people prefer other plugins. See also:
+" https://old.reddit.com/r/neovim/comments/14pvyo4/why_is_nobody_using_coc_anymore/
 
 " -- Syntax/language plugins --
 
