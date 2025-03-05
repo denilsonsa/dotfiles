@@ -54,8 +54,12 @@
     '~/.vim/scripts.vim': 'base/.vim/scripts.vim'
     '~/.config/edir-flags.conf': 'base/.config/edir-flags.conf'
     '~/.config/htop/htoprc': 'base/.config/htop/htoprc'
-    '~/.config/ncdu/config': 'base/.config/ncdu/config'
     '~/.config/pudb/pudb.cfg': 'base/.config/pudb/pudb.cfg'
+
+    # Most systems only have ncdu v2 as the "ncdu" package.
+    # Termux, however, has both "ncdu" and "ncdu2" packages, each one with their own configuration.
+    '~/.config/ncdu/config': 'base/.config/ncdu/config'
+    '~/.config/ncdu2/config': 'base/.config/ncdu/config'
 
     # cplay was great, but it's not maintained for years. And I myself haven't used it anymore.
     #'~/.cplayrc': 'base/.cplayrc'
