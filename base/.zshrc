@@ -71,7 +71,13 @@ if [ -d "${ZSH}" ] ; then
 	# or set a custom format using the strftime function format specifications,
 	# see 'man strftime' for details.
 	# HIST_STAMPS="mm/dd/yyyy"
-	# HIST_STAMPS="yyyy-mm-dd"
+	HIST_STAMPS="yyyy-mm-dd"
+
+	# lib/history.zsh is auto-loaded and sets these:
+	# https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/history.zsh
+	# HISTFILE="$HOME/.zsh_history"
+	# HISTSIZE=50000
+	# SAVEHIST=10000
 
 	# Would you like to use another custom folder than $ZSH/custom?
 	# ZSH_CUSTOM=/path/to/new-custom-folder
