@@ -93,7 +93,7 @@ export COLORTERM=truecolor
 
 if which dircolors &> /dev/null ; then
 	# ls color rules:
-	#eval "$(dircolors -b ~/.dir_colors)"
+	eval "$(dircolors -b ~/.dir_colors)"
 	#
 	# Note: dircolors is part of GNU coreutils, and thus isn't available by
 	# default on Mac OS X and BSD-based systems. The LS_COLORS variable is only
