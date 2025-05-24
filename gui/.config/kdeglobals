@@ -107,6 +107,9 @@ ForegroundVisited=155,89,182
 [General]
 ColorScheme=BreezeDarkModified
 ColorSchemeHash=cb4c6ee5cc9a59dbe09fb467a529af1bf5c55c97
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=none
 
 [KDE]
 AnimationDurationFactor=0.5
