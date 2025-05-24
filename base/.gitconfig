@@ -117,6 +117,7 @@
 
 	# git stash show that actually makes sense:
 	sshow = stash show -p
+	spush = stash push
 	ssave = stash save
 	sdrop = stash drop
 	slist = stash list --pretty=format:\"%C(red)%h%C(reset) - %C(bold magenta)%gd%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)\"
