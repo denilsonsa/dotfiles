@@ -15,6 +15,9 @@ Name_5=Five
 Number=5
 Rows=1
 
+[Effect-cube]
+CubeFaceDisplacement=0
+
 [Effect-mouseclick]
 LineWidth=4
 RingCount=1
