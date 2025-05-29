@@ -181,6 +181,14 @@ else
 		# https://devblogs.microsoft.com/commandline/cascadia-code-2404-23/
 		# Fake Steam Deck logo using `●` and either `)` or `❫`.
 		PS1='%F{68}%K{234}●%F{15}%B❫%b%F{68}%n%F{234}%K{15}🭬%F{234}%1~%F{15}%k🭬%(?||%F{9}%?⏎)%(#|%F{68}%#|)%f '
+
+		# Let's remove something from LD_PRELOAD to prevent annoying error
+		# messages when launching the terminal from within the game mode.
+		#
+		# ERROR: ld.so: object '/home/deck/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
+		# This happens because this is set:
+		# LD_PRELOAD=:/home/deck/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so:/home/deck/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
+		LD_PRELOAD="${LD_PRELOAD/:\/home\/deck\/.local\/share\/Steam\/ubuntu12_32\/gameoverlayrenderer.so/}"
 	elif [ "$USER" = "denilson" ] ; then
 		if [ "$HOST" = "hpelitedesk800g2" ] ; then
 			# By having "Cascadia" installed, I can have all those fancy glyphs
