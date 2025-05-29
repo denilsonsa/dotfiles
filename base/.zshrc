@@ -182,6 +182,10 @@ else
 		# Fake Steam Deck logo using `●` and either `)` or `❫`.
 		PS1='%F{68}%K{234}●%F{15}%B❫%b%F{68}%n%F{234}%K{15}🭬%F{234}%1~%F{15}%k🭬%(?||%F{9}%?⏎)%(#|%F{68}%#|)%f '
 
+		# Vim is part of Steam OS.
+		# But GVim is installed as a flatpak
+		alias gvim='flatpak run --command=gvim --file-forwarding org.vim.Vim'
+
 		# Let's remove something from LD_PRELOAD to prevent annoying error
 		# messages when launching the terminal from within the game mode.
 		#
