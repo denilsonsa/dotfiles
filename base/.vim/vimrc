@@ -767,7 +767,7 @@ let NERDTreeHighlightCursorline=0
 
 "Configuring Conquer of Completion plugin (coc.nvim)"{{{
 
-if executable("node") == 1
+if executable("node") == 1 && v:version > 900
 
 	" - sh for bash
 	" - vetur for Vue.js
@@ -1378,7 +1378,7 @@ endif
 "Plug 'dense-analysis/ale'
 
 " Language auto-completion
-if executable("node") == 1
+if executable("node") == 1 && v:version > 900
 	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
 endif
 " CoC works fine for JavaScript and TypeScript.
