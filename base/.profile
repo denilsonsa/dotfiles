@@ -211,6 +211,14 @@ colors() {
 			51|87|123|159|195|231) printf "\n" ;;
 		esac
 	done
+
+	printf "24-bit color escape codes are:\n"
+	printf " %s for foreground\n" '\e[38;2;${r};${g};${b}m'
+	printf " %s for background\n" '\e[48;2;${r};${g};${b}m'
+	printf "\n"
+	printf "Of course, they can be combined: %s\n" '\e[38;2;${r};${g};${b};48;2;${r};${g};${b}m'
+	printf "Support for these is listed at: https://github.com/termstandard/colors\n"
+	printf "\n"
 }
 
 
