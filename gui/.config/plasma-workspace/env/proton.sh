@@ -4,7 +4,14 @@
 # https://itch.io/t/694459/please-allow-installing-windows-versions-under-linux
 # https://itch.io/post/7913727
 
-PROTON="$HOME/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
-if [ "$USER" = "deck" ] ; then
+PROTON="/home/deck/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
+if [ -d "$PROTON" ] ; then
 	export PATH="$PATH:$PROTON"
 fi
+
+# For some reason, this didn't work:
+#
+# PROTON="$HOME/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
+# if [ "$USER" = "deck" ] ; then
+# 	export PATH="$PATH:$PROTON"
+# fi
