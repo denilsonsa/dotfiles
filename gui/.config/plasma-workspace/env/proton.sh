@@ -6,12 +6,14 @@
 
 PROTON="/home/deck/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
 if [ -d "$PROTON" ] ; then
-	export PATH="$PATH:$PROTON"
+	PATH="$PATH:$PROTON"
+	export PATH
 fi
 
-# For some reason, this didn't work:
+# Alternatively:
 #
 # PROTON="$HOME/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
 # if [ "$USER" = "deck" ] ; then
-# 	export PATH="$PATH:$PROTON"
+# 	PATH="$PATH:$PROTON"
+# 	export PATH
 # fi
