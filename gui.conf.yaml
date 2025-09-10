@@ -53,6 +53,7 @@
     '~/.config/lxtask.conf': 'gui/.config/lxtask.conf'
     '~/.config/plasma-localerc': 'gui/.config/plasma-localerc'
     '~/.config/plasma-workspace/env/locale.sh': 'gui/.config/plasma-workspace/env/locale.sh'
+    '~/.config/plasma-workspace/env/proton.sh': 'gui/.config/plasma-workspace/env/proton.sh'
     '~/.config/plasmarc': 'gui/.config/plasmarc'
     '~/.config/qpdfview/qpdfview.conf': 'gui/.config/qpdfview/qpdfview.conf'
     '~/.config/qpdfview/shortcuts.conf': 'gui/.config/qpdfview/shortcuts.conf'
