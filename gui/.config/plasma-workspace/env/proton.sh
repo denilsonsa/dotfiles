@@ -4,6 +4,8 @@
 # https://itch.io/t/694459/please-allow-installing-windows-versions-under-linux
 # https://itch.io/post/7913727
 
+export THIS_DOES_NOT_WORK=WAT
+
 PROTON="/home/deck/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
 if [ -d "$PROTON" ] ; then
 	PATH="$PATH:$PROTON"
