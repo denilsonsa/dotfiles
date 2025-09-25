@@ -142,6 +142,11 @@
 	configsetuser = "!git config --local user.name 'Denilson Sá Maia' && git config --local user.email 'denilsonsa@gmail.com' && echo 'Please consider updating [includeIf …] at ~/.gitconfig'"
 	configunsetuser = "!git config --local --unset user.name && git config --local --unset user.email"
 
+[diff]
+	# https://pydriller.readthedocs.io/en/latest/repository.html#git-diff-algorithms
+	# https://doi.org/10.1007/s10664-019-09772-z
+	# https://adamj.eu/tech/2024/01/18/git-improve-diff-histogram/
+	algorithm = histogram
 [commit]
 	verbose = true
 	#template = ~/gitmessage.txt
