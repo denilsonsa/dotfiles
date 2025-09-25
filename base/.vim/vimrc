@@ -136,6 +136,7 @@ let &guicursor = &guicursor . ",a:blinkon0"
 
 set wildmenu
 set wildmode=longest:full
+set wildoptions=pum
 
 " http://stackoverflow.com/questions/307148/vim-scrolling-slowly
 "set cursorline
