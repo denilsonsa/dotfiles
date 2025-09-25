@@ -1508,6 +1508,8 @@ au FileType tex,plaintex,*.tex setlocal nocin
 au FileType python,*.py setlocal sw=4 et
 "For Markdown files
 au FileType markdown,*.md setlocal et
+"https://stackoverflow.com/questions/62435926/coc-nvim-how-to-disable-auto-complete-suggestions-in-markdown-files
+au FileType markdown,*.md,gitcommit let b:coc_suggest_disable = 1
 " For commit messages
 au FileType gitcommit,hgcommit setlocal spell spelllang=en
 
