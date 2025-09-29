@@ -6,6 +6,17 @@
 ### lines beginning with a '#' character are comments
 ###
 
+[goom] # Goom effect
+
+# Goom display width (integer)
+#goom-width=800
+
+# Goom display height (integer)
+#goom-height=500
+
+# Goom animation speed (integer)
+#goom-speed=6
+
 [visual] # Visualizer filter
 
 # Effects list (string)
@@ -64,6 +75,32 @@
 
 # Peak height (integer)
 #spect-peak-height=1
+
+[projectm] # libprojectM effect
+
+# projectM preset path (string)
+#projectm-preset-path=/usr/share/projectM/presets
+
+# Title font (string)
+#projectm-title-font=/usr/share/fonts/TTF/DejaVuSans.ttf
+
+# Font menu (string)
+#projectm-menu-font=/usr/share/fonts/TTF/DejaVuSansMono.ttf
+
+# Video width (integer)
+#projectm-width=800
+
+# Video height (integer)
+#projectm-height=500
+
+# Mesh width (integer)
+#projectm-meshx=32
+
+# Mesh height (integer)
+#projectm-meshy=24
+
+# Texture size (integer)
+#projectm-texture-size=1024
 
 [glspectrum] # 3D OpenGL spectrum visualization
 
@@ -211,14 +248,6 @@
 
 # Keywords (string)
 #sout-avi-keywords=
-
-[mux_ogg] # Ogg/OGM muxer
-
-# Index interval (integer)
-#sout-ogg-indexintvl=1000
-
-# Index size ratio (float)
-#sout-ogg-indexratio=1.000000
 
 [swscale] # Video scaling filter
 
@@ -1360,6 +1389,38 @@ wall-rows=1
 # Disable DVD subtitle transparency (boolean)
 #dvdsub-transparency=0
 
+[kate] # Kate overlay decoder
+
+# Formatted Subtitles (boolean)
+#kate-formatted=1
+
+# Use Tiger for rendering (boolean)
+#kate-use-tiger=1
+
+# Rendering quality (float)
+#kate-tiger-quality=1.000000
+
+# Default font description (string)
+#kate-tiger-default-font-desc=
+
+# Default font effect (integer)
+#kate-tiger-default-font-effect=0
+
+# Default font effect strength (float)
+#kate-tiger-default-font-effect-strength=0.500000
+
+# Default font color (integer)
+#kate-tiger-default-font-color=16777215
+
+# Default font alpha (integer)
+#kate-tiger-default-font-alpha=255
+
+# Default background color (integer)
+#kate-tiger-default-background-color=16777215
+
+# Default background alpha (integer)
+#kate-tiger-default-background-alpha=0
+
 [libass] # Subtitle renderers using libass
 
 # Additional fonts directory (string)
@@ -2390,6 +2451,43 @@ qt-privacy-ask=0
 # Size (integer)
 #imem-size=0
 
+[live555] # RTP/RTSP/SDP demuxer (using Live555)
+
+# Use RTP over RTSP (TCP) (boolean)
+#rtsp-tcp=0
+
+# Client port (integer)
+#rtp-client-port=-1
+
+# Force multicast RTP via RTSP (boolean)
+#rtsp-mcast=0
+
+# Tunnel RTSP and RTP over HTTP (boolean)
+#rtsp-http=0
+
+# HTTP tunnel port (integer)
+#rtsp-http-port=80
+
+# Kasenna RTSP dialect (boolean)
+#rtsp-kasenna=0
+
+# WMServer RTSP dialect (boolean)
+#rtsp-wmserver=0
+
+# Username (string)
+#rtsp-user=
+
+# Password (string)
+#rtsp-pwd=
+
+# RTSP frame buffer size (integer)
+#rtsp-frame-buffer-size=250000
+
+[nfs] # NFS input
+
+# Set NFS uid/guid automatically (boolean)
+#nfs-auto-guid=1
+
 [cdda] # Audio CD input
 
 # Audio CD device (string)
@@ -2397,6 +2495,12 @@ qt-privacy-ask=0
 
 # Musicbrainz Server (string)
 #musicbrainz-server=musicbrainz.org
+
+# CDDB Server (string)
+#cddb-server=freedb.videolan.org
+
+# CDDB port (integer)
+#cddb-port=80
 
 [timecode] # Time code subpicture elementary stream generator
 
