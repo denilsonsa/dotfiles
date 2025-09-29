@@ -139,6 +139,9 @@ if [ -n "$ITERM_SESSION_ID" ] ; then
 	# Or we can use "symbols", because it's widely supported anyway.
 fi
 
+alias kindlemount="sshfs kindle:/mnt/us $HOME/sshfs"
+alias kindleunmount="fusermount -u $HOME/sshfs"
+
 # ssh-agent-setup() {
 #     eval "$(ssh-agent -s)"
 #     ssh-add ~/.ssh/id_rsa
