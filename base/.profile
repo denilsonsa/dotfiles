@@ -54,8 +54,12 @@ export PATH="${PATH}:${NPM_CONFIG_PREFIX}/bin"
 manpath -q &> /dev/null && export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
 
 # Ruby gems are installed in ~/.local/share/gem/ruby/3.4.0/
-# I certainly need to update the ruby version from time to time, but this hardcoded version is okay for now.
-export PATH="${PATH}:${HOME}/.local/share/gem/ruby/3.4.0/bin"
+# https://stackoverflow.com/questions/40385493/how-to-run-bundle-install-as-normal-user
+# https://guilhermesimoes.github.io/blog/using-bundler-with-system-ruby
+if which ruby &> /dev/null ; then
+	export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+	export PATH="${PATH}:${GEM_HOME}/bin"
+fi
 
 # Go uses ~/go/ by default
 # https://golang.org/cmd/go/#hdr-GOPATH_environment_variable
