@@ -53,6 +53,10 @@ export NPM_CONFIG_PREFIX="${HOME}/.npm-global-prefix"
 export PATH="${PATH}:${NPM_CONFIG_PREFIX}/bin"
 manpath -q &> /dev/null && export MANPATH="${NPM_PACKAGES}/share/man:$(manpath -q)"
 
+# Ruby gems are installed in ~/.local/share/gem/ruby/3.4.0/
+# I certainly need to update the ruby version from time to time, but this hardcoded version is okay for now.
+export PATH="${PATH}:${HOME}/.local/share/gem/ruby/3.4.0/bin"
+
 # Go uses ~/go/ by default
 # https://golang.org/cmd/go/#hdr-GOPATH_environment_variable
 # I only need this variable if I want to customize it.
