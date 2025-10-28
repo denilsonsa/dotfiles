@@ -204,6 +204,8 @@
 	path = ~/.gitconfig-personal
 [includeIf "gitdir:~/otherrepos/aur/"]
 	path = ~/.gitconfig-personal
+[includeIf "gitdir:~/.homebrew/Library/Taps/"]
+	path = ~/.gitconfig-personal
 
 [include]
 	# Use an additional, host-specific Git config (if it exists).
