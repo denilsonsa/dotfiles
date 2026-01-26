@@ -2,6 +2,18 @@
 NumLock=0
 RepeatDelay=300
 
+[Libinput][1133][16489][Logitech MX Master 2S]
+PointerAccelerationProfile=1
+
+[Libinput][1133][16522][Logitech MX Keys]
+PointerAccelerationProfile=1
+
+[Libinput][6940][6972][Corsair Corsair Gaming HARPOON RGB Mouse]
+PointerAccelerationProfile=1
+
+[Libinput][9025][32822][Arduino LLC Arduino Leonardo Mouse]
+PointerAccelerationProfile=1
+
 [Mouse]
 X11LibInputXAccelProfileFlat=true
 XLbInptAccelProfileFlat=true

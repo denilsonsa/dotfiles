@@ -1,3 +1,3 @@
 [Layout]
-Options=compose:caps,compose:rwin,numpad:microsoft,apple:alupckeys
+Options=compose:caps,numpad:microsoft,apple:alupckeys,compose:rwin
 ResetOldOptions=true

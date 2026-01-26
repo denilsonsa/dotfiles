@@ -2,9 +2,28 @@
 _k_friendly_name=Activity Manager
 
 [KDE Keyboard Layout Switcher]
-Switch to Last-Used Keyboard Layout=none,none,Switch to Last-Used Keyboard Layout
-Switch to Next Keyboard Layout=none,none,Switch to Next Keyboard Layout
+Switch to Last-Used Keyboard Layout=none,Meta+Alt+L,Switch to Last-Used Keyboard Layout
+Switch to Next Keyboard Layout=none,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
+
+[com.google.Chrome]
+2651B9F22066E9F0110294DEA5381289-popupWindow=none,none,Pop-up/Merge page
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-0=none,none,Custom shortcut #1
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-1=none,none,Custom shortcut #2
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-2=none,none,Custom shortcut #3
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-3=none,none,Custom shortcut #4
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-4=none,none,Custom shortcut #5
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-5=none,none,Custom shortcut #6
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-6=none,none,Custom shortcut #7
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-7=none,none,Custom shortcut #8
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-8=none,none,Custom shortcut #9
+2DB4F169A056FFF51B755BC8E01E6FCC-custom-command-9=none,none,Custom shortcut #10
+2DB4F169A056FFF51B755BC8E01E6FCC-save-all-tabs=none,none,Save all tabs
+2DB4F169A056FFF51B755BC8E01E6FCC-save-selected-tabs=none,none,Save the selected tabs or their selected contents
+D99ED5152F67811AE854FB49B8433788-openManage=none,none,Manage
+D99ED5152F67811AE854FB49B8433788-reload=none,none,Reload
+D99ED5152F67811AE854FB49B8433788-styleDisableAll=none,none,Turn all styles off
+_k_friendly_name=Google Chrome
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
@@ -40,7 +59,7 @@ _k_friendly_name=Session Management
 
 [kwin]
 Activate Window Demanding Attention=Meta+Ctrl+A,Meta+Ctrl+A,Activate Window Demanding Attention
-Cube=,Meta+C,Toggle Cube
+Cube=none,Meta+C,Toggle Cube
 Cycle Overview=none,none,Cycle through Overview and Grid View
 Cycle Overview Opposite=none,none,Cycle through Grid View and Overview
 Decrease Opacity=none,,Decrease Opacity of Active Window by 5%
@@ -55,6 +74,7 @@ Invert=Meta+Ctrl+I,Meta+Ctrl+I,Toggle Invert Effect
 Invert Screen Colors=none,none,Invert Screen Colours
 InvertWindow=Meta+Ctrl+U,Meta+Ctrl+U,Toggle Invert Effect on Window
 Kill Window=none,Meta+Ctrl+Esc,Kill Window
+Move Tablet to Next Output=none,none,Move the tablet to the next output
 Move Window to the Bottom-Center=Meta+Num+2,none,Move Window to the Bottom-Center
 Move Window to the Bottom-Left=Meta+Num+1,none,Move Window to the Bottom-Left
 Move Window to the Bottom-Right=Meta+Num+3,none,Move Window to the Bottom-Right
@@ -123,14 +143,14 @@ Toggle Window Raise/Lower=none,,Toggle Window Raise/Lower
 ToggleCurrentThumbnail=Meta+Ctrl+T,Meta+Ctrl+T,Toggle Thumbnail for Current Window
 ToggleMouseClick=Meta+*,Meta+*,Toggle Mouse Click Animation
 TrackMouse=none,none,Track mouse
-Walk Through Windows=Alt+Tab,Alt+Tab,Walk Through Windows
-Walk Through Windows (Reverse)=Alt+Shift+Tab,Alt+Shift+Tab,Walk Through Windows (Reverse)
-Walk Through Windows Alternative=none,,Walk Through Windows Alternative
-Walk Through Windows Alternative (Reverse)=none,,Walk Through Windows Alternative (Reverse)
-Walk Through Windows of Current Application=Alt+`,Alt+`,Walk Through Windows of Current Application
-Walk Through Windows of Current Application (Reverse)=Alt+~,Alt+~,Walk Through Windows of Current Application (Reverse)
-Walk Through Windows of Current Application Alternative=none,,Walk Through Windows of Current Application Alternative
-Walk Through Windows of Current Application Alternative (Reverse)=none,,Walk Through Windows of Current Application Alternative (Reverse)
+Walk Through Windows=Alt+Tab,Meta+Tab\tAlt+Tab,Walk Through Windows
+Walk Through Windows (Reverse)=Alt+Shift+Tab,Meta+Shift+Tab\tAlt+Shift+Tab,Walk Through Windows (Reverse)
+Walk Through Windows Alternative=none,none,Walk Through Windows Alternative
+Walk Through Windows Alternative (Reverse)=none,none,Walk Through Windows Alternative (Reverse)
+Walk Through Windows of Current Application=Alt+`,Meta+`\tAlt+`,Walk Through Windows of Current Application
+Walk Through Windows of Current Application (Reverse)=Alt+~,Meta+~\tAlt+~,Walk Through Windows of Current Application (Reverse)
+Walk Through Windows of Current Application Alternative=none,none,Walk Through Windows of Current Application Alternative
+Walk Through Windows of Current Application Alternative (Reverse)=none,none,Walk Through Windows of Current Application Alternative (Reverse)
 Window Above Other Windows=Meta+T,,Keep Window Above Others
 Window Below Other Windows=none,,Keep Window Below Others
 Window Close=Meta+C\tAlt+F4,Alt+F4,Close Window
@@ -173,7 +193,7 @@ Window Quick Tile Top Left=none,,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=none,,Quick Tile Window to the Top Right
 Window Raise=none,,Raise Window
 Window Resize=none,,Resize Window
-Window Shade=none,,Shade Window
+Window Shade=none,none,Shade Window
 Window Shrink Horizontal=none,,Shrink Window Horizontally
 Window Shrink Vertical=none,,Shrink Window Vertically
 Window to Desktop 1=none,,Window to Desktop 1
@@ -258,6 +278,7 @@ clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Move keyboard focus between panels
 cycleNextAction=none,,Next History Item
 cyclePrevAction=none,,Previous History Item
+edit_clipboard=none,,Edit Contents…
 manage activities=none,Meta+Q,Show Activity Switcher
 next activity=none,none,Walk through activities
 previous activity=none,none,Walk through activities (Reverse)
@@ -265,7 +286,6 @@ repeat_action=none,,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=none,,Show Barcode…
 show-on-mouse-pos=Meta+V,Meta+V,Show Clipboard Items at Mouse Position
-stop current activity=none,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb

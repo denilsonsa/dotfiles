@@ -135,6 +135,10 @@ Sort reversed=false
 Speedbar Width=140
 View Style=Detail
 
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=5242880
+
 [Sounds]
 Enable=false
 
