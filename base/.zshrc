@@ -223,3 +223,6 @@ fi
 # Make sure the last command returns success.
 # Otherwise the first shell prompt will already display the error code (exit code) from the last command.
 true
+
+# Added by ProtonUp-Qt on 11-11-2025 09:32:20
+if [ -d "/home/deck/stl/prefix" ]; then export PATH="$PATH:/home/deck/stl/prefix"; fi

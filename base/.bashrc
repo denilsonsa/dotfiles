@@ -161,3 +161,6 @@ else
 fi
 
 unset use_color
+
+# Added by ProtonUp-Qt on 11-11-2025 09:32:20
+if [ -d "/home/deck/stl/prefix" ]; then export PATH="$PATH:/home/deck/stl/prefix"; fi
