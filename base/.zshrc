@@ -186,13 +186,42 @@ else
 		# But GVim is installed as a flatpak
 		alias gvim='flatpak run --command=gvim --file-forwarding org.vim.Vim'
 
+		# Steam launches it with LC_ALL=C, which disables utf-8 support.
+		# Let's unset that.
+		if [ -n "$LC_ALL" ] ; then
+			echo "Unsetting LC_ALL=${LC_ALL}"
+			unset LC_ALL
+		fi
+
 		# Let's remove something from LD_PRELOAD to prevent annoying error
 		# messages when launching the terminal from within the game mode.
 		#
 		# ERROR: ld.so: object '/home/deck/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
 		# This happens because this is set:
 		# LD_PRELOAD=:/home/deck/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so:/home/deck/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
-		LD_PRELOAD="${LD_PRELOAD/:\/home\/deck\/.local\/share\/Steam\/ubuntu12_32\/gameoverlayrenderer.so/}"
+		if [ -n "$LD_PRELOAD" ] ; then
+			LD_PRELOAD="${LD_PRELOAD/:\/home\/deck\/.local\/share\/Steam\/ubuntu12_32\/gameoverlayrenderer.so/}"
+			echo "Please ignore LD_PRELOAD error messages above."
+			# How to make a braille image like this?
+			# chafa --format=symbols --size=999x13 --symbols=braille --colors=none --invert --work=9 Steam_Deck_logo.png
+			cat << EOF
+
+       ⠀⠀⠀⠀⠀⠀⢸⣿⣷⣶⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣶⣶⣶⣶⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀
+       ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀
+       ⠀⠀⠀⠀⠀⠀⠘⠛⠛⠻⢿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣦⠀⠀⠀
+       ⠀⠀⢀⣠⣤⣶⣶⣶⣤⣄⠀⠉⠻⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠈⠻⣿⣿⣷⡀⠀
+       ⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠙⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⢠⣾⣿⣿⣦⠀⠀⢸⣿⣿⣷⠀
+       ⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⢹⣿⣿⣿⣿⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⢸⣿⣿⣿⣿⠃⠀⢸⣿⣿⣿⡄
+       ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠈⠙⠿⣿⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠉⠛⠋⠁⠀⢀⣾⣿⣿⣿⡇
+       ⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⣸⣿⣿⣿⣿⠀⠀⠀⠀⠀⣤⡀⠀⠀⠉⢛⡋⠉⠁⠀⠀⠀⠀⠀⠀⢀⣀⣤⣴⣿⣿⣿⣿⣿⠃
+       ⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⣰⣿⣿⣿⣿⡏⠀⠀⠀⠀⠀⢿⣿⣷⣦⡴⣿⣿⣿⣦⡀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀
+       ⠀⠀⠀⠙⠛⠿⠿⠟⠛⠉⠀⣠⣾⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣇⠀⠈⠛⠟⠁⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀
+       ⠀⠀⠀⠀⠀⠀⢠⣤⣤⣶⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣦⣄⣀⣀⣀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀
+       ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀
+       ⠀⠀⠀⠀⠀⠀⢸⠿⠿⠿⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠿⠿⠿⠿⠛⠛⠋⠁⠀  ⠀⠀⠀⠀
+
+EOF
+		fi
 	elif [ "$USER" = "denilson" ] ; then
 		if [ "$HOST" = "hpelitedesk800g2" ] ; then
 			# By having "Cascadia" installed, I can have all those fancy glyphs
