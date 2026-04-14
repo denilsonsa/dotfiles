@@ -41,7 +41,7 @@ if [ -d "${ZSH}" ] ; then
 	# zstyle ':omz:update' frequency 13
 
 	# Uncomment the following line if pasting URLs and other text is messed up.
-	# DISABLE_MAGIC_FUNCTIONS="true"
+	DISABLE_MAGIC_FUNCTIONS="true"
 
 	# Uncomment the following line to disable colors in ls.
 	# denilson disabled this because I have my own LS color setup in this dotfiles.
