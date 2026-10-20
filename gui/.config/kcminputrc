@@ -2,11 +2,26 @@
 NumLock=0
 RepeatDelay=300
 
+[Libinput][1133][16468][Logitech Wireless Mouse]
+PointerAccelerationProfile=1
+
 [Libinput][1133][16489][Logitech MX Master 2S]
 PointerAccelerationProfile=1
 
 [Libinput][1133][16522][Logitech MX Keys]
 PointerAccelerationProfile=1
+
+[Libinput][1133][50504][Logitech USB Receiver Mouse]
+PointerAccelerationProfile=1
+
+[Libinput][1386][40][Wacom Intuos5 touch L Finger]
+NaturalScroll=true
+PointerAccelerationProfile=1
+
+[Libinput][1386][40][Wacom Intuos5 touch L Pen]
+MapToWorkspace=true
+OutputArea=0,0,1,0.703125
+TabletToolRelativeMode=true
 
 [Libinput][6940][6972][Corsair Corsair Gaming HARPOON RGB Mouse]
 PointerAccelerationProfile=1

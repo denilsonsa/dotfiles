@@ -1,0 +1,14 @@
+# This config will disable all gestures:
+# https://discuss.kde.org/t/is-there-a-way-to-disable-trackpad-gestures/39347/4
+#
+# Why? Because my Wacom tablet has terrible palm rejection.
+# Alternatively, I could just disable the touchpad completely.
+
+touchpad:
+  gestures:
+    - type: swipe
+      direction: any
+      conditions:
+        - $fingers >= 3
+    - type: pinch
+      direction: any

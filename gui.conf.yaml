@@ -28,6 +28,7 @@
     #'~/.kdiff3rc' ?
     '~/.XCompose': 'gui/.XCompose'
     '~/.config/compton.conf': 'gui/.config/compton.conf'
+    '~/.config/inputactions/config.yaml': 'gui/.config/inputactions/config.yaml'
     '~/.config/kcminputrc': 'gui/.config/kcminputrc'
     '~/.config/kdedefaults/kcminputrc': 'gui/.config/kdedefaults/kcminputrc'
     '~/.config/kdedefaults/kdeglobals': 'gui/.config/kdedefaults/kdeglobals'
