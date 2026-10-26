@@ -200,7 +200,7 @@ else
 		# This happens because this is set:
 		# LD_PRELOAD=:/home/deck/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so:/home/deck/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
 		if [ -n "$LD_PRELOAD" ] ; then
-			LD_PRELOAD="${LD_PRELOAD/:\/home\/deck\/.local\/share\/Steam\/ubuntu12_32\/gameoverlayrenderer.so/}"
+			LD_PRELOAD="${LD_PRELOAD/\/home\/deck\/.local\/share\/Steam\/ubuntu12_32\/gameoverlayrenderer.so/}"
 			echo "Please ignore LD_PRELOAD error messages above."
 			# How to make a braille image like this?
 			# chafa --format=symbols --size=999x13 --symbols=braille --colors=none --invert --work=9 Steam_Deck_logo.png
