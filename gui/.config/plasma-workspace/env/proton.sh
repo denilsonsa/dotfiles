@@ -3,14 +3,15 @@
 # Having `wine` in $PATH causes the itch.io desktop client to allow downloading Windows-only games.
 # https://itch.io/t/694459/please-allow-installing-windows-versions-under-linux
 # https://itch.io/post/7913727
+# This workaround is not needed since desktop client version 26.0.0 ~ 26.22.0.
 
-export THIS_DOES_NOT_WORK=WAT
-
-PROTON="/home/deck/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
-if [ -d "$PROTON" ] ; then
-	PATH="$PATH:$PROTON"
-	export PATH
-fi
+# export THIS_DOES_NOT_WORK=WAT
+#
+# PROTON="/home/deck/.local/share/Steam/steamapps/common/Proton - Experimental/files/bin"
+# if [ -d "$PROTON" ] ; then
+# 	PATH="$PATH:$PROTON"
+# 	export PATH
+# fi
 
 # Alternatively:
 #
